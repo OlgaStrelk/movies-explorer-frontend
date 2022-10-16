@@ -11,12 +11,13 @@ body {
   --ligther-text: #A0A0A0;
   --button-text: #FFFFFF;
 
-  --intro-background: #F3C1F8;
+  --promo-background: #F3C1F8;
   --main-background: #FFFFFF;
   --contrast-background: #F5F5F5;
 
   --light-strip: #F2F2F2;
   --text-substrate: #E8E8E8;
+  --button-background: #000000;
 
   --font-family: 'Inter', sans-serif;
 }

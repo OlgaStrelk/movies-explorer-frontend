@@ -1,0 +1,29 @@
+.header__panel {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 70px;
+	min-height: 74px;
+}
+
+.header__promo-panel {
+	background: var(--promo-background);
+}
+
+.header__btn {
+	border: none;
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+.header__signup-btn {
+	background-color: transparent;
+}
+
+.header__signin-btn {
+	padding: 8px 20px;
+	border-radius: 3px;
+	background-color: var(--button-background);
+	color: var(--button-text)
+}
