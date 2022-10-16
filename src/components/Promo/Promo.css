@@ -1,0 +1,33 @@
+.promo__container {
+	background: var(--promo-background);
+	display: grid;
+	grid-template-rows: 484px;
+	grid-template-columns: 730px;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 40px;
+}
+
+.promo__image {
+	background: center center no-repeat url('../../images/promo__background.svg');
+	width: 320px;
+	height: 320px;
+	grid-area: 1 / 1;
+	justify-self: center;
+}
+
+.promo__title {
+	font-weight: 400;
+	margin: 0;
+	text-align: center;
+	font-size: 50px;
+	line-height: 58px;
+	grid-area: 1 / 1;
+
+}
+
+@media screen and (max-width: 1023px) {
+}
+
+@media screen and (max-width: 767px) {
+}
