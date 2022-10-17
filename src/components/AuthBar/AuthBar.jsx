@@ -1,18 +1,24 @@
 import "./AuthBar.css";
 
 function AuthBar() {
-  const BTNS_CLASS_NAME = "header__btn";
+  const BTNS_CLASS_NAME = "authBar__btn";
   const space = " ";
+  const CONTAINER_CLASS_NAME = "authBar__container";
+  const BTN_TYPE = "button";
 
   const BTNS = [
-    { title: "Регистрация", id: 1, uniqueBtnsClassName: "header__signup-btn" },
-    { title: "Войти", id: 2, uniqueBtnsClassName: "header__signin-btn" },
+    {
+      title: "Регистрация",
+      id: 1,
+      uniqueBtnsClassName: "authBar__btn_type_signup",
+    },
+    { title: "Войти", id: 2, uniqueBtnsClassName: "authBar__btn_type_signin" },
   ];
 
   const btnsMarkup = BTNS.map((btn) => (
     <button
       key={btn.id}
-      type="button"
+      type={BTN_TYPE}
       className={BTNS_CLASS_NAME + space + btn.uniqueBtnsClassName}
     >
       {btn.title}
@@ -20,7 +26,7 @@ function AuthBar() {
   ));
   return (
     <>
-      <div className="header__btns">{btnsMarkup}</div>
+      <div className={CONTAINER_CLASS_NAME}>{btnsMarkup}</div>
     </>
   );
 }
