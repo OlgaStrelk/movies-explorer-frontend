@@ -12,7 +12,11 @@ function AuthBar() {
       id: 1,
       uniqueBtnsClassName: "authBar__btn_type_signup",
     },
-    { title: "Войти", id: 2, uniqueBtnsClassName: "authBar__btn_type_signin" },
+    { 
+      title: "Войти", 
+      id: 2, 
+      uniqueBtnsClassName: "authBar__btn_type_signin" 
+    },
   ];
 
   const btnsMarkup = BTNS.map((btn) => (
