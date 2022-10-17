@@ -1,5 +1,5 @@
-.nav__section {
-  background-color: var(--button-background);
+.nav__panel {
+  background-color: var(--contrast-elements);
   color: var(--button-text);
 }
 

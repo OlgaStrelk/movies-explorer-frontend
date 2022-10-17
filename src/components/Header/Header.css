@@ -2,12 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 70px;
 	min-height: 74px;
-}
-
-.header__promo-panel {
-	background: var(--promo-background);
 }
 
 .header__btn {
@@ -25,7 +20,7 @@
 	margin-left: 30px;
 	padding: 8px 20px;
 	border-radius: 3px;
-	background-color: var(--button-background);
+	background-color: var(--contrast-elements);
 	color: var(--button-text)
 }
 
