@@ -1,5 +1,7 @@
 import "./NavTab.css";
 function NavTab() {
+  const NAV_CLASS_NAME = "nav";
+  const NAV_LIST_CLASS_NAME = "nav__list";
   const NAV_ITEM_CLASS_NAME = "nav__item";
   const NAV_LINK_CLASS_NAME = "nav__link";
   const NAV_ITEMS = [
@@ -29,8 +31,8 @@ function NavTab() {
   ));
 
   return (
-    <nav className="nav__panel">
-      <ul className="nav__list">{navItemsMarkup}</ul>
+    <nav className={NAV_CLASS_NAME}>
+      <ul className={NAV_LIST_CLASS_NAME}>{navItemsMarkup}</ul>
     </nav>
   );
 }

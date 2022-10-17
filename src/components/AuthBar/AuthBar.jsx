@@ -2,8 +2,8 @@ import "./AuthBar.css";
 
 function AuthBar() {
   const BTNS_CLASS_NAME = "authBar__btn";
-  const space = " ";
   const CONTAINER_CLASS_NAME = "authBar__container";
+  const space = " ";
   const BTN_TYPE = "button";
 
   const BTNS = [
