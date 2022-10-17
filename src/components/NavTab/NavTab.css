@@ -1,0 +1,27 @@
+.nav__section {
+  background-color: var(--button-background);
+  color: var(--button-text);
+}
+
+.nav__list {
+  margin: 0;
+  padding: 25px 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__item {
+  margin-left: 40px;
+}
+
+.nav__item:first-of-type {
+  margin-left: 0px;
+}
+
+.nav__link {
+  color: var(--button-text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+}
