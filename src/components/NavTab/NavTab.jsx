@@ -20,7 +20,7 @@ function NavTab() {
     },
   ];
 
-  const renderNavItems = NAV_ITEMS.map((item) => (
+  const navItemsMarkup = NAV_ITEMS.map((item) => (
     <li className={NAV_ITEM_CLASS_NAME} key={item.id}>
       <a className={NAV_LINK_CLASS_NAME} href={item.link}>
         {item.title}
@@ -30,7 +30,7 @@ function NavTab() {
 
   return (
     <nav className="nav__panel">
-      <ul className="nav__list">{renderNavItems}</ul>
+      <ul className="nav__list">{navItemsMarkup}</ul>
     </nav>
   );
 }

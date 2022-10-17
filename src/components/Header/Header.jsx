@@ -1,16 +1,14 @@
-import React from 'react';
-import './Header.css';
-import { ReactComponent as LogoImage } from '../../images/header__logo.svg';
+import React from "react";
+import "./Header.css";
+import { ReactComponent as LogoImage } from "../../images/header__logo.svg";
+import AuthBar from "../AuthBar/AuthBar";
 
 function Header() {
   return (
     <div className="section section_type_promo header__panel">
-			<LogoImage />
-		<div className='header__btns'>
-			<button type='button' className='header__btn header__signup-btn'>Регистрация</button>
-			<button type='button' className='header__btn header__signin-btn'>Войти</button>
-		</div>
-	</div>
+      <LogoImage />
+      <AuthBar />
+    </div>
   );
 }
 
