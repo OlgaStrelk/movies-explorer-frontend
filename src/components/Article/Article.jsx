@@ -7,6 +7,7 @@ function Article({
   text,
   isCentred,
 }) {
+  console.log(isCentred)
   const articleClassName = isCentred ? "article article_centred" : "article";
   const titleClassName = `article__title ${uniqueTitleClass}`;
   const textClassName = uniqueTextCLass
