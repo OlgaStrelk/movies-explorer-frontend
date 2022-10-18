@@ -1,9 +1,21 @@
 .list-item {
+  margin-top: 20px;
+  border-bottom: 1px solid var(--icons-substrate);
+}
+
+.list-item:first-of-type {
+  margin-top: 50px;
+}
+
+.list-item:last-of-type {
+	margin-bottom: 15px;
 }
 
 .list-item__link {
   color: var(--main-text);
   text-decoration: none;
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-item__title {
@@ -15,6 +27,8 @@
 }
 
 .list-item__icon {
+  width: 29px;
+  height: 60px;
   background: center center no-repeat
     url("../../images/about-me__link-arrow.svg");
 }
