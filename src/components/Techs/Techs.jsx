@@ -5,10 +5,17 @@ import "./Techs.css";
 
 function Techs() {
   const TECHS_TITLE = "Технологии";
-  const ARTICLE_TITLE = "7 технологий";
-  const TECHS_TITLE_CLASS_NAME = "techs__title";
-  const ARTICLE_TEXT =
-    "На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.";
+  const CLASS_NAMES_CONFIG = {
+    uniqueTitleClass: "techs__title",
+    isCentred: true,
+  };
+
+  const ARTICLE_DATA = {
+    data: {
+      title: "7 технологий",
+      text: "На курсе веб-разработки мы освоили технологии, которые применили в дипломном проекте.",
+    },
+  };
 
   const ICONS_TITLES = [
     { title: "HTML", id: 1 },
@@ -27,12 +34,9 @@ function Techs() {
     <section className="section section_type_contrast">
       <Title>{TECHS_TITLE}</Title>
       <div className="techs__article">
-        <Article
-          title={ARTICLE_TITLE}
-          text={ARTICLE_TEXT}
-          uniqueTitleClass={TECHS_TITLE_CLASS_NAME}
-          isCentred={true}
-        />
+        <Article classes={CLASS_NAMES_CONFIG} isCentred={true}>
+          {ARTICLE_DATA.data}
+        </Article>
       </div>
       <div className="techs__icons">{iconsMarkup}</div>
     </section>
