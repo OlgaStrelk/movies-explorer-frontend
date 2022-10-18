@@ -1,0 +1,17 @@
+.list-item {
+}
+
+.list-item__link {
+}
+
+.list-item__title {
+  color: var(--ligther-text);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.list-item__icon {
+  background: center center no-repeat
+    url("../../images/about-me__link-arrow.svg");
+}

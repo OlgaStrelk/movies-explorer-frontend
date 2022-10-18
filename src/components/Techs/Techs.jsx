@@ -34,7 +34,7 @@ function Techs() {
     <section className="section section_type_contrast">
       <Title>{TECHS_TITLE}</Title>
       <div className="techs__article">
-        <Article classes={CLASS_NAMES_CONFIG} isCentred={true}>
+        <Article classes={CLASS_NAMES_CONFIG}>
           {ARTICLE_DATA.data}
         </Article>
       </div>

@@ -1,0 +1,9 @@
+.portfolio__title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.portfolio__list {
+  list-style-type: none;
+}

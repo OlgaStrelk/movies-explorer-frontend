@@ -1,0 +1,35 @@
+.about-me__grid {
+  margin: 66px 0 100px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 270px;
+  grid-template-areas:
+    "article photo"
+    "link photo";
+}
+
+.about-me__title {
+  font-size: 50px;
+  line-height: 58px;
+}
+
+.about-me__subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.about-me__text {
+  max-width: 600px;
+  line-height: 22px;
+}
+
+.about-me__link {
+  grid-area: link;
+  align-self: flex-end;
+  color: var(--main-text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+}
