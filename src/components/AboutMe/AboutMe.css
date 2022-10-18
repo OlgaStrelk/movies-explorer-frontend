@@ -33,3 +33,10 @@
   font-weight: 500;
   line-height: 17px;
 }
+
+@media screen and (max-width: 1279px) {
+  .about-me__grid {
+    column-gap: 0;
+    grid-template-columns: auto;
+  }
+}

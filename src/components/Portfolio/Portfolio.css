@@ -1,4 +1,6 @@
 .portfolio__title {
+  color: var(--ligther-text);
+
   font-size: 18px;
   font-weight: 400;
   line-height: 20px;
