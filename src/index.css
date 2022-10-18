@@ -7,7 +7,7 @@ body {
 }
 
 .section {
-	padding: var(--laptop-side-paddings);
+  padding: var(--laptop-horizontal-paddings);
 }
 
 .section__title {
@@ -22,37 +22,37 @@ body {
 }
 
 .section_type_promo {
-	background: var(--promo-background);
-
+  background: var(--promo-background);
 }
 
 .section_type_base {
   background: var(--main-background);
-  padding-top: var(--base-section-padding-top);
+  padding-top: var(--laptop-vertical-paddings-base);
+  padding-bottom: var(--laptop-vertical-paddings-base);
 }
 
 .section_type_contrast {
   background: var(--contrast-background);
-  padding-top: var(--contrast-section-padding-top);
+  padding-top: var(--laptop-vertical-paddings-contrast);
+  padding-bottom: var(--laptop-vertical-paddings-contrast);
 }
 
 :root {
   --main-text: #000000;
-  --ligther-text: #A0A0A0;
-  --button-text: #FFFFFF;
+  --ligther-text: #a0a0a0;
+  --contrast-text: #ffffff;
 
-  --promo-background: #F3C1F8;
-  --main-background: #FFFFFF;
-  --contrast-background: #F5F5F5;
+  --promo-background: #f3c1f8;
+  --main-background: #ffffff;
+  --contrast-background: #f5f5f5;
 
-  --light-strip: #F2F2F2;
-  --text-substrate: #E8E8E8;
+  --light-strip: #f2f2f2;
+  --icons-substrate: #e8e8e8;
   --contrast-elements: #000000;
 
-  --font-family: 'Inter', sans-serif;
+  --font-family: "Inter", sans-serif;
 
-  --base-section-padding-top: 110px;
-  --contrast-section-padding-top: 100px;
-  --laptop-side-paddings: 0 70px;
+  --laptop-vertical-paddings-base: 110px;
+  --laptop-vertical-paddings-contrast: 100px;
+  --laptop-horizontal-paddings: 0 70px;
 }
-

@@ -1,10 +1,8 @@
 import "./NavTab.css";
 function NavTab() {
-  const NAV_CLASS_NAME = "nav";
-  const NAV_LIST_CLASS_NAME = "nav__list";
   const NAV_ITEM_CLASS_NAME = "nav__item";
   const NAV_LINK_CLASS_NAME = "nav__link";
-  const NAV_ITEMS = [
+  const NAV_ITEMS_DATA = [
     {
       title: "О проекте",
       link: "#about-project",
@@ -22,7 +20,7 @@ function NavTab() {
     },
   ];
 
-  const navItemsMarkup = NAV_ITEMS.map((item) => (
+  const navItemsMarkup = NAV_ITEMS_DATA.map((item) => (
     <li className={NAV_ITEM_CLASS_NAME} key={item.id}>
       <a className={NAV_LINK_CLASS_NAME} href={item.link}>
         {item.title}
@@ -31,8 +29,8 @@ function NavTab() {
   ));
 
   return (
-    <nav className={NAV_CLASS_NAME}>
-      <ul className={NAV_LIST_CLASS_NAME}>{navItemsMarkup}</ul>
+    <nav className="nav">
+      <ul className="nav__list">{navItemsMarkup}</ul>
     </nav>
   );
 }

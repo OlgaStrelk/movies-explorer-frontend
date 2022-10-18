@@ -5,24 +5,6 @@
 	min-height: 74px;
 }
 
-.header__btn {
-	border: none;
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 16px;
-}
-
-.header__signup-btn {
-	background-color: transparent;
-}
-
-.header__signin-btn {
-	margin-left: 30px;
-	padding: 8px 20px;
-	border-radius: 3px;
-	background-color: var(--contrast-elements);
-	color: var(--button-text)
-}
 
 @media screen and (max-width: 1023px) {
 	.header__panel {

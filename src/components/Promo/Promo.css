@@ -1,5 +1,4 @@
-.promo__section {
-	background: var(--promo-background);
+.promo__container {
 	display: grid;
 	grid-template-rows: 484px;
 	grid-template-columns: 730px;

@@ -1,4 +1,4 @@
-.nav__panel {
+.nav {
   background-color: var(--contrast-elements);
   color: var(--button-text);
 }
@@ -20,7 +20,7 @@
 }
 
 .nav__link {
-  color: var(--button-text);
+  color: var(--contrast-text);
   font-size: 13px;
   font-weight: 500;
   line-height: 16px;

@@ -1,3 +1,10 @@
-.section__container {
-	padding: var(--laptop-side-paddings);
+.about-project__texts {
+  padding: 70px 0 var(--laptop-vertical-paddings-base);
+  display: flex;
 }
+
+.about-project__title {
+	font-size: 20px;
+	line-height: 24px;
+}
+

@@ -1,0 +1,12 @@
+.techs__title {
+  margin-top: 90px;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+}
+
+.techs__icons {
+  padding-top: var(--laptop-vertical-paddings-contrast);
+  display: flex;
+  justify-content: center;
+}

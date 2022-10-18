@@ -1,0 +1,32 @@
+.time-line {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.time-line__strip {
+  height: 36px;
+}
+
+.time-line__strip_type_contrast {
+  background: var(--contrast-elements);
+  color: var(--contrast-text);
+}
+
+.time-line__strip_type_smoothed {
+  background: var(--light-strip);
+  color: var(--main-text);
+}
+
+.time-line__text {
+  margin: 0;
+  padding-top: 8px;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+.time-line__text_type_capture {
+  padding-top: 14px;
+  font-weight: 500;
+  color: var(--ligther-text);
+}
