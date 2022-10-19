@@ -6,13 +6,26 @@ body {
   font-family: var(--font-family);
 }
 
+h1, h2, h3, h4, h5 {
+  margin-block: 0;
+  margin: 0;
+}
+
+p {
+	margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .section {
   padding: var(--laptop-horizontal-paddings);
 }
 
 .section__title {
-  margin: 0;
-  margin-block: 0;
   padding: 0 0 23px;
   font-size: 22px;
   font-weight: 400;
@@ -39,7 +52,7 @@ body {
 
 :root {
   --main-text: #000000;
-  --ligther-text: #a0a0a0;
+  --lightened-text: #a0a0a0;
   --contrast-text: #ffffff;
 
   --promo-background: #f3c1f8;

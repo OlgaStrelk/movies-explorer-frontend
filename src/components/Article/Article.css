@@ -14,14 +14,12 @@
 }
 
 .article__title {
-  margin-block: 0;
-  margin: 0 0 26px;
+  margin-bottom: 26px;
   font-weight: 400;
   letter-spacing: -0.04em;
 }
 
 .article__text {
-  margin: 0;
   max-width: 460px;
   font-size: 14px;
   font-weight: 400;

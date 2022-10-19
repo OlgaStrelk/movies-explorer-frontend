@@ -4,9 +4,7 @@
 }
 
 .nav__list {
-  margin: 0;
   padding: 25px 0;
-  list-style-type: none;
   display: flex;
   justify-content: center;
 }

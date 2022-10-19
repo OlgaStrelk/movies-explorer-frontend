@@ -1,27 +1,32 @@
 import "./Footer.css";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   const FOOTER_DATA = {
     caption: "Учебный проект Яндекс.Практикум х BeatFilm.",
-    year: 2022,
+    year: currentYear,
     links: [
-      { id: 1, text: "Яндекс.Практикум", href: "" },
-      { id: 2, text: "Github", href: "" },
+      { id: 1, title: "Яндекс.Практикум", href: "" },
+      { id: 2, title: "Github", href: "" },
     ],
   };
 
   const linksMarkdown = FOOTER_DATA.links.map((item) => (
-    <a key={item.id} href={item.href}>
-      <p>{item.title}</p>
-    </a>
+    <li className="footer__item" key={item.id}>
+      <a className="footer__link" href={item.href}>
+        {item.title}
+      </a>
+    </li>
   ));
 
   return (
-    <>
-      <p>{FOOTER_DATA.caption}</p>
-      <p>{FOOTER_DATA.year}</p>
-      {linksMarkdown}
-    </>
+    <footer className='footer'>
+      <p className="footer__caption">{FOOTER_DATA.caption}</p>
+      <div className='footer__container'>
+      <p className="footer__year">&#169;{FOOTER_DATA.year}</p>
+      <ul className="footer__list">{linksMarkdown}</ul>
+      </div>
+    </footer>
   );
 }
 

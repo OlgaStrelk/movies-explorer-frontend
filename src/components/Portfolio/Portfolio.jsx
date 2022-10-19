@@ -14,7 +14,7 @@ function Portfolio() {
   return (
     <>
       <h4 className="portfolio__title">{PORTFOLIO_TITLE}</h4>
-      <ul className="portfolio__list">{linksMarkdown}</ul>
+      <ul>{linksMarkdown}</ul>
     </>
   );
 }
