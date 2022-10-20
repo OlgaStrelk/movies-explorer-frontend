@@ -1,5 +1,6 @@
 import HeaderBar from "../HeaderBar/HeaderBar";
 import "./AuthBar.css";
+import { PATHS } from "../../utils/consts";
 
 function AuthBar() {
   const BTNS_DATA = {
@@ -8,11 +9,13 @@ function AuthBar() {
       {
         title: "Регистрация",
         id: 1,
+        to: PATHS.signup,
         className: "auth-bar__btn_type_signup",
       },
       {
         title: "Войти",
         id: 2,
+        to: PATHS.signin,
         className: "auth-bar__btn_type_signin",
       },
     ],

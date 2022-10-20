@@ -1,15 +1,16 @@
+import { NavLink } from 'react-router-dom';
 import "./HeaderBar.css";
 
 function HeaderBar(props) {
 	const { btns, style } = props.data
   const btnsMarkup = btns.map((btn) => (
-    <button
+    <NavLink
       key={btn.id}
-      type="button"
+      to={btn.path}
       className={`${style} ${btn.className}`}
     >
       {btn.title}
-    </button>
+    </NavLink>
   ));
   return <div>{btnsMarkup}</div>;
 }
