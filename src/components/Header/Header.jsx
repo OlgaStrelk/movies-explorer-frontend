@@ -1,8 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import { ReactComponent as LogoImage } from "../../images/header__logo.svg";
 import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import LoggedInNavigation from "../LoggedInNavigation/LoggedInNavigation";
+import { PATHS } from "../../utils/consts";
 
 function Header({ isLoggedIn, handler }) {
   const STYLE = {
@@ -19,7 +21,9 @@ function Header({ isLoggedIn, handler }) {
           : `${STYLE.section} ${STYLE.sectionType.promo} ${STYLE.header}`
       }
     >
+      {/* <Link to={PATHS.aboutProject}> */}
       <LogoImage className="header__logo" onClick={handler} />
+      {/* </Link> */}
       {!isLoggedIn ? <AuthNavigation /> : <LoggedInNavigation />}
     </div>
   );

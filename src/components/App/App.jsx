@@ -5,6 +5,7 @@ import Main from "../Main/Main";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { PATHS } from "../../utils/consts";
+import Movies from '../Movies/Movies';
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -18,7 +19,7 @@ function App() {
       <Routes>
         <Route exact path={PATHS.aboutProject} element={<Main />} />
         <Route path={PATHS.profile}></Route>
-        <Route path={PATHS.movies}></Route>
+        <Route path={PATHS.movies} element={<Movies />}></Route>
         <Route path={PATHS.savedMovies}></Route>
         <Route path={PATHS.signup}></Route>
         <Route path={PATHS.signin}></Route>
