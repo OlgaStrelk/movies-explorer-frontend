@@ -1,8 +1,14 @@
 .header__panel {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-areas: "logo movies account";
+	grid-template-columns: max-content auto max-content;
+	gap: 40px;
 	align-items: center;
 	min-height: 74px;
+}
+
+.header__logo {
+	grid-area: logo;
 }
 
 @media screen and (max-width: 1023px) {

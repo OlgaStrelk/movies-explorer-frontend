@@ -19,7 +19,7 @@ function Header({ isLoggedIn, handler }) {
           : `${STYLE.section} ${STYLE.sectionType.promo} ${STYLE.header}`
       }
     >
-      <LogoImage onClick={handler} />
+      <LogoImage className="header__logo" onClick={handler} />
       {!isLoggedIn ? <AuthNavigation /> : <LoggedInNavigation />}
     </div>
   );

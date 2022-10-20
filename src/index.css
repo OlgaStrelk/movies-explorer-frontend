@@ -27,7 +27,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: var(--main-text)
+  color: var(--main-text);
 }
 
 .section {
@@ -70,6 +70,7 @@ a {
 
   --light-strip: #f2f2f2;
   --icons-substrate: #e8e8e8;
+  --account-icon-substrate: #f9f9f9;
   --contrast-elements: #000000;
 
   --font-family: "Inter", sans-serif;

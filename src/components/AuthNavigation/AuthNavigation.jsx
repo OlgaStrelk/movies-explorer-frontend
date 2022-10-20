@@ -22,9 +22,9 @@ function AuthNavigation() {
   };
 
   return (
-    <>
+    <div className='auth-bar'>
       <Navigation data={BTNS_DATA} />
-    </>
+    </div>
   );
 }
 

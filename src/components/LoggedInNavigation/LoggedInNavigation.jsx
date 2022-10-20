@@ -1,6 +1,7 @@
 import Navigation from "../Navigation/Navigation";
 import "./LoggedInNavigation.css";
 import { PATHS } from "../../utils/consts";
+import AccountLink from "../AccountLink/AccountLink";
 
 function LoggedInNavigation() {
   const BTNS_DATA = {
@@ -23,8 +24,10 @@ function LoggedInNavigation() {
 
   return (
     <>
-      <Navigation data={BTNS_DATA} />
-      {/* <AccountLink /> */}
+      <div className="logged-in-bar">
+        <Navigation data={BTNS_DATA} />
+      </div>
+      <AccountLink />
     </>
   );
 }
