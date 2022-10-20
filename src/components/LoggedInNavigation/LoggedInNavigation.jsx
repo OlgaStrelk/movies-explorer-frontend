@@ -24,7 +24,7 @@ function LoggedInNavigation() {
   return (
     <>
       <Navigation data={BTNS_DATA} />
-      {/* <AccountLink></AccountLink> */}
+      {/* <AccountLink /> */}
     </>
   );
 }
