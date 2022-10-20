@@ -1,8 +1,8 @@
-import HeaderBar from "../HeaderBar/HeaderBar";
-import "./AuthBar.css";
+import Navigation from "../Navigation/Navigation";
+import "./AuthNavigation.css";
 import { PATHS } from "../../utils/consts";
 
-function AuthBar() {
+function AuthNavigation() {
   const BTNS_DATA = {
     style: "auth-bar__btn",
     btns: [
@@ -23,9 +23,9 @@ function AuthBar() {
 
   return (
     <>
-      <HeaderBar data={BTNS_DATA} />
+      <Navigation data={BTNS_DATA} />
     </>
   );
 }
 
-export default AuthBar;
+export default AuthNavigation;

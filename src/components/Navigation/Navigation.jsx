@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
-import "./HeaderBar.css";
+import "./Navigation.css";
 
-function HeaderBar(props) {
+function Navigation(props) {
 	const { btns, style } = props.data
   const btnsMarkup = btns.map((btn) => (
     <NavLink
@@ -15,4 +15,4 @@ function HeaderBar(props) {
   return <div>{btnsMarkup}</div>;
 }
 
-export default HeaderBar;
+export default Navigation;

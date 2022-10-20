@@ -1,5 +1,6 @@
-import HeaderBar from "../HeaderBar/HeaderBar";
+import Navigation from "../Navigation/Navigation";
 import "./LoggedInBar.css";
+import { PATHS } from "../../utils/consts";
 
 function LoggedInBar() {
   const BTNS_DATA = {
@@ -8,11 +9,13 @@ function LoggedInBar() {
       {
         title: "Фильмы",
         id: 1,
+        to: PATHS.movies,
         className: "",
       },
       {
         title: "Сохранённые фильмы",
         id: 2,
+        to: PATHS.savedMovies,
         className: "",
       },
     ],
@@ -20,8 +23,8 @@ function LoggedInBar() {
 
   return (
     <>
-      <HeaderBar data={BTNS_DATA} />
-	  {/* <AccountLink></AccountLink> */}
+      <Navigation data={BTNS_DATA} />
+      {/* <AccountLink></AccountLink> */}
     </>
   );
 }
