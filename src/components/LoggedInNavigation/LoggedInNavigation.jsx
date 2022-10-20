@@ -1,8 +1,8 @@
 import Navigation from "../Navigation/Navigation";
-import "./LoggedInBar.css";
+import "./LoggedInNavigation.css";
 import { PATHS } from "../../utils/consts";
 
-function LoggedInBar() {
+function LoggedInNavigation() {
   const BTNS_DATA = {
     style: "logged-in-bar__btn",
     btns: [
@@ -29,4 +29,4 @@ function LoggedInBar() {
   );
 }
 
-export default LoggedInBar;
+export default LoggedInNavigation;
