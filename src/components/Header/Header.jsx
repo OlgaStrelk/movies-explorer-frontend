@@ -6,7 +6,7 @@ import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import LoggedInNavigation from "../LoggedInNavigation/LoggedInNavigation";
 import { PATHS } from "../../utils/consts";
 
-function Header({ isLoggedIn, handler }) {
+function Header({ isLoggedIn }) {
   const STYLE = {
     section: "section",
     sectionType: { promo: "section_type_promo" },
@@ -21,9 +21,9 @@ function Header({ isLoggedIn, handler }) {
           : `${STYLE.section} ${STYLE.sectionType.promo} ${STYLE.header}`
       }
     >
-      {/* <Link to={PATHS.aboutProject}> */}
-      <LogoImage className="header__logo" onClick={handler} />
-      {/* </Link> */}
+      <Link to={PATHS.aboutProject}>
+      <LogoImage className="header__logo" />
+      </Link>
       {!isLoggedIn ? <AuthNavigation /> : <LoggedInNavigation />}
     </div>
   );

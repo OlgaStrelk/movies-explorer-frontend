@@ -59,6 +59,11 @@ a {
   padding-bottom: var(--laptop-vertical-paddings-contrast);
 }
 
+.section_type_search-form {
+  padding-top: var(--laptop-vertical-search-form);
+  padding-bottom: var(--laptop-vertical-search-form);
+}
+
 :root {
   --main-text: #000000;
   --lightened-text: #a0a0a0;
@@ -70,12 +75,16 @@ a {
 
   --light-strip: #f2f2f2;
   --icons-substrate: #e8e8e8;
-  --account-icon-substrate: #f9f9f9;
   --contrast-elements: #000000;
+
+  --account-icon-substrate: #f9f9f9;
+  --tumbler-background: #2be080;
+  --borders: #cbcbcb;
 
   --font-family: "Inter", sans-serif;
 
   --laptop-vertical-paddings-base: 110px;
   --laptop-vertical-paddings-contrast: 100px;
+  --laptop-vertical-search-form: 70px;
   --laptop-horizontal-paddings: 0 70px;
 }

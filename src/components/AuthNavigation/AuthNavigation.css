@@ -1,5 +1,5 @@
 .auth-bar {
-  grid-section: account;
+  grid-area: account;
 }
 
 .auth-bar__btn {

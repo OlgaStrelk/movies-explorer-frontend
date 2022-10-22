@@ -9,13 +9,13 @@ function AuthNavigation() {
       {
         title: "Регистрация",
         id: 1,
-        to: PATHS.signup,
+        path: PATHS.signup,
         className: "auth-bar__btn_type_signup",
       },
       {
         title: "Войти",
         id: 2,
-        to: PATHS.signin,
+        path: PATHS.signin,
         className: "auth-bar__btn_type_signin",
       },
     ],

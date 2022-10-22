@@ -10,13 +10,13 @@ function LoggedInNavigation() {
       {
         title: "Фильмы",
         id: 1,
-        to: PATHS.movies,
+        path: PATHS.movies,
         className: "",
       },
       {
         title: "Сохранённые фильмы",
         id: 2,
-        to: PATHS.savedMovies,
+        path: PATHS.savedMovies,
         className: "",
       },
     ],

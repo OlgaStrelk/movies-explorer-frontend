@@ -1,0 +1,36 @@
+.tumbler {
+  display: flex;
+  margin: 16px 0;
+  padding: 0 30px;
+  border-left: 1px solid #cbcbcb;
+  align-items: center;
+}
+
+.tumbler__container {
+  display: flex;
+  justify-content: flex-start;
+  background: var(--light-strip);
+  align-items: center;
+  height: 14px;
+  width: 34px;
+  border-radius: 20px;
+}
+
+.tumbler__container_active {
+  justify-content: flex-end;
+  background: var(--tumbler-background);
+}
+
+.tumbler__switch {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--main-background);
+}
+
+.tumbler__title {
+  margin-left: 14px;
+  justify-self: flex-end;
+  font-size: 13px;
+  line-height: 18px;
+}
