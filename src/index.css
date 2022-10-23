@@ -31,7 +31,7 @@ a {
 }
 
 .section {
-  padding: var(--laptop-horizontal-paddings);
+  padding: var(--laptop-horizontal-indents);
 }
 
 .section__title {
@@ -49,19 +49,27 @@ a {
 
 .section_type_base {
   background: var(--main-background);
-  padding-top: var(--laptop-vertical-paddings-base);
-  padding-bottom: var(--laptop-vertical-paddings-base);
+  padding-top: var(--laptop-vertical-indents-base);
+  padding-bottom: var(--laptop-vertical-indents-base);
 }
 
 .section_type_contrast {
   background: var(--contrast-background);
-  padding-top: var(--laptop-vertical-paddings-contrast);
-  padding-bottom: var(--laptop-vertical-paddings-contrast);
+  padding-top: var(--laptop-vertical-indents-contrast);
+  padding-bottom: var(--laptop-vertical-indents-contrast);
 }
 
 .section_type_search-form {
-  padding-top: var(--laptop-vertical-search-form);
-  padding-bottom: var(--laptop-vertical-search-form);
+  margin: var(--laptop-horizontal-indents);
+  padding-top: var(--laptop-vertical-indents-search-form);
+  padding-bottom: var(--laptop-vertical-indents-search-form);
+  border-bottom: 1px solid var(--borders_3);
+}
+
+.section_type_content {
+  padding-top: 80px;
+  padding-bottom: 102px;
+  min-height: 27vh;
 }
 
 :root {
@@ -77,14 +85,16 @@ a {
   --icons-substrate: #e8e8e8;
   --contrast-elements: #000000;
 
-  --account-icon-substrate: #f9f9f9;
+  --icons-substrate_2: #f9f9f9;
   --tumbler-background: #2be080;
-  --borders: #cbcbcb;
+  --borders_2: #cbcbcb;
+  --borders_3: #e8e8e8;
 
   --font-family: "Inter", sans-serif;
 
-  --laptop-vertical-paddings-base: 110px;
-  --laptop-vertical-paddings-contrast: 100px;
-  --laptop-vertical-search-form: 70px;
-  --laptop-horizontal-paddings: 0 70px;
+  --laptop-vertical-indents-base: 110px;
+  --laptop-vertical-indents-contrast: 100px;
+  --laptop-vertical-indents-search-form: 70px;
+  --laptop-vertical-indents-card-list: 80px;
+  --laptop-horizontal-indents: 0 70px;
 }

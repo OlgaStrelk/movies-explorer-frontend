@@ -14,6 +14,7 @@
   
   .form__input {
 	background: #fdfdfd;
+	padding: 0;
 	padding-left: 10px;
 	height: 100%;
 	border: none;

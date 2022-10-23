@@ -1,5 +1,5 @@
 .footer {
-  padding: var(--laptop-horizontal-paddings);
+  padding: var(--laptop-horizontal-indents);
   padding-top: 79px;
   display: flex;
   flex-direction: column;
