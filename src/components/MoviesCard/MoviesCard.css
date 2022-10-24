@@ -1,26 +1,36 @@
 .card {
+  position: relative;
 }
 
-.card__save-btn {
-  top: 14px;
-  right: 14px;
-  visibility: hidden;
+.card__image {
+  width: 360px;
+  height: 201px;
+  border-radius: 6px;
 }
 
-.card__save-btn_visible {
-  visibility: visible;
-}
-
-.card__check-mark {
-  visibility: hidden;
-  border-radius: 30px;
-  background: #ff4062;
+.card__btn_type_icon-content {
   width: 21px;
-  height: 21px;
+  left: 325px;
+}
+.card__btn_type_checked {
+  visibility: visible;
+  background: #ff4062;
 }
 
-.card__check-mark_visible {
-  visibility: visible;
+.card__btn_type_delete {
+  visibility: hidden;
+  background: #f9f9f9;
+}
+
+.card__btn_type_text-content {
+  visibility: hidden;
+  width: fit-content;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 9px;
+  padding: 0 10px;
+  left: 274px;
+  background: #f9f9f9;
 }
 
 .card__caption {

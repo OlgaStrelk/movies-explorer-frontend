@@ -9,7 +9,7 @@ function Movies(props) {
         <SearchForm />
       </section>
       <section className="section section_type_content">
-        <MoviesCardList />
+        <MoviesCardList isSorted={false}/>
       </section>
     </>
   );

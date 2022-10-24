@@ -1,17 +1,49 @@
 import { useState } from "react";
 import "./MoviesCard.css";
+import CheckButton from "../CheckButton/CheckButton";
+import CheckButtonIcon from "../../images/card__check-mark.svg";
+import CrossButtonIcon from "../../images/card__cross.svg";
 
-function MoviesCard({ data }) {
+function MoviesCard({ data, isSorted }) {
+  const saveMovie = () => {
+    console.log("Фильм сохранен");
+  };
+  const deleteSavedMovie = () => {
+    console.log("Фильм удален");
+  };
+
+  let BUTTON_DATA =
+    data.isSaved && isSorted
+      ? {
+          style: "card__btn_type_icon-content card__btn_type_delete",
+          handler: deleteSavedMovie,
+        }
+      : data.isSaved
+      ? {
+          style: "card__btn_type_icon-content card__btn_type_checked",
+          handler: deleteSavedMovie,
+        }
+      : {
+          style: "card__btn_type_text-content",
+          handler: saveMovie,
+        };
+
+  let CHILDREN_DATA =
+    data.isSaved && isSorted
+      ? {
+          src: CrossButtonIcon,
+          alt: "Удалить",
+        }
+      : data.isSaved
+      ? {
+          src: CheckButtonIcon,
+          alt: "Сохранено",
+        }
+      : {
+          text: "Сохранить",
+        };
+
   const [isVisible, setVisible] = useState(false);
-
-  const saveBtnClassName =
-    isVisible && !data.isSaved
-      ? "card__save-btn card__save-btn_visible"
-      : "card__save-btn";
-  const checkMarkClassName =
-    isVisible && data.isSaved
-      ? "card__check-mark card__check-mark_visible"
-      : "card__check-mark";
 
   const showBtn = () => {
     setVisible(true);
@@ -23,17 +55,24 @@ function MoviesCard({ data }) {
 
   return (
     <div className="card">
-      <button type="button" className={saveBtnClassName}>
-        Сохранить
-      </button>
-      <div className={checkMarkClassName}></div>
-      <img
+      <div
         className="card__image"
-        alt={data.title}
-        src={data.src}
-        onMouseEnter={showBtn}
+        style={{
+          background: `center center no-repeat url(${data.src})`,
+        }}
+        onMouseOver={showBtn}
         onMouseLeave={hideBtn}
-      />
+      >
+        {(CHILDREN_DATA.src) ? (
+        <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
+          <img src={CHILDREN_DATA.src} alt={CHILDREN_DATA.alt} />
+        </CheckButton>
+        ) : (
+        <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
+          <p>{CHILDREN_DATA.text}</p>
+        </CheckButton>
+        )}
+      </div>
       <div className="card__caption">
         <h4 className="card__title">{data.title}</h4>
         <p className="card__duration">{data.duration}</p>
