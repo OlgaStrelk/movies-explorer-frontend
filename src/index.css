@@ -60,6 +60,13 @@ a {
   padding-bottom: var(--laptop-vertical-indents-contrast);
 }
 
+.section_type_auth {
+  margin: 0 auto;
+  padding: var(--laptop-vertical-indents-forms) 0;
+  width: 396px;
+  height: calc(100vh - var(--laptop-vertical-indents-forms) * 2);
+}
+
 :root {
   --main-text: #000000;
   --lightened-text: #a0a0a0;
@@ -82,7 +89,7 @@ a {
 
   --laptop-vertical-indents-base: 110px;
   --laptop-vertical-indents-contrast: 100px;
-  --laptop-vertical-indents-search-form: 70px;
+  --laptop-vertical-indents-forms: 70px;
   --laptop-vertical-indents-card-list: 80px;
-  --laptop-horizontal-indents: 0 70px;
+  --laptop-horizontal-indents: 70px;
 }

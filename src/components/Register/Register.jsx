@@ -12,14 +12,14 @@ function Register(props) {
     ],
     btn: "Зарегистрироваться",
     caption: "Уже зарегистрированы?",
-    link: "Войти"
-  }
+    link: "Войти",
+  };
 
   return (
-    <>
+    <section className="section">
       <LogoLink />
-      <AuthForm data={FORM_DATA}/>
-    </>
+      <AuthForm data={FORM_DATA} />
+    </section>
   );
 }
 

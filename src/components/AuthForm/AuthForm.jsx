@@ -14,8 +14,10 @@ function AuthForm({ data }) {
         <button className="auth__btn" type="button">
           {data.btn}
         </button>
-        <p className="auth__caption">{data.caption}</p>
-        <Link>{data.link}</Link>
+        <div className="auth__caption">
+          <p className="auth__text">{data.caption}</p>
+          <Link className="auth__link">{data.link}</Link>
+        </div>
       </form>
     </>
   );

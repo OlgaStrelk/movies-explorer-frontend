@@ -15,10 +15,10 @@ function Login(props) {
   }
 
   return (
-    <>
+    <section className='section section_type_auth'>
       <LogoLink />
       <AuthForm data={FORM_DATA}></AuthForm>
-    </>
+    </section>
   );
 }
 
