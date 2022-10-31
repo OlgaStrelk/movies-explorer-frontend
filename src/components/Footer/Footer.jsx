@@ -26,7 +26,7 @@ function Footer() {
 
   return (
     <>
-      {path !== PATHS.signup && path !== PATHS.signin && (
+      {path !== PATHS.signup && path !== PATHS.signin && path !== PATHS.profile && (
         <footer className="footer">
           <p className="footer__caption">{FOOTER_DATA.caption}</p>
           <div className="footer__container">

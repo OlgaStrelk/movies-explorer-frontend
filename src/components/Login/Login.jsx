@@ -1,7 +1,7 @@
 import "./Login.css";
 import LogoLink from "../LogoLink/LogoLink";
 import AuthForm from "../AuthForm/AuthForm";
-
+import { PATHS } from "../../utils/consts";
 function Login(props) {
   const FORM_DATA = {
     title: "Рады видеть!",
@@ -11,13 +11,13 @@ function Login(props) {
     ],
     btn: "Войти",
     caption: "Ещё не зарегистрированы?",
-    link: "Регистрация",
+    link: { path: PATHS.signup, title: "Регистрация" },
   };
 
   return (
     <section className="section section_type_auth">
       <LogoLink />
-      <AuthForm data={FORM_DATA} />
+      <AuthForm handler={props.handler} data={FORM_DATA} />
     </section>
   );
 }

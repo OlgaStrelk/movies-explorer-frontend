@@ -4,7 +4,7 @@ import Title from "../Title/Title";
 import "./Techs.css";
 
 function Techs() {
-  const TECHS_TITLE = "Технологии";
+  const SECTION_DATA = { id: "technologies", title: "Технологии" };
   const CLASS_NAMES_CONFIG = {
     uniqueTitleClass: "techs__title",
     isCentred: true,
@@ -31,12 +31,10 @@ function Techs() {
   ));
 
   return (
-    <section className="section section_type_contrast">
-      <Title>{TECHS_TITLE}</Title>
+    <section className="section section_type_contrast" id={SECTION_DATA.id}>
+      <Title>{SECTION_DATA.title}</Title>
       <div className="techs__article">
-        <Article classes={CLASS_NAMES_CONFIG}>
-          {ARTICLE_DATA.data}
-        </Article>
+        <Article classes={CLASS_NAMES_CONFIG}>{ARTICLE_DATA.data}</Article>
       </div>
       <div className="techs__icons">{iconsMarkup}</div>
     </section>

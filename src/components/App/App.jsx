@@ -15,18 +15,22 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   const handler = () => {
-    setLoggedIn(!isLoggedIn);
+    setLoggedIn(true);
   };
+
   return (
     <>
-      <Header isLoggedIn={isLoggedIn} handler={handler} />
+      <Header isLoggedIn={isLoggedIn} />
       <Routes>
         <Route exact path={PATHS.aboutProject} element={<Main />} />
-        <Route path={PATHS.profile} element={<Profile />}></Route>
-        <Route path={PATHS.movies} element={<Movies />}></Route>
-        <Route path={PATHS.savedMovies} element={<SavedMovies />}></Route>
+        <Route path={PATHS.profile} element={<Profile handler={handler}/>}></Route>
+        <Route path={PATHS.movies} element={<Movies handler={handler}/>}></Route>
+        <Route path={PATHS.savedMovies} element={<SavedMovies handler={handler}/>}></Route>
         <Route path={PATHS.signup} element={<Register />}></Route>
-        <Route path={PATHS.signin} element={<Login />}></Route>
+        <Route
+          path={PATHS.signin}
+          element={<Login />}
+        ></Route>
       </Routes>
       <Footer />
     </>

@@ -1,8 +1,9 @@
 import LogoLink from "../LogoLink/LogoLink";
 import "./Register.css";
 import AuthForm from "../AuthForm/AuthForm";
+import { PATHS } from "../../utils/consts";
 
-function Register(props) {
+function Register() {
   const FORM_DATA = {
     title: "Добро пожаловать!",
     inputs: [
@@ -12,7 +13,7 @@ function Register(props) {
     ],
     btn: "Зарегистрироваться",
     caption: "Уже зарегистрированы?",
-    link: "Войти",
+    link: { path: PATHS.signin, title: "Войти" },
   };
 
   return (

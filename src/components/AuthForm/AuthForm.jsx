@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import "./AuthForm.css";
 import AuthInput from "../AuthInput/AuthInput";
 
-function AuthForm({ data }) {
+function AuthForm({ handler, data }) {
   const inputMarkup = data.inputs.map((input) => (
     <AuthInput key={input.id} input={input.data} />
   ));
   return (
     <>
       <h4 className="auth__title">{data.title}</h4>
-      <form className="auth__form">
+      <form onSubmit={() => handler(true)} className="auth__form">
         <div className="auth__inputs">{inputMarkup}</div>
         <div className="auths__submit">
           <button className="auth__btn" type="button">
@@ -17,7 +17,7 @@ function AuthForm({ data }) {
           </button>
           <div className="auth__caption">
             <p className="auth__text">{data.caption}</p>
-            <Link className="auth__link">{data.link}</Link>
+            <Link to={data.link.path}className="auth__link">{data.link.title}</Link>
           </div>
         </div>
       </form>

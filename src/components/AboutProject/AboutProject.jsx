@@ -4,7 +4,8 @@ import Article from "../Article/Article";
 import TimeLine from "../TimeLine/TimeLine";
 
 function AboutProject() {
-  const ABOUT_PROJECT_TITLE = "О проекте";
+  const SECTION_DATA = { id: "about-project", title: "О проекте" };
+
   const CLASS_NAMES_CONFIG = {
     uniqueTitleClass: "about-project__title", 
   }
@@ -34,8 +35,8 @@ function AboutProject() {
     </Article>
   ));
   return (
-    <section className="section section_type_base">
-      <Title>{ABOUT_PROJECT_TITLE}</Title>
+    <section className="section section_type_base" id={SECTION_DATA.id}>
+      <Title>{SECTION_DATA.title}</Title>
       <div className="about-project__texts">{articlesMarkup}</div>
       <TimeLine />
     </section>
