@@ -60,19 +60,6 @@ a {
   padding-bottom: var(--laptop-vertical-indents-contrast);
 }
 
-.section_type_search-form {
-  margin: var(--laptop-horizontal-indents);
-  padding-top: var(--laptop-vertical-indents-search-form);
-  padding-bottom: var(--laptop-vertical-indents-search-form);
-  border-bottom: 1px solid var(--borders_3);
-}
-
-.section_type_content {
-  padding-top: 80px;
-  padding-bottom: 102px;
-  min-height: 27vh;
-}
-
 :root {
   --main-text: #000000;
   --lightened-text: #a0a0a0;

@@ -1,0 +1,8 @@
+.show-more-btn {
+  cursor: pointer;
+  background: #f9f9f9;
+  width: 320px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+}

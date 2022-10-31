@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Header.css";
-import { ReactComponent as LogoImage } from "../../images/header__logo.svg";
 import AuthNavigation from "../AuthNavigation/AuthNavigation";
 import LoggedInNavigation from "../LoggedInNavigation/LoggedInNavigation";
+import LogoLink from "../LogoLink/LogoLink";
 import { PATHS } from "../../utils/consts";
-
+import { useLocation } from "react-router-dom";
 function Header({ isLoggedIn }) {
   const STYLE = {
     section: "section",
@@ -13,18 +12,26 @@ function Header({ isLoggedIn }) {
     header: "header__panel",
   };
 
+  let location = useLocation();
+
+  const path = location.pathname;
+
   return (
     <div
       className={
-        isLoggedIn
+        path !== PATHS.aboutProject
           ? `${STYLE.section} ${STYLE.header}`
           : `${STYLE.section} ${STYLE.sectionType.promo} ${STYLE.header}`
       }
     >
-      <Link to={PATHS.aboutProject}>
-      <LogoImage className="header__logo" />
-      </Link>
-      {!isLoggedIn ? <AuthNavigation /> : <LoggedInNavigation />}
+      {path !== PATHS.signup && path !== PATHS.signin && <LogoLink />}
+      {isLoggedIn ? (
+        <LoggedInNavigation />
+      ) : path === PATHS.signup || path === PATHS.signin ? (
+        <></>
+      ) : (
+        <AuthNavigation />
+      )}
     </div>
   );
 }

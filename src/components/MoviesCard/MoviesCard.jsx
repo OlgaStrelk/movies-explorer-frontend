@@ -69,7 +69,7 @@ function MoviesCard({ data, isSorted }) {
         </CheckButton>
         ) : (
         <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
-          <p>{CHILDREN_DATA.text}</p>
+          {CHILDREN_DATA.text}
         </CheckButton>
         )}
       </div>

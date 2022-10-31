@@ -6,7 +6,7 @@
 }
 
 .techs__icons {
-  padding-top: var(--laptop-vertical-paddings-contrast);
+  padding-top: var(--laptop-vertical-indents-contrast);
   display: flex;
   justify-content: center;
 }

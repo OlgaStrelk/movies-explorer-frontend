@@ -1,16 +1,20 @@
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
+import ShowMoreButton from "../ShowMoreButton/ShowMoreButton";
 import "./Movies.css";
 
 function Movies(props) {
   return (
     <>
-      <section className="section section_type_search-form">
+      <article className="movies__search-form">
         <SearchForm />
-      </section>
-      <section className="section section_type_content">
-        <MoviesCardList isSorted={false}/>
-      </section>
+      </article>
+      <article className="movies__content">
+        <MoviesCardList isSorted={false} />
+      </article>
+      <article className='movies__btn'>
+        <ShowMoreButton />
+      </article>
     </>
   );
 }

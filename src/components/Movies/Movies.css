@@ -1,0 +1,19 @@
+.movies__search-form {
+  margin: var(--laptop-horizontal-indents);
+  padding-top: var(--laptop-vertical-indents-search-form);
+  padding-bottom: var(--laptop-vertical-indents-search-form);
+  border-bottom: 1px solid var(--borders_3);
+}
+
+.movies__content {
+  padding-top: 80px;
+  padding-bottom: 28px;
+  min-height: 27vh;
+}
+
+.movies__btn {
+	display: flex;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 80px;
+}

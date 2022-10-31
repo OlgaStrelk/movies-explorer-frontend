@@ -1,5 +1,5 @@
 .about-project__texts {
-  padding: 70px 0 var(--laptop-vertical-paddings-base);
+  padding: 70px 0 var(--laptop-vertical-indents-base);
   display: flex;
 }
 
