@@ -11,8 +11,8 @@ function Footer() {
     caption: "Учебный проект Яндекс.Практикум х BeatFilm.",
     year: currentYear,
     links: [
-      { id: 1, title: "Яндекс.Практикум", href: "" },
-      { id: 2, title: "Github", href: "" },
+      { id: 1, title: "Яндекс.Практикум", href: "https://practicum.yandex.ru/web/" },
+      { id: 2, title: "Github", href: "https://github.com/" },
     ],
   };
 
