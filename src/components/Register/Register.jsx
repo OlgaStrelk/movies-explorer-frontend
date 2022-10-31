@@ -3,15 +3,22 @@ import "./Register.css";
 import AuthForm from "../AuthForm/AuthForm";
 
 function Register(props) {
-  const REGISTER_INPUTS = [
-    { id: 1, data: { label: "Имя", placeholder: "Введите имя" } },
-    { id: 2, data: { label: "E-mail", placeholder: "Введите e-mail" } },
-    { id: 3, data: { label: "Пароль", placeholder: "Введите пароль" } },
-  ];
+  const FORM_DATA = {
+    title: "Добро пожаловать!",
+    inputs: [
+      { id: 1, data: { label: "Имя", placeholder: "Введите имя" } },
+      { id: 2, data: { label: "E-mail", placeholder: "Введите e-mail" } },
+      { id: 3, data: { label: "Пароль", placeholder: "Введите пароль" } },
+    ],
+    btn: "Зарегистрироваться",
+    caption: "Уже зарегистрированы?",
+    link: "Войти"
+  }
+
   return (
     <>
       <LogoLink />
-      <AuthForm array={REGISTER_INPUTS}></AuthForm>
+      <AuthForm data={FORM_DATA}/>
     </>
   );
 }
