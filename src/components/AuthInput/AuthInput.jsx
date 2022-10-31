@@ -1,10 +1,10 @@
 import "./AuthInput.css";
 
-function AuthInput({ label, placeholder }) {
+function AuthInput({input}) {
   return (
     <div className="input">
-      <label className="input__label">{label}</label>
-      <input className="input__field" placeholder={placeholder}></input>
+      <label className="input__label">{input.label}</label>
+      <input className="input__field" placeholder={input.placeholder}></input>
     </div>
   );
 }
