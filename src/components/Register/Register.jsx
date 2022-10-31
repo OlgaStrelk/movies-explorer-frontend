@@ -16,7 +16,7 @@ function Register(props) {
   };
 
   return (
-    <section className="section">
+    <section className="section section_type_auth">
       <LogoLink />
       <AuthForm data={FORM_DATA} />
     </section>

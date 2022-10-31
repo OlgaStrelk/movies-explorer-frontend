@@ -1,18 +1,19 @@
 .auth__title {
+  margin: 40px 0;
   font-size: 24px;
   font-weight: 500;
   line-height: 29px;
 }
 
 .auth__form {
-  margin: 0 auto;
-  width: 396px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .auth__btn {
   width: 100%;
   height: 45px;
-  border: none;
   border-radius: 3px;
   color: var(--contrast-text);
   background: var(--contrast-elements);
@@ -22,6 +23,7 @@
 }
 
 .auth__caption {
+  grid-area: button;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -29,9 +31,10 @@
 }
 
 .auth__text {
+  margin-top: 16px;
   display: inline-block;
   color: var(--lightened-text);
 }
 .auth__link {
-	margin-left: 6px;
+  margin-left: 6px;
 }

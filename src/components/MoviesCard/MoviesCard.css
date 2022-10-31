@@ -30,7 +30,7 @@
   line-height: 9px;
   padding: 0 10px;
   left: 274px;
-  background: #f9f9f9;
+  background: var(--icons-substrate_2);
 }
 
 .card__caption {

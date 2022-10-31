@@ -29,10 +29,23 @@ ul {
 a {
   text-decoration: none;
   color: var(--main-text);
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+input {
+  border: none;
+}
+input:focus {
+  outline: none;
 }
 
 .section {
-  padding: var(--laptop-horizontal-indents);
+  padding: 0 var(--laptop-horizontal-indents);
 }
 
 .section__title {
@@ -65,6 +78,8 @@ a {
   padding: var(--laptop-vertical-indents-forms) 0;
   width: 396px;
   height: calc(100vh - var(--laptop-vertical-indents-forms) * 2);
+  display: grid;
+  grid-template-rows: repeat(2, max-content) 1fr;
 }
 
 :root {

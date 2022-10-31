@@ -10,13 +10,15 @@ function AuthForm({ data }) {
     <>
       <h4 className="auth__title">{data.title}</h4>
       <form className="auth__form">
-        {inputMarkup}
-        <button className="auth__btn" type="button">
-          {data.btn}
-        </button>
-        <div className="auth__caption">
-          <p className="auth__text">{data.caption}</p>
-          <Link className="auth__link">{data.link}</Link>
+        <div className="auth__inputs">{inputMarkup}</div>
+        <div className="auths__submit">
+          <button className="auth__btn" type="button">
+            {data.btn}
+          </button>
+          <div className="auth__caption">
+            <p className="auth__text">{data.caption}</p>
+            <Link className="auth__link">{data.link}</Link>
+          </div>
         </div>
       </form>
     </>

@@ -1,6 +1,6 @@
 import "./Login.css";
-import LogoLink from '../LogoLink/LogoLink';
-import AuthForm from '../AuthForm/AuthForm';
+import LogoLink from "../LogoLink/LogoLink";
+import AuthForm from "../AuthForm/AuthForm";
 
 function Login(props) {
   const FORM_DATA = {
@@ -11,13 +11,13 @@ function Login(props) {
     ],
     btn: "Войти",
     caption: "Ещё не зарегистрированы?",
-    link: "Регистрация"
-  }
+    link: "Регистрация",
+  };
 
   return (
-    <section className='section section_type_auth'>
+    <section className="section section_type_auth">
       <LogoLink />
-      <AuthForm data={FORM_DATA}></AuthForm>
+      <AuthForm data={FORM_DATA} />
     </section>
   );
 }
