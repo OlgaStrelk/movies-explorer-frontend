@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./PageNotFound.css";
 
 function PageNotFound(props) {
@@ -16,7 +16,7 @@ function PageNotFound(props) {
         <h1 className="page-not-found__title">{PAGE_NOT_FOUND_DATA.title}</h1>
         <p className="page-not-found__caption">{PAGE_NOT_FOUND_DATA.caption}</p>
       </div>
-      <button className="page-not-found__link" onClick={() => navigate(-1)}>
+      <button className="page-not-found__btn" onClick={() => navigate(-1)}>
         {PAGE_NOT_FOUND_DATA.link}
       </button>
     </div>
