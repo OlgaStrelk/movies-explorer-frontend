@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./PageNotFound.css";
 
 function PageNotFound(props) {
+  const navigate = useNavigate();
+
   const PAGE_NOT_FOUND_DATA = {
     title: "404",
     caption: "Страница не найдена",
@@ -14,7 +16,9 @@ function PageNotFound(props) {
         <h1 className="page-not-found__title">{PAGE_NOT_FOUND_DATA.title}</h1>
         <p className="page-not-found__caption">{PAGE_NOT_FOUND_DATA.caption}</p>
       </div>
-      <Link className="page-not-found__link">{PAGE_NOT_FOUND_DATA.link}</Link>
+      <button className="page-not-found__link" onClick={() => navigate(-1)}>
+        {PAGE_NOT_FOUND_DATA.link}
+      </button>
     </div>
   );
 }
