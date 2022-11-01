@@ -1,19 +1,18 @@
 .movies__search-form {
-  margin: var(--laptop-horizontal-indents);
+  margin: 0 var(--laptop-horizontal-indents);
   padding-top: var(--laptop-vertical-indents-forms);
   padding-bottom: var(--laptop-vertical-indents-forms);
   border-bottom: 1px solid var(--borders_3);
 }
 
 .movies__content {
-  padding-top: 80px;
-  padding-bottom: 28px;
-  min-height: 27vh;
+  padding: 80px var(--laptop-horizontal-indents) 0;
+  min-height: 39vh;
 }
 
 .movies__btn {
 	display: flex;
 	justify-content: center;
-	padding-top: 50px;
+	padding-top: 78px;
 	padding-bottom: 80px;
 }

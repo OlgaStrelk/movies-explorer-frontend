@@ -5,5 +5,6 @@ export const PATHS = {
   signup: "/signup",
   signin: "/signin",
   profile: "/profile",
+  others: "/*"
 };
 

@@ -14,12 +14,12 @@
 }
 .card__btn_type_checked {
   visibility: visible;
-  background: #ff4062;
+  background: var(--catchy-element);
 }
 
 .card__btn_type_delete {
   visibility: hidden;
-  background: #f9f9f9;
+  background: var(--icons-substrate_2);
 }
 
 .card__btn_type_text-content {

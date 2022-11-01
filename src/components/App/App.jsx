@@ -10,6 +10,7 @@ import Profile from "../Profile/Profile";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
+import PageNotFound from "../PageNotFound/PageNotFound"
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -23,14 +24,21 @@ function App() {
       <Header isLoggedIn={isLoggedIn} />
       <Routes>
         <Route exact path={PATHS.aboutProject} element={<Main />} />
-        <Route path={PATHS.profile} element={<Profile handler={handler}/>}></Route>
-        <Route path={PATHS.movies} element={<Movies handler={handler}/>}></Route>
-        <Route path={PATHS.savedMovies} element={<SavedMovies handler={handler}/>}></Route>
-        <Route path={PATHS.signup} element={<Register />}></Route>
         <Route
-          path={PATHS.signin}
-          element={<Login />}
+          path={PATHS.profile}
+          element={<Profile handler={handler} />}
         ></Route>
+        <Route
+          path={PATHS.movies}
+          element={<Movies handler={handler} />}
+        ></Route>
+        <Route
+          path={PATHS.savedMovies}
+          element={<SavedMovies handler={handler} />}
+        ></Route>
+        <Route path={PATHS.signup} element={<Register />}></Route>
+        <Route path={PATHS.signin} element={<Login />}></Route>
+        <Route path={PATHS.others} element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
     </>

@@ -86,6 +86,7 @@ input:focus {
   --main-text: #000000;
   --lightened-text: #a0a0a0;
   --contrast-text: #ffffff;
+  --catchy-element: #FF4062;
 
   --promo-background: #f3c1f8;
   --main-background: #ffffff;
@@ -96,7 +97,9 @@ input:focus {
   --contrast-elements: #000000;
 
   --icons-substrate_2: #f9f9f9;
+  --inputs-substrate: #fdfdfd;
   --tumbler-background: #2be080;
+  --icons-substrate_3: #ff4062;
   --borders_2: #cbcbcb;
   --borders_3: #e8e8e8;
 
