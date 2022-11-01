@@ -30,11 +30,23 @@ a {
   text-decoration: none;
   color: var(--main-text);
   cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+a:hover {
+  opacity: 0.7;
 }
 
 button {
   cursor: pointer;
   border: none;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+button:hover {
+  opacity: 0.7;
 }
 
 input {
@@ -86,7 +98,7 @@ input:focus {
   --main-text: #000000;
   --lightened-text: #a0a0a0;
   --contrast-text: #ffffff;
-  --catchy-element: #FF4062;
+  --catchy-element: #ff4062;
 
   --promo-background: #f3c1f8;
   --main-background: #ffffff;
