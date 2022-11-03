@@ -35,3 +35,11 @@
   font-size: 13px;
   line-height: 18px;
 }
+
+@media screen and (max-width: 767px) {
+  .tumbler {
+    margin: 16px 0;
+    padding: 30px;
+    border-left: none;
+  }
+}

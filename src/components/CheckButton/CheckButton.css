@@ -13,3 +13,12 @@
 .check-button_visible {
   visibility: visible;
 }
+
+
+@media screen and (max-width: 767px) {
+  .check-button {
+    top: 10px;
+
+  }
+
+}

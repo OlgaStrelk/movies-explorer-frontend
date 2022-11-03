@@ -126,5 +126,6 @@ input:focus {
   --laptop-horizontal-indents: 70px;
 
   --tablet-horizontal-indents: 30px;
+  --mobile-horizontal-indents: 10px;
 
 }
