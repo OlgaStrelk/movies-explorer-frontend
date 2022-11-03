@@ -8,10 +8,10 @@ function AuthForm({ handler, data }) {
   ));
   return (
     <>
-      <h4 className="auth__title">{data.title}</h4>
+      <h1 className="auth__title">{data.title}</h1>
       <form onSubmit={() => handler(true)} className="auth__form">
         <div className="auth__inputs">{inputMarkup}</div>
-        <div className="auths__submit">
+        <div>
           <button className="auth__btn" type="button">
             {data.btn}
           </button>

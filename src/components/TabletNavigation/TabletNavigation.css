@@ -1,0 +1,18 @@
+.tablet-navigation {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.tablet-navigation__btn {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-top: 21px;
+  padding-bottom: 7px;
+}
+
+.tablet-navigation__btn_active {
+  text-decoration: underline;
+}

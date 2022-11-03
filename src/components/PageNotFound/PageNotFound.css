@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 700px;
 }
 
 .page-not-found__container {
@@ -38,4 +37,13 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
+}
+
+@media screen and (max-width: 1023px) {
+  .page-not-found__container {
+    padding-top: 222px;
+  }
+  .page-not-found__btn {
+    margin-bottom: 222px;
+  }
 }

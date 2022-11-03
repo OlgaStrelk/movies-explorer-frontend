@@ -10,20 +10,34 @@ import Profile from "../Profile/Profile";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
-import PageNotFound from "../PageNotFound/PageNotFound"
+import PageNotFound from "../PageNotFound/PageNotFound";
+import SideBar from "../SideBar/SideBar";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const handler = () => {
     setLoggedIn(true);
   };
 
+  const handlerReverse = () => {
+    setLoggedIn(false);
+  };
+
+  const burgerHandler = () => {
+    setMenuOpen(true);
+  };
+
   return (
     <>
-      <Header isLoggedIn={isLoggedIn} />
+      <Header isLoggedIn={isLoggedIn} handler={burgerHandler} />
       <Routes>
-        <Route exact path={PATHS.aboutProject} element={<Main />} />
+        <Route
+          exact
+          path={PATHS.aboutProject}
+          element={<Main handler={handlerReverse} />}
+        />
         <Route
           path={PATHS.profile}
           element={<Profile handler={handler} />}
@@ -41,6 +55,7 @@ function App() {
         <Route path={PATHS.others} element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
+      {isMenuOpen && <SideBar />}
     </>
   );
 }

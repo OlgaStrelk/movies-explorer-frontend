@@ -1,0 +1,28 @@
+.profile-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-form__container {
+  display: flex;
+  flex-direction: column;
+}
+.profile-form__btn {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.profile-form__btn:disabled {
+  cursor: default;
+}
+
+.profile-form__btn_type_edit {
+  font-weight: 400;
+}
+.profile-form__btn_type_sign-out {
+  font-weight: 500;
+  color: var(--catchy-element);
+}

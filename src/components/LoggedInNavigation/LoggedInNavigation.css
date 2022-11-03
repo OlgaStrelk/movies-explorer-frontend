@@ -11,3 +11,9 @@
 .logged-in-bar__btn:first-of-type {
   margin-left: 0;
 }
+
+@media screen and (max-width: 1023px) {
+  .logged-in-bar {
+    display: none;
+  }
+}

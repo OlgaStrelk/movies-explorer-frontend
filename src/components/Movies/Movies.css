@@ -11,8 +11,18 @@
 }
 
 .movies__btn {
-	display: flex;
-	justify-content: center;
-	padding-top: 78px;
-	padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  padding-top: 78px;
+  padding-bottom: 80px;
+}
+
+@media screen and (max-width: 1023px) {
+  .movies__search-form {
+    margin: 0 var(--tablet-horizontal-indents);
+  }
+
+  .movies__content {
+    padding: 80px var(--tablet-horizontal-indents) 0;
+  }
 }

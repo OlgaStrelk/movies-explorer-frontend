@@ -41,7 +41,7 @@
 }
 
 .card__title {
-  width: 250px;
+  max-width: 250px;
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;
@@ -51,4 +51,27 @@
   font-size: 11px;
   font-weight: 400;
   line-height: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .card__image {
+    width: 339px;
+    height: 190px;
+  }
+  
+  .card__title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .card__btn_type_text-content {
+    left: 253px;
+  }
+
+  .card__btn_type_icon-content {
+    left: 304px;
+  }
 }

@@ -3,10 +3,10 @@ import { PATHS } from "../../utils/consts";
 import "./AccountLink.css";
 import AccountIcon from "../../images/account__icon.svg";
 
-function AccountLink() {
+function AccountLink(props) {
   const ACCOUNT_LINK_TITLE = "Аккаунт";
   return (
-    <Link to={PATHS.profile} className="account-link__item">
+    <Link to={PATHS.profile} className="account-link__item" style={props.style}>
       {ACCOUNT_LINK_TITLE}
       <div className="account__icon-substrate">
         <img className="account__icon" src={AccountIcon} alt={ACCOUNT_LINK_TITLE} />

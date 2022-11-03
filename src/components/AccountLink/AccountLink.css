@@ -23,3 +23,9 @@
   height: 10.669027328491211px;
   width: 10.383013725280762px;
 }
+
+@media screen and (max-width: 1023px) {
+  .account-link__item {
+    display: none;
+  }
+}

@@ -1,0 +1,13 @@
+.burger {
+	display: none;
+  }
+  
+  @media screen and (max-width: 1023px) {
+	.burger {
+	  display: block;
+	  grid-area: account;
+	  width: 44px;
+	  height: 44px;
+	  background: center center no-repeat url(../../images/header__burger.svg);
+	}
+  }
