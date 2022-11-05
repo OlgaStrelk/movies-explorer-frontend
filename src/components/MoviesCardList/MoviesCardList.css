@@ -1,6 +1,5 @@
 .movies-card-list {
   padding-bottom: 12px;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   gap: 43px 30px;
@@ -10,6 +9,7 @@
 @media screen and (max-width: 1023px) {
   .movies-card-list {
     grid-template-columns: repeat(auto-fit, 339px);
+    grid-template-rows: repeat(auto-fit, 231px);
     gap: 47px 30px;
   }
 }

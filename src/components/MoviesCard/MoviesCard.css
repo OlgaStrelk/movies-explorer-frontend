@@ -106,7 +106,6 @@
   }
   .card__caption {
     max-width: 300px;
-      margin-top: 16px;
-    
+    margin-top: 16px;
   }
 }
