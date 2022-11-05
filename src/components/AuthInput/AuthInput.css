@@ -8,12 +8,13 @@
 
 .auth-input__field {
   margin-bottom: 20px;
+
+  width: 100%;
+  height: 46px;
+
   font-size: 13px;
   line-height: 16px;
   color: var(--main-text);
-  padding: 0;
-  width: 100%;
-  height: 46px;
   background: var(--icons-substrate_2);
   border-radius: 8px;
 }

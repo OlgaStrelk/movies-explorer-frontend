@@ -8,8 +8,8 @@
 }
 
 .promo__image {
-  object-fit: contain;
-  background: center center no-repeat url("../../images/promo__background.svg");
+  background-image: url("../../images/promo__background.svg");
+  background-size: contain;
   width: 320px;
   height: 320px;
   grid-area: 1 / 1;

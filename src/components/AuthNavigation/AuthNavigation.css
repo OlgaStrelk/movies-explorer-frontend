@@ -20,8 +20,7 @@
   color: var(--contrast-text);
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   .auth-bar {
-    display: none;
   }
 }

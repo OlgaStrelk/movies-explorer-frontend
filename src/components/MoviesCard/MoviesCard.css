@@ -35,6 +35,7 @@
 
 .card__caption {
   margin-top: 14px;
+
   min-height: 32px;
   display: flex;
   justify-content: space-between;
@@ -42,9 +43,9 @@
 
 .card__title {
   max-width: 250px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: 16px;
 }
 
 .card__duration {
@@ -71,8 +72,10 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    font-size: 13px;
-    line-height: 16px;
+  }
+  .card__caption {
+    margin-top: 25px;
+    min-height: auto;
   }
 
   .card__btn_type_text-content {
@@ -97,8 +100,13 @@
   }
   .card__title {
     max-width: 240px;
+    font-family: Inter;
+    font-size: 12px;
+    line-height: 15px;
   }
   .card__caption {
     max-width: 300px;
+      margin-top: 16px;
+    
   }
 }

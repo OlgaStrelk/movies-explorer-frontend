@@ -1,19 +1,23 @@
 .tumbler {
+  padding-left: 30px;
+  padding-right: 30px;
+
+  height: 72px;
   display: flex;
-  margin: 16px 0;
-  padding: 0 30px;
+  box-sizing: border-box;
   border-left: 1px solid var(--borders_2);
   align-items: center;
 }
 
 .tumbler__container {
+  height: 14px;
+  width: 34px;
+
   cursor: pointer;
   display: flex;
   justify-content: flex-start;
   background: var(--light-strip);
   align-items: center;
-  height: 14px;
-  width: 34px;
   border-radius: 20px;
 }
 
@@ -23,14 +27,16 @@
 }
 
 .tumbler__switch {
-  border-radius: 50%;
   width: 10px;
   height: 10px;
+
+  border-radius: 50%;
   background: var(--main-background);
 }
 
 .tumbler__title {
   margin-left: 14px;
+
   justify-self: flex-end;
   font-size: 13px;
   line-height: 18px;
@@ -38,8 +44,6 @@
 
 @media screen and (max-width: 767px) {
   .tumbler {
-    margin: 16px 0;
-    padding: 30px;
     border-left: none;
   }
 }

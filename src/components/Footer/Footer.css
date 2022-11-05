@@ -1,5 +1,8 @@
 .footer {
-  padding: 79px var(--laptop-horizontal-indents) 0;
+  padding-top: 79px; 
+  padding-left: var(--laptop-horizontal-indents);
+  padding-right: var(--laptop-horizontal-indents);
+  
   display: flex;
   flex-direction: column;
   font-size: 13px;
@@ -8,14 +11,16 @@
 }
 
 .footer__caption {
+  padding-bottom: 20px;
+
   text-align: center;
   color: var(--lightened-text);
-  padding-bottom: 20px;
   border-bottom: 1px solid var(--icons-substrate);
 }
 
 .footer__container {
   margin: 20px 0;
+
   display: flex;
   justify-content: space-between;
 }
@@ -40,19 +45,22 @@
 
 @media screen and (max-width: 1023px) {
   .footer {
-    padding: 79px var(--tablet-horizontal-indents) 0;
+    padding-left: var(--tablet-horizontal-indents);
+    padding-right: var(--tablet-horizontal-indents);
   }
 }
 @media screen and (max-width: 767px) {
   .footer {
-    padding: 79px var(--mobile-horizontal-indents) 0;
-    font-size: 12px;
-    font-weight: 400;
+    padding-left: var(--mobile-horizontal-indents);
+    padding-right: var(--mobile-horizontal-indents);
+
     line-height: 15px;
+    font-size: 12px;
   }
 
   .footer__container {
     margin: 20px 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;

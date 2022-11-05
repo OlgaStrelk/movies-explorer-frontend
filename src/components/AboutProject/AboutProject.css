@@ -1,10 +1,16 @@
 .about-project__texts {
-  padding: 70px 0 var(--laptop-vertical-indents-base);
+  padding-top: var(--inner-vertical-indents);
+  padding-bottom: var(--laptop-vertical-indents-base);
   display: flex;
 }
 
 .about-project__title {
-	font-size: 20px;
-	line-height: 24px;
+  font-size: 20px;
+  line-height: 24px;
 }
 
+@media screen and (max-width: 1023px) {
+  .about-project__texts {
+    padding-bottom: var(--tablet-vertical-indents-base);
+  }
+}
