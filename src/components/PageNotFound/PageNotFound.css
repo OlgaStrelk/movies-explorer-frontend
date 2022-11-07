@@ -47,3 +47,27 @@
     margin-bottom: 222px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .page-not-found__container {
+    padding-top: 46px;
+  }
+  .page-not-found__title {
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .page-not-found__caption {
+    margin-top: 10px;
+
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .page-not-found__btn {
+    margin-bottom: 30px;
+
+    font-size: 12px;
+    line-height: 15px;
+  }
+}

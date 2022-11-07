@@ -5,7 +5,7 @@ import LoggedInNavigation from "../LoggedInNavigation/LoggedInNavigation";
 import { PATHS } from "../../utils/consts";
 import { useLocation } from "react-router-dom";
 import LogoLink from "../LogoLink/LogoLink";
-import Burger from '../Burger/Burger';
+import Burger from "../Burger/Burger";
 
 function Header({ isLoggedIn, handler }) {
   const STYLE = {
@@ -13,7 +13,6 @@ function Header({ isLoggedIn, handler }) {
     sectionType: { promo: "section_type_promo" },
     header: "header__panel",
   };
-
 
   let location = useLocation();
 
@@ -30,8 +29,13 @@ function Header({ isLoggedIn, handler }) {
           }
         >
           <LogoLink />
-          {isLoggedIn ? <LoggedInNavigation /> : <AuthNavigation />}
-          {isLoggedIn && <Burger handler={handler}/>}
+          {isLoggedIn ? (
+            <>
+              <LoggedInNavigation /> <Burger handler={handler} />
+            </>
+          ) : (
+            <AuthNavigation />
+          )}
         </div>
       )}
     </>

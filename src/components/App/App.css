@@ -60,6 +60,14 @@
 @media screen and (max-width: 767px) {
   .section {
     padding-left: var(--mobile-horizontal-indents);
-	padding-right: var(--mobile-horizontal-indents);
+    padding-right: var(--mobile-horizontal-indents);
+  }
+  .section_type_auth {
+    padding-top: 56px;
+    padding-bottom: 30px;
+  
+    height: calc(100vh -  56px - 30px);
+    width: 260px;
+    text-align: center;
   }
 }

@@ -23,7 +23,6 @@
   justify-content: center;
 }
 
-
 @media screen and (max-width: 1023px) {
   .movies__search-form {
     margin-left: var(--tablet-horizontal-indents);
@@ -44,6 +43,11 @@
     margin-left: var(--mobile-horizontal-indents);
     margin-right: var(--mobile-horizontal-indents);
     padding-bottom: 0;
+
     border: none;
+  }
+
+  .movies__content {
+    padding-top: 50px;
   }
 }

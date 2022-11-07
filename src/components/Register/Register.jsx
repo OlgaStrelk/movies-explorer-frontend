@@ -7,9 +7,9 @@ function Register() {
   const FORM_DATA = {
     title: "Добро пожаловать!",
     inputs: [
-      { id: 1, data: { label: "Имя", placeholder: "Введите имя" } },
-      { id: 2, data: { label: "E-mail", placeholder: "Введите e-mail" } },
-      { id: 3, data: { label: "Пароль", placeholder: "Введите пароль" } },
+      { id: 1, data: { label: "Имя" } },
+      { id: 2, data: { label: "E-mail" } },
+      { id: 3, data: { label: "Пароль" } },
     ],
     btn: "Зарегистрироваться",
     caption: "Уже зарегистрированы?",
