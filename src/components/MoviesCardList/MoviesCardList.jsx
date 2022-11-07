@@ -10,7 +10,7 @@ function MoviesCardList({ isSorted }) {
   const moviesArray = cards.map((movie) => (
     <MoviesCard key={movie.id} data={movie} isSorted={isSorted} />
   ));
-  return <div className="movies-card-list">{moviesArray}</div>;
+  return <ul className="movies-card-list">{moviesArray}</ul>;
 }
 
 export default MoviesCardList;

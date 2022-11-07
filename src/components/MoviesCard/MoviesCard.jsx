@@ -54,7 +54,7 @@ function MoviesCard({ data, isSorted }) {
   };
 
   return (
-    <div className="card">
+    <li className="card">
       <div
         className="card__image"
         style={{
@@ -77,7 +77,7 @@ function MoviesCard({ data, isSorted }) {
         <h4 className="card__title">{data.title}</h4>
         <p className="card__duration">{data.duration}</p>
       </div>
-    </div>
+    </li>
   );
 }
 

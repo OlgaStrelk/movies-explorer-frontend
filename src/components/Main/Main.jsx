@@ -11,13 +11,13 @@ function Main(props) {
   }, []);
   
   return (
-    <>
+    <main>
       <Promo />
       <NavTab />
       <AboutProject />
       <Techs />
       <AboutMe />
-    </>
+    </main>
   );
 }
 

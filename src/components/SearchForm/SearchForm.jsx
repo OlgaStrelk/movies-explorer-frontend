@@ -20,10 +20,8 @@ function SearchForm() {
 
   return (
     <div className="search-form">
-      <div className="search-form__container">
         <Form data={FORM_DATA} />
         <Tumbler data={TUMBLER_DATA} />
-      </div>
     </div>
   );
 }

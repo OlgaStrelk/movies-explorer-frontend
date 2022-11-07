@@ -32,10 +32,10 @@
 
 .section_type_auth {
   margin: 0 auto;
-  padding-top: var(--laptop-vertical-indents-forms);
-  padding-bottom: var(--laptop-vertical-indents-forms);
+  padding-top: var(--inner-vertical-indents);
+  padding-bottom: var(--inner-vertical-indents);
 
-  height: calc(100vh - var(--laptop-vertical-indents-forms) * 2);
+  height: calc(100vh - var(--inner-vertical-indents) * 2);
   width: 396px;
 
   display: grid;

@@ -11,14 +11,14 @@ function SavedMovies(props) {
   }, []);
 
   return (
-    <>
+    <main>
       <article className="movies__search-form">
         <SearchForm />
       </article>{" "}
       <article className="movies__content">
         {isLoading ? <Preloader /> : <MoviesCardList isSorted={true} />}
       </article>
-    </>
+    </main>
   );
 }
 

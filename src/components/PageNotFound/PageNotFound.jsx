@@ -11,15 +11,15 @@ function PageNotFound(props) {
   };
 
   return (
-    <div className="page-not-found">
-      <div className="page-not-found__container">
+    <main className="page-not-found">
+      <section className="page-not-found__container">
         <h1 className="page-not-found__title">{PAGE_NOT_FOUND_DATA.title}</h1>
         <p className="page-not-found__caption">{PAGE_NOT_FOUND_DATA.caption}</p>
-      </div>
+      </section>
       <button className="page-not-found__btn" onClick={() => navigate(-1)}>
         {PAGE_NOT_FOUND_DATA.link}
       </button>
-    </div>
+    </main>
   );
 }
 
