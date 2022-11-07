@@ -1,8 +1,10 @@
 .profile-input__label {
   margin: 0 auto;
   padding: 16px 0;
-  box-sizing: border-box;
+
   width: 410px;
+
+  box-sizing: border-box;
   border-bottom: solid 1px var(--icons-substrate);
   display: flex;
   justify-content: space-between;
@@ -17,6 +19,7 @@
 
 .profile-input__field {
   width: 122px;
+  
   text-align: end;
   line-height: 13px;
 }

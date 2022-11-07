@@ -1,7 +1,7 @@
 .profile {
   padding-top: 74px;
-  padding-bottom: 74px;
-  
+  padding-bottom: 70px;
+
   height: 89vh;
   box-sizing: border-box;
   display: flex;
@@ -15,4 +15,14 @@
   font-weight: 500;
   line-height: 29px;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+  .profile__title {
+    margin-bottom: 106px;
+  }
 }

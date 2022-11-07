@@ -4,10 +4,7 @@ import TabletNavigation from "../TabletNavigation/TabletNavigation";
 import { useState } from "react";
 
 function SideBar({ burgerHandler }) {
-  // const [isClicked, setIsClicked] = useState(false);
-  // const handler = () => {
-  //   setIsClicked(true);
-  // };
+
   return (
     <div className="side-bar__overlay">
       <div className="side-bar__container">

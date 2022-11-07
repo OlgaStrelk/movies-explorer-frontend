@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import "./AuthForm.css";
-import AuthInput from "../AuthInput/AuthInput";
+import Input from '../Input/Input';
 
 function AuthForm({ handler, data }) {
+  const stylesConfig = {
+    labelClassName: "auth__label",
+    inputClassName: "auth__input",
+  };
+  
   const inputMarkup = data.inputs.map((input) => (
-    <AuthInput key={input.id} input={input.data} />
+    <Input key={input.id} data={input.data} styles={stylesConfig}/>
   ));
+
   return (
     <>
       <h1 className="auth__title">{data.title}</h1>

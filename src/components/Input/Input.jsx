@@ -1,15 +1,16 @@
 import { useState } from 'react';
 import "./Input.css";
 
-function Input({ data }) {
+function Input({ data, styles }) {
   const [value, setValue] = useState(data.value);
+  console.log(data)
 
   return (
     <>
-      <label className="profile-input__label">
+      <label className={styles.labelClassName}>
         {data.label}
         <input
-          className="profile-input__field"
+          className={styles.inputClassName}
           onChange={(e)=>{setValue(e.target.value)}}
           id={data.id}
           value={value}

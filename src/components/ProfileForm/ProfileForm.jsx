@@ -9,7 +9,6 @@ function ProfileForm(props) {
         label: "Имя",
         type: "text",
         id: "name",
-        placeholder: "Введите имя",
         name: "name",
         required: true,
         value: "Ольга",
@@ -24,7 +23,6 @@ function ProfileForm(props) {
         label: "E-mail",
         type: "email",
         id: "email",
-        placeholder: "Введите e-mail",
         name: "email",
         required: true,
         value: "strelod@gmail.com",
@@ -34,8 +32,13 @@ function ProfileForm(props) {
       },
     },
   ];
+
+  const stylesConfig = {
+    inputClassName: "profile-input__field",
+    labelClassName: "profile-input__label",
+  };
   const inputMarkup = INPUTS_DATA.map((input) => (
-    <Input key={input.id} data={input.data} />
+    <Input key={input.id} data={input.data} styles={stylesConfig}/>
   ));
   const BTNS_DATA = [
     {
@@ -64,7 +67,12 @@ function ProfileForm(props) {
   const btnsMarkup = BTNS_DATA.map((btn) => {
     let btnClassName = `profile-form__btn ${btn.data.uniqueStyle}`;
     return (
-      <button key={btn.id} type={btn.data.type} className={btnClassName} disabled={btn.data.disabled}>
+      <button
+        key={btn.id}
+        type={btn.data.type}
+        className={btnClassName}
+        disabled={btn.data.disabled}
+      >
         {btn.data.title}
       </button>
     );
