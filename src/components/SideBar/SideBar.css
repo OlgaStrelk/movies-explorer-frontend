@@ -10,13 +10,14 @@
 }
 
 .side-bar__container {
+  padding: 24px 0 92px;
+
   background: var(--main-background);
   width: 68%;
   height: 100vh;
   display: grid;
   grid-template-rows: max-content 1fr max-content;
   box-sizing: border-box;
-  padding: 24px 0 92px;
 }
 
 .side-bar__close-btn {
@@ -34,6 +35,8 @@
 
 @media screen and (max-width: 767px) {
   .side-bar__container {
+    padding: 15px 0 48px;
+
     width: 100%;
   }
 }

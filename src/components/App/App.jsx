@@ -26,7 +26,7 @@ function App() {
   };
 
   const burgerHandler = () => {
-    setMenuOpen(true);
+    setMenuOpen(!isMenuOpen);
   };
 
   return (
@@ -55,7 +55,7 @@ function App() {
         <Route path={PATHS.others} element={<PageNotFound />}></Route>
       </Routes>
       <Footer />
-      {isMenuOpen && <SideBar />}
+      {isMenuOpen && <SideBar burgerHandler={burgerHandler}/>}
     </>
   );
 }

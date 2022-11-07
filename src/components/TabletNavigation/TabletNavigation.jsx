@@ -2,7 +2,7 @@ import Navigation from "../Navigation/Navigation";
 import "./TabletNavigation.css";
 import { PATHS } from "../../utils/consts";
 
-function TabletNavigation(props) {
+function TabletNavigation({handler}) {
   const BTNS_DATA = {
     style: "tablet-navigation__btn",
     btns: [
@@ -16,7 +16,6 @@ function TabletNavigation(props) {
         title: "Фильмы",
         id: 2,
         path: PATHS.movies,
-        className: "",
       },
       {
         title: "Сохранённые фильмы",
@@ -28,7 +27,7 @@ function TabletNavigation(props) {
   };
   return (
     <div className="tablet-navigation">
-      <Navigation style={BTNS_DATA.style} data={BTNS_DATA} />
+      <Navigation style={BTNS_DATA.style} data={BTNS_DATA} handler={handler}/>
     </div>
   );
 }

@@ -1,14 +1,21 @@
 import AccountLink from "../AccountLink/AccountLink";
 import "./SideBar.css";
 import TabletNavigation from "../TabletNavigation/TabletNavigation";
+import { useState } from "react";
 
-function SideBar(props) {
+function SideBar({ burgerHandler }) {
+  // const [isClicked, setIsClicked] = useState(false);
+  // const handler = () => {
+  //   setIsClicked(true);
+  // };
   return (
     <div className="side-bar__overlay">
       <div className="side-bar__container">
         <button className="side-bar__close-btn" />
-        <TabletNavigation />
-        <div className='side-bar__link'><AccountLink style={{ display: "flex"}} /></div>
+        <TabletNavigation handler={burgerHandler} />
+        <div className="side-bar__link">
+          <AccountLink style={{ display: "flex" }} />
+        </div>
       </div>
     </div>
   );
