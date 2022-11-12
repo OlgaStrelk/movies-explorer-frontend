@@ -48,6 +48,9 @@
     padding-right: var(--tablet-horizontal-indents);
   }
 
+  .section_type_contrast {
+  }
+
   .section_type_base {
     padding-top: var(--tablet-vertical-indents-base);
     padding-bottom: var(--tablet-vertical-indents-base);
@@ -81,5 +84,10 @@
     height: calc(100vh - 56px - 30px);
     width: 260px;
     text-align: center;
+  }
+
+  .section_type_contrast {
+    padding-top: var(--mobile-vertical-indents-bigger);
+    /* padding-bottom: var(--mobile-vertical-indents-contrast); */
   }
 }

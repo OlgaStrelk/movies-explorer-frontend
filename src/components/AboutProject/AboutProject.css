@@ -17,6 +17,9 @@
 
 @media screen and (max-width: 767px) {
   .about-project__texts {
+    padding-bottom: var(--mobile-vertical-indents-smaller);
+  }
+  .about-project__texts {
     flex-direction: column;
     row-gap: 56px;
   }

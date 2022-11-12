@@ -5,6 +5,9 @@
 }
 
 .time-line__strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 36px;
 }
 
@@ -19,15 +22,18 @@
 }
 
 .time-line__text {
-  margin: 0;
-  padding-top: 8px;
   font-size: 14px;
   line-height: 17px;
-  text-align: center;
 }
 
 .time-line__text_type_capture {
+  text-align: center;
   padding-top: 14px;
   font-weight: 500;
   color: var(--lightened-text);
+}
+
+.time-line__text {
+  font-size: 11px;
+  line-height: 13px;
 }
