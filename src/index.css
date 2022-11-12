@@ -98,9 +98,11 @@ input:focus {
   --laptop-horizontal-indents: 70px;
 
   --tablet-horizontal-indents: 30px;
-  --tablet-vertical-indents-base: 90px;
+  --laptop-tablet-vertical-indents: 90px;
   
-  --mobile-horizontal-indents: 10px;
+  --mobile-horizontal-indents-promo: 10px;
+  --mobile-horizontal-indents-regular: 18px;
   --mobile-vertical-indents-bigger: 70px;
   --mobile-vertical-indents-smaller: 60px;
+  --mobile-vertical-indents-smallest: 50px
 }

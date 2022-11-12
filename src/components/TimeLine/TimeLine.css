@@ -27,13 +27,25 @@
 }
 
 .time-line__text_type_capture {
-  text-align: center;
   padding-top: 14px;
+
+  text-align: center;
   font-weight: 500;
   color: var(--lightened-text);
 }
 
 .time-line__text {
-  font-size: 11px;
-  line-height: 13px;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  .time-line__text {
+    font-size: 11px;
+    line-height: 13px;
+  }
+
+  .time-line__text_type_capture {
+    padding-top: 10px;
+  }
 }

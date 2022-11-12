@@ -1,6 +1,6 @@
 .icon__substrate {
-  margin-left: 10px;
-  width: 90px;
+  max-width: 90px;
+  min-width: 84px;
   height: 60px;
   background: var(--icons-substrate);
   border-radius: 10px;

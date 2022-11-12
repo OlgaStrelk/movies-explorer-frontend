@@ -8,6 +8,7 @@ function Techs() {
   const CLASS_NAMES_CONFIG = {
     uniqueTitleClass: "techs__title",
     isCentred: true,
+    uniqueTextClass: "techs__text"
   };
 
   const ARTICLE_DATA = {

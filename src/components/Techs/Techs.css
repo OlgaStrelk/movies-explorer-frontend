@@ -1,7 +1,8 @@
 .techs__title {
-  padding-top: 90px;
+  padding-top: var(--laptop-tablet-vertical-indents);
   font-size: 50px;
   line-height: 58px;
+  letter-spacing: -0.04em;
   text-align: center;
 }
 
@@ -9,4 +10,28 @@
   padding-top: var(--laptop-vertical-indents-contrast);
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media screen and (max-width: 767px) {
+  .techs__title {
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -0.04em;
+  }
+
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: -0.04em;
+  }
+
+  .techs__icons {
+    max-width: calc(84px * 2 + 10px);
+    margin: 0 auto;
+    padding-top:  var(--mobile-vertical-indents-smallest);
+    justify-content: flex-start;
+
+  }
 }
