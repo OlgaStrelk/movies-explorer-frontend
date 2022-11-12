@@ -1,11 +1,11 @@
 import "./ListItem.css";
 
-function ListItem({ link }) {
+function ListItem({ link, styles }) {
   return (
-    <li key={link.id} className="list-item">
-      <a href={link.href} className="list-item__link" target="blank">
-        <h5 className="list-item__title">{link.title}</h5>
-        <div className="list-item__icon"></div>
+    <li key={link.id} className={styles.itemClassName}>
+      <a href={link.href} className={styles.linkClassName} target="blank">
+        <h5 className={styles.titleClassName}>{link.title}</h5>
+        <div className={styles.iconClassName}></div>
       </a>
     </li>
   );

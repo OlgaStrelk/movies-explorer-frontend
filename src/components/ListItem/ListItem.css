@@ -1,27 +1,21 @@
 .list-item {
-  margin-top: 20px;
+  box-sizing: border-box;
   border-bottom: 1px solid var(--icons-substrate);
 }
 
-.list-item:first-of-type {
-  margin-top: 50px;
-}
-
-.list-item:last-of-type {
-	margin-bottom: 15px;
-}
-
 .list-item__link {
+  height: 100%;
+  width: 100%;
   color: var(--main-text);
   text-decoration: none;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.5s linear ;
 }
 
 .list-item__link:hover {
-  opacity: 1;
   box-shadow: 0px 3px 14px rgb(0 0 0 / 8%);
-  border-radius: 9px;
 }
 
 .list-item__title {
@@ -37,4 +31,11 @@
   height: 60px;
   background: center center no-repeat
     url("../../images/about-me__link-arrow.svg");
+}
+
+@media screen and (max-width: 767px) {
+  .list-item__title {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }

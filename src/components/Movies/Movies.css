@@ -12,7 +12,7 @@
   padding-left: var(--laptop-horizontal-indents);
   padding-right: var(--laptop-horizontal-indents);
   box-sizing: border-box;
-  min-height: 56vh;
+  min-height: calc(100vh - 74px - 212px - 172px);
 }
 
 .movies__btn {
