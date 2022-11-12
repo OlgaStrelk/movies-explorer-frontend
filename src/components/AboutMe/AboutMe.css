@@ -1,8 +1,8 @@
 .about-me__grid {
   margin: 66px 0 100px;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: repeat(2, max-content);
-  column-gap: 270px;
+  grid-template-columns: repeat(2, auto);
   grid-template-areas:
     "article photo"
     "link photo";

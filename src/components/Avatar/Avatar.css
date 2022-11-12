@@ -1,6 +1,6 @@
 .photo__container {
   grid-area: photo;
-  justify-self: end;
+  justify-self: flex-end;
   height: 327px;
   width: 270px;
 }
