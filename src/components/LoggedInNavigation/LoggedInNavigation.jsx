@@ -11,7 +11,8 @@ function LoggedInNavigation() {
       listItemClassName: "logged-in-bar__list-item",
       linkClassName: "logged-in-bar__link",
     },
-    links: [
+    
+    data: [
       {
         title: "Фильмы",
         id: 1,
