@@ -6,9 +6,9 @@ import "./Techs.css";
 function Techs() {
   const SECTION_DATA = { id: "technologies", title: "Технологии" };
   const CLASS_NAMES_CONFIG = {
-    uniqueTitleClass: "techs__title",
+    uniqueTitleClassName: "techs__title",
     isCentred: true,
-    uniqueTextClass: "techs__text"
+    uniqueTextClassName: "techs__text"
   };
 
   const ARTICLE_DATA = {

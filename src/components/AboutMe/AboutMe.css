@@ -34,7 +34,7 @@
   line-height: 17px;
 }
 
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 767px) {
   .about-me__grid {
     margin-top: var(--mobile-vertical-indents-medium);
     margin-bottom: var(--mobile-vertical-indents-medium);

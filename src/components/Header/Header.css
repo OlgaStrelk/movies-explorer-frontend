@@ -8,8 +8,6 @@
 }
 
 .header__logo {
-  /* width: 38px;
-  height: 38px; */
   grid-area: logo;
 }
 
@@ -22,7 +20,7 @@
 
 @media screen and (max-width: 767px) {
   .header__panel {
-    padding-left: var(--mobile-horizontal-indents);
-	padding-right: var(--mobile-horizontal-indents);
+    padding-left: var(--mobile-horizontal-indents-small);
+	padding-right: var(--mobile-horizontal-indents-small);
   }
 }
