@@ -1,18 +1,15 @@
 .auth-bar {
   grid-area: account;
+  display: flex;
 }
 
-.auth-bar__btn {
+.auth-bar__link {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
 }
 
-.auth-bar__btn_type_signup {
-  background-color: transparent;
-}
-
-.auth-bar__btn_type_signin {
+.auth-bar__link_type_signin {
   margin-left: 30px;
   padding: 8px 20px;
   border-radius: 3px;
@@ -21,6 +18,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .auth-bar {
+  .auth-bar__link_type_signin {
+    margin-left: 14px;
   }
+
 }

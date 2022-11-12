@@ -8,6 +8,8 @@
 }
 
 .header__logo {
+  /* width: 38px;
+  height: 38px; */
   grid-area: logo;
 }
 

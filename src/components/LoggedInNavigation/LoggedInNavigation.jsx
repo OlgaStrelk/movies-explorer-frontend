@@ -4,9 +4,14 @@ import { PATHS } from "../../utils/consts";
 import AccountLink from "../AccountLink/AccountLink";
 
 function LoggedInNavigation() {
-  const BTNS_DATA = {
-    style: "logged-in-bar__btn",
-    btns: [
+  const LIST_CLASS_NAME = "logged-in-bar";
+
+  const LINKS_DATA = {
+    styles: {
+      listItemClassName: "logged-in-bar__list-item",
+      linkClassName: "logged-in-bar__link",
+    },
+    links: [
       {
         title: "Фильмы",
         id: 1,
@@ -24,9 +29,7 @@ function LoggedInNavigation() {
 
   return (
     <>
-      <div className="logged-in-bar">
-        <Navigation data={BTNS_DATA} />
-      </div>
+      <Navigation listClassName={LIST_CLASS_NAME} linksData={LINKS_DATA} />
       <AccountLink />
     </>
   );

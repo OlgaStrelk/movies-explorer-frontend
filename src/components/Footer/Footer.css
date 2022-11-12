@@ -44,7 +44,7 @@
 }
 
 .footer__year {
-  color: var(--lightened-text);
+  color: (--lightened-text);
 }
 
 @media screen and (max-width: 1023px) {
@@ -60,6 +60,10 @@
 
     line-height: 15px;
     font-size: 12px;
+  }
+
+  .footer__caption {
+    padding-bottom: 21px;
   }
 
   .footer__container {

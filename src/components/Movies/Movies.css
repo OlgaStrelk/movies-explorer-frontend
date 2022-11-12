@@ -49,5 +49,7 @@
 
   .movies__content {
     padding-top: 50px;
+    min-height: calc(100vh - 74px - 262px - 243px);
+
   }
 }

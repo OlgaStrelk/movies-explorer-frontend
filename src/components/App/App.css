@@ -63,15 +63,22 @@
     padding-right: var(--mobile-horizontal-indents);
   }
 
+  .section__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+  }
+
   .section_type_base {
+    padding-top: var(--mobile-vertical-indents-base);
     padding-bottom: var(--mobile-vertical-indents-base);
   }
 
   .section_type_auth {
     padding-top: 56px;
     padding-bottom: 30px;
-  
-    height: calc(100vh -  56px - 30px);
+
+    height: calc(100vh - 56px - 30px);
     width: 260px;
     text-align: center;
   }

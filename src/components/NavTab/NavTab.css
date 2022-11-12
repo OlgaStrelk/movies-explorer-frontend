@@ -6,7 +6,7 @@
 .nav__list {
   padding-top: 25px;
   padding-bottom: 25px;
-  
+
   display: flex;
   justify-content: center;
 }
@@ -25,4 +25,13 @@
   font-weight: 500;
   line-height: 16px;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__item {
+    margin-left: 24px;
+  }
+  .nav__link {
+    font-size: 11px;
+  }
 }

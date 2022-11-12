@@ -12,6 +12,7 @@ function Header({ isLoggedIn, handler }) {
     section: "section",
     sectionType: { promo: "section_type_promo" },
     header: "header__panel",
+    // logo: "header__logo"
   };
 
   let location = useLocation();
@@ -28,7 +29,7 @@ function Header({ isLoggedIn, handler }) {
               : `${STYLE.section} ${STYLE.sectionType.promo} ${STYLE.header}`
           }
         >
-          <LogoLink />
+          <LogoLink class={STYLE.logo}/>
           {isLoggedIn ? (
             <>
               <LoggedInNavigation /> <Burger handler={handler} />
