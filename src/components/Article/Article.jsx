@@ -1,15 +1,15 @@
 import "./Article.css";
 
 function Article(props) {
-  const { isCentred, uniqueTitleClass, uniqueTextClass, subtitleClassName } =
+  const { isCentred, uniqueTitleClassName, uniqueTextClassName, subtitleClassName } =
     props.classes;
 
   const { title, subtitle, text } = props.children;
 
   const articleClassName = isCentred ? "article article_centred" : "article";
-  const titleClassName = `article__title ${uniqueTitleClass}`;
-  const textClassName = uniqueTextClass
-    ? `article__text ${uniqueTextClass}`
+  const titleClassName = `article__title ${uniqueTitleClassName}`;
+  const textClassName = uniqueTextClassName
+    ? `article__text ${uniqueTextClassName}`
     : "article__text";
   return (
     <article className={articleClassName}>

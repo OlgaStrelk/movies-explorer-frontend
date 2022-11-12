@@ -11,3 +11,18 @@
   object-fit: contain;
   border-radius: 10px;
 }
+
+.about-me__photo {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+
+  .photo__container {
+    grid-area: photo;
+    justify-self: center;
+    height: 352px;
+    width: 292px;
+  }
+  
+}

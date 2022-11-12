@@ -77,7 +77,7 @@
   }
 
   .section_type_base {
-    padding: var(--mobile-vertical-indents-bigger) var(--mobile-horizontal-indents-regular);
+    padding: var(--mobile-vertical-indents-big) var(--mobile-horizontal-indents-big);
   }
 
   .section_type_auth {
@@ -89,8 +89,13 @@
     text-align: center;
   }
 
+  .section_type_about-me {
+    padding-left: var(--mobile-horizontal-indents-small);
+    padding-right: var(--mobile-horizontal-indents-small);
+  }
+
   .section_type_contrast {
-    padding: var(--mobile-vertical-indents-bigger) var(--mobile-horizontal-indents-regular);
-    /* padding-bottom: var(--mobile-vertical-indents-contrast); */
+    background: var(--main-background);
+    padding: var(--mobile-vertical-indents-big) var(--mobile-horizontal-indents-big);
   }
 }

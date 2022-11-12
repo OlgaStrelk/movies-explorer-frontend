@@ -22,18 +22,19 @@ function AboutMe() {
     },
   };
 
-  const CLASS_NAMES_CONFIG = {
-    uniqueTitleClass: "about-me__title",
-    uniqueTextCLass: "about-me__text",
+  const STYLES_CONFIG = {
+    photoClassName: "about-me__photo",
+    uniqueTitleClassName: "about-me__title",
+    uniqueTextCLassName: "about-me__text",
     subtitleClassName: "about-me__subtitle",
   };
 
   return (
-    <section className="section section_type_base" id={SECTION_DATA.id}>
+    <section className="section section_type_base section_type_about-me" id={SECTION_DATA.id}>
       <Title>{SECTION_DATA.title}</Title>
       <div className="about-me__grid">
-        <Article classes={CLASS_NAMES_CONFIG}>{PERSONAL_DATA.data}</Article>
-        <Avatar data={PERSONAL_DATA.photo} />
+        <Article classes={STYLES_CONFIG}>{PERSONAL_DATA.data}</Article>
+        <Avatar className={STYLES_CONFIG.photoClassName} data={PERSONAL_DATA.photo} />
         <a className="about-me__link" href={PERSONAL_DATA.link.url}>
           {PERSONAL_DATA.link.title}
         </a>

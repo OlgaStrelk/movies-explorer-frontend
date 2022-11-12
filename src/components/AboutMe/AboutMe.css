@@ -36,7 +36,32 @@
 
 @media screen and (max-width: 1279px) {
   .about-me__grid {
+    margin-top: var(--mobile-vertical-indents-medium);
+    margin-bottom: var(--mobile-vertical-indents-medium);
     column-gap: 0;
     grid-template-columns: auto;
+    grid-template-areas:
+      "photo"
+      "article"
+      "link";
+  }
+
+  .about-me__title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .about-me__subtitle {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  .about-me__link {
+    margin-top: 40px;
   }
 }
