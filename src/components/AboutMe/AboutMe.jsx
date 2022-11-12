@@ -23,9 +23,8 @@ function AboutMe() {
   };
 
   const STYLES_CONFIG = {
-    photoClassName: "about-me__photo",
     uniqueTitleClassName: "about-me__title",
-    uniqueTextCLassName: "about-me__text",
+    uniqueTextClassName: "about-me__text",
     subtitleClassName: "about-me__subtitle",
   };
 
@@ -34,7 +33,7 @@ function AboutMe() {
       <Title>{SECTION_DATA.title}</Title>
       <div className="about-me__grid">
         <Article classes={STYLES_CONFIG}>{PERSONAL_DATA.data}</Article>
-        <Avatar className={STYLES_CONFIG.photoClassName} data={PERSONAL_DATA.photo} />
+        <Avatar data={PERSONAL_DATA.photo} />
         <a className="about-me__link" href={PERSONAL_DATA.link.url}>
           {PERSONAL_DATA.link.title}
         </a>

@@ -11,7 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: box-shadow 0.5s linear ;
+  transition: box-shadow 0.5s linear;
 }
 
 .list-item__link:hover {
@@ -33,6 +33,11 @@
     url("../../images/about-me__link-arrow.svg");
 }
 
+@media screen and (max-width: 767px) {
+  .list-item__title {
+    font-size: 28px;
+  }
+}
 @media screen and (max-width: 767px) {
   .list-item__title {
     font-size: 18px;

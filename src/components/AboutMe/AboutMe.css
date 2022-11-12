@@ -1,5 +1,6 @@
 .about-me__grid {
-  margin: 66px 0 100px;
+  margin-top: 66px;
+  margin-bottom: 100px;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -34,6 +35,31 @@
   line-height: 17px;
 }
 
+@media screen and (max-width: 1023px) {
+  .about-me__grid {
+    margin-bottom: 90px;
+    grid-template-columns: 364px auto;
+  }
+
+  .about-me__title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .about-me__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__title {
+    margin-bottom: 16px;
+  }
+
+  .about-me__subtitle {
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .about-me__grid {
     margin-top: var(--mobile-vertical-indents-medium);
@@ -54,8 +80,6 @@
   }
 
   .about-me__subtitle {
-    margin-bottom: 20px;
-
     font-size: 11px;
     font-weight: 500;
     line-height: 16px;
