@@ -19,8 +19,9 @@
 
 @media screen and (max-width: 767px) {
   .profile {
-    padding-top: 70px;
-    padding-bottom: 40px;
+    padding: 70px 30px 40px;
+    width: 100%;
+    height: calc(100vh - 74px);
   }
   .profile__title {
     margin-bottom: 106px;

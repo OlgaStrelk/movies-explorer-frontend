@@ -2,7 +2,7 @@
   margin: 0 auto;
   padding: 16px 0;
 
-  width: 410px;
+  max-width: 410px;
 
   box-sizing: border-box;
   border-bottom: solid 1px var(--icons-substrate);
@@ -19,7 +19,13 @@
 
 .profile-input__field {
   width: 122px;
-  
+
   text-align: end;
   line-height: 13px;
+}
+
+@media screen and (max-wifth: 767px) {
+  .profile-input__label {
+    max-width: 260px;
+  }
 }

@@ -26,3 +26,13 @@
   font-weight: 500;
   color: var(--catchy-element);
 }
+
+@media screen and (max-width: 767px) {
+  .profile-form {
+    width: 100%;
+  }
+  .profile-form__container {
+    max-width: 100%;
+    max-height: cals(100vh-74px);
+  }
+}
