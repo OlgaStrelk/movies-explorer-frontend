@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.tablet-navigation__btn {
+.tablet-navigation__list-item {
   display: block;
   text-align: center;
   margin-top: 19px;
@@ -14,15 +14,18 @@
 
   width: fit-content;
   position: relative;
+}
+
+.tablet-navigation__link {
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
 }
-.tablet-navigation__btn:first-of-type {
+.tablet-navigation__link:first-of-type {
   margin-top: 0;
 }
 
-.tablet-navigation__btn.active {
+.tablet-navigation__link.active {
   border-bottom: 2px solid var(--main-text);
 }
 
