@@ -17,6 +17,12 @@
   color: var(--contrast-text);
 }
 
+@media screen and (max-width: 1023px) {
+  .is-hidden {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .auth-bar__link_type_signin {
     margin-left: 14px;

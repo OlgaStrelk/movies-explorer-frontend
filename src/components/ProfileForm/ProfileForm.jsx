@@ -1,7 +1,12 @@
+import { Link, redirect, useNavigate } from "react-router-dom";
+import { PATHS } from "../../utils/consts";
+
 import Input from "../Input/Input";
 import "./ProfileForm.css";
 
-function ProfileForm(props) {
+function ProfileForm({ logOutHandler }) {
+  const navigate = useNavigate();
+
   const INPUTS_DATA = [
     {
       id: 1,
@@ -38,8 +43,13 @@ function ProfileForm(props) {
     labelClassName: "profile-input__label",
   };
   const inputMarkup = INPUTS_DATA.map((input) => (
-    <Input key={input.id} data={input.data} styles={stylesConfig}/>
+    <Input key={input.id} data={input.data} styles={stylesConfig} />
   ));
+
+  const handleSignOutClick=()=> {
+    logOutHandler();
+    navigate(PATHS.aboutProject)
+  }
   const BTNS_DATA = [
     {
       id: 1,
@@ -57,9 +67,7 @@ function ProfileForm(props) {
         uniqueStyle: "profile-form__btn_type_sign-out",
         type: "button",
         disabled: false,
-        onClick: () => {
-          console.log("Вышел");
-        },
+        clickHandler: handleSignOutClick
       },
     },
   ];
@@ -72,6 +80,7 @@ function ProfileForm(props) {
         type={btn.data.type}
         className={btnClassName}
         disabled={btn.data.disabled}
+        onClick={btn.data.clickHandler}
       >
         {btn.data.title}
       </button>

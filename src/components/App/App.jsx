@@ -1,5 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+import { LoggedInContext } from "../../contexts/LoggedInContext";
+import { MenuStateContext } from "../../contexts/MenuStateContext";
+
 import "./App.css";
 import Main from "../Main/Main";
 import Header from "../Header/Header";
@@ -17,45 +20,51 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
 
-  const handler = () => {
+  useEffect(() => {
+    console.log(isLoggedIn);
+  }, [isLoggedIn]);
+  const handleLogIn = () => {
     setLoggedIn(true);
   };
 
-  const handlerReverse = () => {
+  const handleLogOut = () => {
     setLoggedIn(false);
   };
 
-  const burgerHandler = () => {
+  const toggleMenuState = () => {
     setMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
-      <Header isLoggedIn={isLoggedIn} handler={burgerHandler} />
-      <Routes>
-        <Route
-          exact
-          path={PATHS.aboutProject}
-          element={<Main handler={handlerReverse} />}
-        />
-        <Route
-          path={PATHS.profile}
-          element={<Profile handler={handler} />}
-        ></Route>
-        <Route
-          path={PATHS.movies}
-          element={<Movies handler={handler} />}
-        ></Route>
-        <Route
-          path={PATHS.savedMovies}
-          element={<SavedMovies handler={handler} />}
-        ></Route>
-        <Route path={PATHS.signup} element={<Register />}></Route>
-        <Route path={PATHS.signin} element={<Login />}></Route>
-        <Route path={PATHS.others} element={<PageNotFound />}></Route>
-      </Routes>
-      <Footer />
-      {isMenuOpen && <SideBar burgerHandler={burgerHandler}/>}
+      <LoggedInContext.Provider value={isLoggedIn}>
+        <MenuStateContext.Provider value={isMenuOpen}>
+          <Header handler={toggleMenuState} />
+          <Routes>
+            <Route exact path={PATHS.aboutProject} element={<Main />} />
+            <Route
+              path={PATHS.profile}
+              element={<Profile logOutHandler={handleLogOut} />}
+            ></Route>
+            <Route
+              path={PATHS.movies}
+              element={<Movies handler={handleLogIn} />}
+            ></Route>
+            <Route
+              path={PATHS.savedMovies}
+              element={<SavedMovies handler={handleLogIn} />}
+            ></Route>
+            <Route path={PATHS.signup} element={<Register />}></Route>
+            <Route
+              path={PATHS.signin}
+              element={<Login handler={handleLogIn} />}
+            ></Route>
+            <Route path={PATHS.others} element={<PageNotFound />}></Route>
+          </Routes>
+          <Footer />
+          {isMenuOpen && <SideBar toggleMenuState={toggleMenuState} />}
+        </MenuStateContext.Provider>
+      </LoggedInContext.Provider>
     </>
   );
 }

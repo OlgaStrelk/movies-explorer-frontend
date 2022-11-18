@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import "./AuthForm.css";
 import Input from '../Input/Input';
+import { PATHS } from "../../utils/consts";
 
 function AuthForm({ handler, data }) {
+  const navigate = useNavigate();
+
   const stylesConfig = {
     labelClassName: "auth__label",
     inputClassName: "auth__input",
@@ -12,13 +15,30 @@ function AuthForm({ handler, data }) {
     <Input key={input.id} data={input.data} styles={stylesConfig}/>
   ));
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  // }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log('я тут')
+  //   handler()
+  //   redirect(PATHS.movies)
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handler()
+    navigate(PATHS.movies)
+  }
+
+
   return (
     <>
       <h1 className="auth__title">{data.title}</h1>
-      <form onSubmit={() => handler(true)} className="auth__form">
+      <form onSubmit={handleSubmit} className="auth__form">
         <div className="auth__inputs">{inputMarkup}</div>
         <div>
-          <button className="auth__btn" type="button">
+          <button className="auth__btn" type="submit">
             {data.btn}
           </button>
           <div className="auth__caption">

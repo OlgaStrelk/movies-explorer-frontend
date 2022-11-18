@@ -1,32 +1,27 @@
+import React, { useContext} from "react";
+
 import Navigation from "../Navigation/Navigation";
 import "./AuthNavigation.css";
-import { PATHS } from "../../utils/consts";
+import { NAVIGATION_DATA } from "../../utils/consts";
+import { LoggedInContext } from "../../contexts/LoggedInContext";
+
 
 function AuthNavigation() {
-  const LIST_CLASS_NAME = "auth-bar";
-  const LINKS_DATA = {
-    styles: {
-      listItemClassName: "auth-bar__list-item",
-      linkClassName: "auth-bar__link",
-    },
+  const isLoggedIn = useContext(LoggedInContext);
 
-    data: [
-      {
-        title: "Регистрация",
-        id: 1,
-        path: PATHS.signup,
-        className: "auth-bar__link_type_signup",
-      },
-      {
-        title: "Войти",
-        id: 2,
-        path: PATHS.signin,
-        className: "auth-bar__link_type_signin",
-      },
-    ],
+  const stylesConfig = {
+    // listClassName: isLoggedIn ? "auth-bar is-hidden" : "auth-bar",
+    listClassName: "auth-bar is-hidden",
+    listItemClassName: "auth-bar__list-item",
+    linkClassName: "auth-bar__link",
   };
 
-  return <Navigation listClassName={LIST_CLASS_NAME} linksData={LINKS_DATA} />;
+  return (
+    <Navigation
+      styles={stylesConfig}
+      linksData={NAVIGATION_DATA.authLinks}
+    />
+  );
 }
 
 export default AuthNavigation;

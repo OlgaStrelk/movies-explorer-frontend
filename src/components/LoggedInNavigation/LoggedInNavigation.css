@@ -1,5 +1,6 @@
 .logged-in-bar {
   grid-area: movies;
+  display: flex;
 }
 
 .logged-in-bar__list-item {
