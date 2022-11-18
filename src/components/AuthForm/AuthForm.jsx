@@ -1,4 +1,4 @@
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./AuthForm.css";
 import Input from '../Input/Input';
 import { PATHS } from "../../utils/consts";
@@ -14,16 +14,6 @@ function AuthForm({ handler, data }) {
   const inputMarkup = data.inputs.map((input) => (
     <Input key={input.id} data={input.data} styles={stylesConfig}/>
   ));
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  // }
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log('я тут')
-  //   handler()
-  //   redirect(PATHS.movies)
-  // }
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -34,13 +34,14 @@ export const NAVIGATION_DATA = {
       title: "Регистрация",
       id: 4,
       path: PATHS.signup,
-      headerClassName: "auth-bar__link_type_signup",
+      headerClassName: "auth-bar__list-item_type_signup",
     },
     {
       title: "Войти",
       id: 5,
       path: PATHS.signin,
-      headerClassName: "auth-bar__link_type_signin",
+      headerListItemClassName: "auth-bar__list-item_type_signin",
+      headerLinkClassName: "auth-bar__link_type_signin"
     },
   ],
 };

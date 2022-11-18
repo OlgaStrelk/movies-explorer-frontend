@@ -1,6 +1,7 @@
 .auth-bar {
   grid-area: account;
   display: flex;
+  align-items: center;
 }
 
 .auth-bar__link {
@@ -9,11 +10,14 @@
   line-height: 16px;
 }
 
-.auth-bar__link_type_signin {
+.auth-bar__list-item_type_signin {
   margin-left: 30px;
   padding: 8px 20px;
   border-radius: 3px;
   background-color: var(--contrast-elements);
+}
+
+.auth-bar__link_type_signin  {
   color: var(--contrast-text);
 }
 
