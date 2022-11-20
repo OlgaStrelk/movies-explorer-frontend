@@ -28,7 +28,7 @@ function Header({ handler }) {
   return (
     <>
       {path !== PATHS.signup && path !== PATHS.signin && (
-        <div
+        <header
           className={
             path !== PATHS.aboutProject
               ? `${STYLE.section} ${STYLE.header}`
@@ -45,7 +45,7 @@ function Header({ handler }) {
               <AuthNavigation /> <Burger handler={handler} />
             </>
           )}
-        </div>
+        </header>
       )}
     </>
   );

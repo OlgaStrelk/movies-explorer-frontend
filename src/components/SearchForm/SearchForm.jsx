@@ -10,6 +10,7 @@ function SearchForm() {
   const FORM_DATA = {
     input: {
       placeholder: "Фильм",
+      required: true
     },
     btn: {
       type: "submit",

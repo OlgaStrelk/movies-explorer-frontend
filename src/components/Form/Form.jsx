@@ -12,7 +12,8 @@ function Form({ data }) {
       <input
         className="form__input"
         placeholder={data.input.placeholder}
-      ></input>
+        required={data.input.required}
+      />
       <button className="form__btn" type={data.btn.type}>
         <img src={data.btn.src} alt={data.btn.alt} />
       </button>

@@ -12,7 +12,7 @@ function AuthForm({ handler, data }) {
   };
   
   const inputMarkup = data.inputs.map((input) => (
-    <Input key={input.id} data={input.data} styles={stylesConfig}/>
+    <Input key={input.id} data={input.data} styles={stylesConfig} />
   ));
 
   const handleSubmit = (e) => {

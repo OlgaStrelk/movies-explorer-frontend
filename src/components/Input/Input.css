@@ -1,12 +1,14 @@
 .profile-input__label {
   margin: 0 auto;
-  padding: 16px 0;
+  /* padding: 16px 0; */
 
   max-width: 410px;
+  height: 48px;
 
   box-sizing: border-box;
   border-bottom: solid 1px var(--icons-substrate);
   display: flex;
+  align-items: center;
   justify-content: space-between;
   font-size: 11px;
   font-weight: 500;
@@ -18,10 +20,20 @@
 }
 
 .profile-input__field {
+  height: 100%;
   width: 122px;
 
+  box-sizing: border-box;
   text-align: end;
   line-height: 13px;
+}
+
+.profile-input__field:focus {
+  outline: none;
+}
+
+.profile-input__field:focus-visible {
+  border-bottom: 1px solid var(--icons-substrate);
 }
 
 @media screen and (max-wifth: 767px) {

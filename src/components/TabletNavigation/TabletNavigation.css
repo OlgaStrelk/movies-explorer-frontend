@@ -3,16 +3,15 @@
   display: flex;
   flex-direction: column;
   justify-self: center;
-  text-align: center;
 }
 
 .tablet-navigation__list-item {
   display: block;
-  text-align: center;
   margin-top: 19px;
   padding-bottom: 7px;
+  text-align: center;
 
-  width: fit-content;
+  width: 100%;
   position: relative;
 }
 
@@ -21,6 +20,7 @@
   font-weight: 500;
   line-height: 22px;
 }
+
 .tablet-navigation__link:first-of-type {
   margin-top: 0;
 }

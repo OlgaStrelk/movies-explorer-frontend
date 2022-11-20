@@ -1,8 +1,9 @@
 .tumbler {
   padding-left: 30px;
   padding-right: 30px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 
-  height: 72px;
   display: flex;
   box-sizing: border-box;
   border-left: 1px solid var(--borders_2);
@@ -12,6 +13,7 @@
 .tumbler__container {
   height: 14px;
   width: 34px;
+  padding: 2px;
 
   cursor: pointer;
   display: flex;
@@ -44,6 +46,10 @@
 
 @media screen and (max-width: 767px) {
   .tumbler {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    height: 72px;
     padding: 0;
     border-left: none;
     height: 110px;

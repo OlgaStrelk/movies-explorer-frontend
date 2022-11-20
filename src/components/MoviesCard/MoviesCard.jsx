@@ -58,7 +58,7 @@ function MoviesCard({ data, isSorted }) {
       <div
         className="card__image"
         style={{
-          background: `center center no-repeat url(${data.src})`,
+          background: `center center / contain no-repeat url(${data.src})`,
         }}
         onMouseOver={showBtn}
         onMouseLeave={hideBtn}

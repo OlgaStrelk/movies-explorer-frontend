@@ -5,5 +5,12 @@
   border-radius: 6px;
 }
 
+.show-more-btn:hover {
+  background: var(--icons-substrate_2);
+  width: 320px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
 @media screen and (max-width: 767px) {
 }

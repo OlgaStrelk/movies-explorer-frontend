@@ -6,8 +6,8 @@ function Login(props) {
   const FORM_DATA = {
     title: "Рады видеть!",
     inputs: [
-      { id: 1, data: { label: "E-mail" } },
-      { id: 2, data: { label: "Пароль" } },
+      { id: 1, data: { label: "E-mail", required: true } },
+      { id: 2, data: { label: "Пароль", required: true } },
     ],
     btn: "Войти",
     caption: "Ещё не зарегистрированы?",
