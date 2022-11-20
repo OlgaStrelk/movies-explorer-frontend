@@ -1,0 +1,24 @@
+.check-button {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 21px;
+  top: 14px;
+  border: none;
+  border-radius: 30px;
+}
+
+.check-button_visible {
+  visibility: visible;
+}
+
+
+@media screen and (max-width: 767px) {
+  .check-button {
+    top: 10px;
+
+  }
+
+}

@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--main-text);
+  background: var(--main-background);
+  font-family: var(--font-family);
+}
+
+article {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-block: 0;
+  margin: 0;
+}
+
+p {
+  margin-block: 0;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-text);
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+button {
+  padding: 0;
+
+  cursor: pointer;
+  border: unset;
+  opacity: 1;
+  background: transparent;
+  transition: opacity 0.5s linear;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+input {
+  padding: 0;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
+:root {
+  --main-text: #000000;
+  --lightened-text: #a0a0a0;
+  --contrast-text: #ffffff;
+  --catchy-element: #ff4062;
+
+  --promo-background: #f3c1f8;
+  --main-background: #ffffff;
+  --contrast-background: #f5f5f5;
+
+  --light-strip: #f2f2f2;
+  --icons-substrate: #e8e8e8;
+  --contrast-elements: #000000;
+
+  --icons-substrate_2: #f9f9f9;
+  --inputs-substrate: #fdfdfd;
+  --tumbler-background: #2be080;
+  --icons-substrate_3: #ff4062;
+  --borders_2: #cbcbcb;
+  --borders_3: #e8e8e8;
+
+  --font-family: "Inter", sans-serif;
+
+  --inner-vertical-indents: 70px;
+  --laptop-vertical-indents-card-list: 80px;
+
+
+  --laptop-vertical-indents-base: 110px;
+  --laptop-vertical-indents-contrast: 100px;
+  --laptop-horizontal-indents: 70px;
+
+  --tablet-horizontal-indents: 30px;
+  --laptop-tablet-vertical-indents: 90px;
+  
+  --mobile-horizontal-indents-promo: 10px;
+  --mobile-horizontal-indents-big: 18px;
+  --mobile-horizontal-indents-small: 14px;
+  --mobile-vertical-indents-big: 70px;
+  --mobile-vertical-indents-medium: 60px;
+  --mobile-vertical-indents-smallest: 50px
+}

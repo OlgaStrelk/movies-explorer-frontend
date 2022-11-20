@@ -1,0 +1,26 @@
+.header__panel {
+  display: grid;
+  grid-template-areas: "logo movies account";
+  grid-template-columns: max-content auto max-content;
+  gap: 40px;
+  align-items: center;
+  min-height: 74px;
+}
+
+.header__logo {
+  grid-area: logo;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__panel {
+    padding-left: var(--tablet-horizontal-indents);
+	padding-right: var(--tablet-horizontal-indents);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__panel {
+    padding-left: var(--mobile-horizontal-indents-small);
+	padding-right: var(--mobile-horizontal-indents-small);
+  }
+}

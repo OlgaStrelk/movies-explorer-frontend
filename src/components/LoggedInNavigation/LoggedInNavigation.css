@@ -1,0 +1,24 @@
+.logged-in-bar {
+  grid-area: movies;
+  display: flex;
+}
+
+.logged-in-bar__list-item {
+  margin-left: 16px;
+}
+
+.logged-in-bar__link {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.logged-in-bar__link:first-of-type {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 1023px) {
+  .logged-in-bar {
+    display: none;
+  }
+}

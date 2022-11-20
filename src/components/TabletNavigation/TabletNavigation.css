@@ -1,0 +1,36 @@
+.tablet-navigation {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.tablet-navigation__list-item {
+  display: block;
+  margin-top: 19px;
+  padding-bottom: 7px;
+  text-align: center;
+
+  width: 100%;
+  position: relative;
+}
+
+.tablet-navigation__link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.tablet-navigation__link:first-of-type {
+  margin-top: 0;
+}
+
+.tablet-navigation__link.active {
+  border-bottom: 2px solid var(--main-text);
+}
+
+@media screen and (max-width: 767px) {
+  .tablet-navigation {
+    margin-top: 85px;
+  }
+}

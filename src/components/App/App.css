@@ -1,0 +1,101 @@
+.section {
+  padding-left: var(--laptop-horizontal-indents);
+  padding-right: var(--laptop-horizontal-indents);
+}
+
+.section__title {
+  padding-bottom: 23px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: -0.04em;
+  border-bottom: 1px solid var(--contrast-elements);
+}
+
+.section_type_promo {
+  background: var(--promo-background);
+}
+
+.section_type_base {
+  padding-top: var(--laptop-vertical-indents-base);
+  padding-bottom: var(--laptop-vertical-indents-base);
+
+  background: var(--main-background);
+}
+
+.section_type_contrast {
+  padding-top: var(--laptop-vertical-indents-contrast);
+  padding-bottom: var(--laptop-vertical-indents-contrast);
+
+  background: var(--contrast-background);
+}
+
+.section_type_auth {
+  margin: 0 auto;
+  padding-top: var(--inner-vertical-indents);
+  padding-bottom: var(--inner-vertical-indents);
+
+  height: calc(100vh - var(--inner-vertical-indents) * 2);
+  width: 396px;
+
+  display: grid;
+  grid-template-rows: repeat(2, max-content) 1fr;
+}
+
+@media screen and (max-width: 1023px) {
+  .section {
+    padding-left: var(--tablet-horizontal-indents);
+    padding-right: var(--tablet-horizontal-indents);
+  }
+
+  .section_type_contrast {
+  }
+
+  .section_type_base {
+    padding-top: var(--laptop-tablet-vertical-indents);
+    padding-bottom: var(--laptop-tablet-vertical-indents);
+  }
+
+  .section_type_auth {
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding: 0;
+  }
+  .section_type_promo {
+    background: var(--promo-background);
+    padding-left: var(--mobile-horizontal-indents-promo);
+    padding-right: var(--mobile-horizontal-indents-promo);
+  }
+
+  .section__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+  }
+
+  .section_type_base {
+    padding: var(--mobile-vertical-indents-big) var(--mobile-horizontal-indents-big);
+  }
+
+  .section_type_auth {
+    padding-top: 56px;
+    padding-bottom: 30px;
+
+    height: calc(100vh - 56px - 30px);
+    width: 260px;
+    text-align: center;
+  }
+
+  .section_type_about-me {
+    padding-left: var(--mobile-horizontal-indents-small);
+    padding-right: var(--mobile-horizontal-indents-small);
+  }
+
+  .section_type_contrast {
+    background: var(--main-background);
+    padding: var(--mobile-vertical-indents-big) var(--mobile-horizontal-indents-big);
+  }
+}

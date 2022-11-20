@@ -1,0 +1,55 @@
+.movies__search-form {
+  margin-left: var(--laptop-horizontal-indents);
+  margin-right: var(--laptop-horizontal-indents);
+  padding-top: var(--inner-vertical-indents);
+  padding-bottom: calc(var(--inner-vertical-indents) - 1px);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--borders_3);
+}
+
+.movies__content {
+  padding-top: 80px;
+  padding-left: var(--laptop-horizontal-indents);
+  padding-right: var(--laptop-horizontal-indents);
+  box-sizing: border-box;
+  min-height: calc(100vh - 74px - 212px - 172px);
+}
+
+.movies__btn {
+  padding-top: 50px;
+  padding-bottom: 80px;
+
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .movies__search-form {
+    margin-left: var(--tablet-horizontal-indents);
+    margin-right: var(--tablet-horizontal-indents);
+    padding-top: 80px;
+    padding-bottom: 110px;
+  }
+
+  .movies__content {
+    padding-left: var(--tablet-horizontal-indents);
+    padding-right: var(--tablet-horizontal-indents);
+    min-height: 60vh;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .movies__search-form {
+    margin-left: var(--mobile-horizontal-indents);
+    margin-right: var(--mobile-horizontal-indents);
+    padding-bottom: 0;
+
+    border: none;
+  }
+
+  .movies__content {
+    padding-top: 50px;
+    min-height: calc(100vh - 74px - 262px - 243px);
+
+  }
+}

@@ -1,0 +1,37 @@
+.nav {
+  background-color: var(--contrast-elements);
+  color: var(--button-text);
+}
+
+.nav__list {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.nav__item {
+  margin-left: 40px;
+}
+
+.nav__item:first-of-type {
+  margin-left: 0px;
+}
+
+.nav__link {
+  color: var(--contrast-text);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .nav__item {
+    margin-left: 24px;
+  }
+  .nav__link {
+    font-size: 11px;
+  }
+}

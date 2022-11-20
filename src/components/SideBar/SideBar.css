@@ -1,0 +1,42 @@
+.side-bar__overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.side-bar__container {
+  padding: 24px 0 92px;
+
+  background: var(--main-background);
+  width: 68%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  box-sizing: border-box;
+}
+
+.side-bar__close-btn {
+  width: 22px;
+  height: 22px;
+  margin-right: 24px;
+  justify-self: end;
+  background: center center no-repeat url("../../images/menu__cross.svg");
+}
+
+.side-bar__link {
+  width: 100px;
+  justify-self: center;
+}
+
+@media screen and (max-width: 767px) {
+  .side-bar__container {
+    padding: 15px 0 48px;
+
+    width: 100%;
+  }
+}
