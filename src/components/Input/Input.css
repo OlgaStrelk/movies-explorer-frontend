@@ -21,7 +21,11 @@
 
 .profile-input__field {
   height: 100%;
-  width: 122px;
+  width: 80%;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
 
   box-sizing: border-box;
   text-align: end;
@@ -33,7 +37,10 @@
 }
 
 .profile-input__field:focus-visible {
-  border-bottom: 1px solid var(--icons-substrate);
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray; 
+   border-right: 1px solid gray;
+
 }
 
 @media screen and (max-wifth: 767px) {

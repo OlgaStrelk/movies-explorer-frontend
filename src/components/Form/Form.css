@@ -7,7 +7,7 @@
   align-items: center;
   border-radius:  9px 0 0 9px;
   border: 3px solid transparent;
-
+  box-sizing: border-box;
 }
 
 .form__icon {
@@ -35,8 +35,8 @@
 
 
 .form__btn {
-  height: 22px;
-  width: 22px;
+  height: 34px;
+  width: 34px;
 
   display: flex;
   align-items: center;

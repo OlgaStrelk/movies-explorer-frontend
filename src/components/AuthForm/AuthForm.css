@@ -10,6 +10,8 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+
 .auth__label {
   display: block;
   font-size: 10px;
@@ -31,6 +33,14 @@
   color: var(--main-text);
   background: var(--icons-substrate_2);
   border-radius: 8px;
+}
+
+.auth__input:focus {
+  outline: none;
+}
+
+.auth__input:focus-visible {
+  outline: 2px solid black;
 }
 
 .auth__btn {
