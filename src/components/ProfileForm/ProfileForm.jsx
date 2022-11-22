@@ -38,12 +38,12 @@ function ProfileForm({ logOutHandler }) {
     },
   ];
 
-  const stylesConfig = {
+  const STYLES_CONFIG = {
     inputClassName: "profile-input__field",
     labelClassName: "profile-input__label",
   };
   const inputMarkup = INPUTS_DATA.map((input) => (
-    <Input key={input.id} data={input.data} styles={stylesConfig} />
+    <Input key={input.id} data={input.data} styles={STYLES_CONFIG} />
   ));
 
   const handleSignOutClick=()=> {

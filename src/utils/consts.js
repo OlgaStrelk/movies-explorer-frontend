@@ -1,3 +1,7 @@
+export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
+// export const BASE_URL = "http://localhost:3000";
+
+
 export const PATHS = {
   aboutProject: "/",
   movies: "/movies",

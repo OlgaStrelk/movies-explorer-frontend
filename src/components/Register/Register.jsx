@@ -3,7 +3,7 @@ import "./Register.css";
 import AuthForm from "../AuthForm/AuthForm";
 import { PATHS } from "../../utils/consts";
 
-function Register() {
+function Register(props) {
   const FORM_DATA = {
     title: "Добро пожаловать!",
     inputs: [
@@ -19,7 +19,7 @@ function Register() {
   return (
     <section className="section section_type_auth">
       <LogoLink />
-      <AuthForm data={FORM_DATA} />
+      <AuthForm handler={props.handler} data={FORM_DATA} />
     </section>
   );
 }

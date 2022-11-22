@@ -11,14 +11,14 @@ function Portfolio() {
     { id: 3, data: { href: "https://github.com/OlgaStrelk/react-mesto-api-full", title: "Одностраничное приложение" } },
   ];
 
-  const stylesConfig = {
+  const STYLES_CONFIG = {
     itemClassName: "list-item",
     linkClassName: "list-item__link",
     titleClassName: "list-item__title",
     iconClassName: "list-item__icon"
   }
   const linksMarkdown = LINKS_DATA.map((link) => (
-    <ListItem key={link.id} link={link.data} styles={stylesConfig}/>
+    <ListItem key={link.id} link={link.data} styles={STYLES_CONFIG}/>
   ));
   return (
     <>
