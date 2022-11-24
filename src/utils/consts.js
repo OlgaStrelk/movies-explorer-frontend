@@ -1,6 +1,12 @@
 export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
 // export const BASE_URL = "http://localhost:3000";
 
+export const VALIDATION_TEXT = {
+  registerErrorText: 'При регистрации пользователя',
+  loginErrorText: 'При аутентификации пользователя',
+  
+
+}
 
 export const PATHS = {
   aboutProject: "/",

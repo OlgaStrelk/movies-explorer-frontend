@@ -2,6 +2,7 @@
 import "./Form.css";
 
 function Form({ data }) {
+  
   const handleForm = (e) => {
     e.PreventDefault();
     console.log("You clicked submit.");

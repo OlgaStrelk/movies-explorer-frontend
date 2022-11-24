@@ -8,7 +8,7 @@ import "./App.css";
 import Main from "../Main/Main";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { PATHS } from "../../utils/consts";
+import { PATHS, VALIDATION_TEXT } from "../../utils/consts";
 import Movies from "../Movies/Movies";
 import Profile from "../Profile/Profile";
 import SavedMovies from "../SavedMovies/SavedMovies";
@@ -17,6 +17,7 @@ import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
 import { authorize, register } from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   let navigate = useNavigate();
@@ -25,11 +26,14 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
 
   const handleLogIn = (data) => {
-    authorize(data).then((token) => {
-      setCurrentUser(data);
-      setLoggedIn(true);
-      console.log(token);
-    });
+    authorize(data)
+      .then((token) => {
+        setCurrentUser(data);
+        setLoggedIn(true);
+      })
+      .catch((err) => {
+        console.log(`${VALIDATION_TEXT.loginErrorText} ${err}`);
+      });
   };
 
   const handleRegister = (data) => {
@@ -37,7 +41,9 @@ function App() {
       .then((res) => {
         handleLogIn({ email: data.email, password: data.password });
       })
-      .catch(() => {});
+      .catch((err) => {
+        console.log(`${VALIDATION_TEXT.registerErrorText} ${err}`);
+      });
   };
 
   const handleLogOut = () => {
@@ -56,19 +62,22 @@ function App() {
           <MenuStateContext.Provider value={isMenuOpen}>
             <Header handler={toggleMenuState} />
             <Routes>
+
               <Route exact path={PATHS.aboutProject} element={<Main />} />
               <Route
                 path={PATHS.profile}
-                element={<Profile logOutHandler={handleLogOut} />}
+                element={<ProtectedRoute><Profile logOutHandler={handleLogOut} /></ProtectedRoute>}
               ></Route>
               <Route
                 path={PATHS.movies}
-                element={<Movies handler={handleLogIn} />}
+                element={<ProtectedRoute><Movies handler={handleLogIn} /></ProtectedRoute>}
               ></Route>
               <Route
                 path={PATHS.savedMovies}
-                element={<SavedMovies handler={handleLogIn} />}
+                element={<ProtectedRoute><SavedMovies handler={handleLogIn} /></ProtectedRoute>}
               ></Route>
+
+
               <Route
                 path={PATHS.signup}
                 element={<Register handler={handleRegister} />}
