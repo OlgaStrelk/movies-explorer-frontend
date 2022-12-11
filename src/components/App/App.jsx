@@ -8,7 +8,7 @@ import "./App.css";
 import Main from "../Main/Main";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { PATHS, VALIDATION_TEXT } from "../../utils/consts";
+import { PATHS, BACKEND_VALIDATION_TEXT } from "../../utils/consts";
 import Movies from "../Movies/Movies";
 import Profile from "../Profile/Profile";
 import SavedMovies from "../SavedMovies/SavedMovies";
@@ -32,7 +32,7 @@ function App() {
         setLoggedIn(true);
       })
       .catch((err) => {
-        console.log(`${VALIDATION_TEXT.loginErrorText} ${err}`);
+        console.log(`${BACKEND_VALIDATION_TEXT.loginErrorText} ${err}`);
       });
   };
 
@@ -42,7 +42,7 @@ function App() {
         handleLogIn({ email: data.email, password: data.password });
       })
       .catch((err) => {
-        console.log(`${VALIDATION_TEXT.registerErrorText} ${err}`);
+        console.log(`${BACKEND_VALIDATION_TEXT.registerErrorText} ${err}`);
       });
   };
 

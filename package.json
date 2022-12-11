@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.39.7",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -17,7 +18,7 @@
     "build": "react-scripts build && scp -r ./build/* strelod@51.250.78.202:/home/strelod/frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-		"lint": "npx eslint . --fix"
+    "lint": "npx eslint . --fix"
   },
   "eslintConfig": {
     "extends": [
