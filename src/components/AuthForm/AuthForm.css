@@ -11,8 +11,12 @@
   justify-content: space-between;
 }
 
+.auth__error {
+  color: red;
+}
 
 .auth__label {
+  padding-bottom: 15px;
   display: block;
   font-size: 10px;
   font-weight: 400;
@@ -22,7 +26,7 @@
 
 .auth__input {
   margin-top: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   padding-left: 10px;
 
   width: 100%;

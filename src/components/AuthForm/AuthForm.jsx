@@ -1,5 +1,5 @@
 // import { Link, useNavigate } from "react-router-dom";
-// import "./AuthForm.css";
+import "./AuthForm.css";
 // import Input from "../Input/Input";
 // import { PATHS } from "../../utils/consts";
 
