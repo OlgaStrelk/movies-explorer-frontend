@@ -63,10 +63,12 @@ import { useForm } from "react-hook-form";
 function AuthForm({ defaultValues, children, onSubmit }) {
   const methods = useForm({ defaultValues });
   const { handleSubmit } = methods;
+  // console.log(methods.formState.isValid);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {Children.map(children, (child) => {
+        console.log(child.type === "SubmitButton");
         return child.props.name
           ? createElement(child.type, {
               ...{
@@ -76,11 +78,9 @@ function AuthForm({ defaultValues, children, onSubmit }) {
                 key: child.props.name,
               },
             })
-          : child.type === "SubmitButton"
-          ? createElement(child.type, {
+          : createElement(child.type, {
               ...{ ...child.props, isValid: methods.formState.isValid },
-            })
-          : child;
+            });
       })}
     </form>
   );

@@ -59,6 +59,7 @@
 }
 
 .auth__btn_disabled {
+  cursor: default;
   color: var(--lightened-text);
   background: var(--icons-substrate);
 }

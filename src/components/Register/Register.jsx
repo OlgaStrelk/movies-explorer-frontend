@@ -44,7 +44,12 @@ function Register(props) {
       required: true,
       pattern: "^([^ ]+@[^ ]+.[a-z]{2,6}|)$",
     },
-    { label: "Пароль", name: "password", type: "password", required: true },
+    {
+      label: "Пароль",
+      name: "password",
+      type: "password",
+      required: true,
+    },
   ];
 
   const inputsMarkup = INPUTS_DATA.map((input) => (
