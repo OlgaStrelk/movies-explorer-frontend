@@ -4,9 +4,9 @@ import AuthForm from "../AuthForm/AuthForm";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import { PATHS } from "../../utils/consts";
-function Login(props) {
+function Login({handler}) {
   const onSubmit = (data) => {
-    console.log(data);
+    handler(data);
   };
   
   const STYLES_CONFIG = {

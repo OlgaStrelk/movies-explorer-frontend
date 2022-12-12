@@ -7,7 +7,7 @@ export const register = (name, email, password) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, email, password }),
+    body: JSON.stringify( name, email, password ),
   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
 };
 export const authorize = (email, password) => {
@@ -17,7 +17,7 @@ export const authorize = (email, password) => {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ email, password }),
+    body: JSON.stringify( email, password ),
   })
     .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
     .then((data) => {

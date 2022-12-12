@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { LoggedInContext } from "../../contexts/LoggedInContext";
 import { MenuStateContext } from "../../contexts/MenuStateContext";
@@ -16,33 +17,44 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
+import Popup from "../Popup/Popup";
 import { authorize, register } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   let navigate = useNavigate();
+  const [infoToolTip, setInfoToolTip] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
+  console.log(infoToolTip);
   const handleLogIn = (data) => {
     authorize(data)
-      .then((token) => {
+      .then((res) => {
+        console.log(res);
         setCurrentUser(data);
         setLoggedIn(true);
+        navigate(PATHS.movies);
       })
       .catch((err) => {
-        console.log(`${BACKEND_VALIDATION_TEXT.loginErrorText} ${err}`);
+        if (err === 409) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+        }
+        console.log(err);
       });
   };
 
   const handleRegister = (data) => {
     register(data)
-      .then((res) => {
+      .then(() => {
         handleLogIn({ email: data.email, password: data.password });
       })
       .catch((err) => {
-        console.log(`${BACKEND_VALIDATION_TEXT.registerErrorText} ${err}`);
+        if (err === 409) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+        }
+        console.log(err);
       });
   };
 
@@ -62,21 +74,31 @@ function App() {
           <MenuStateContext.Provider value={isMenuOpen}>
             <Header handler={toggleMenuState} />
             <Routes>
-
               <Route exact path={PATHS.aboutProject} element={<Main />} />
               <Route
                 path={PATHS.profile}
-                element={<ProtectedRoute><Profile logOutHandler={handleLogOut} /></ProtectedRoute>}
+                element={
+                  <ProtectedRoute>
+                    <Profile logOutHandler={handleLogOut} />
+                  </ProtectedRoute>
+                }
               ></Route>
               <Route
                 path={PATHS.movies}
-                element={<ProtectedRoute><Movies handler={handleLogIn} /></ProtectedRoute>}
+                element={
+                  <ProtectedRoute>
+                    <Movies handler={handleLogIn} />
+                  </ProtectedRoute>
+                }
               ></Route>
               <Route
                 path={PATHS.savedMovies}
-                element={<ProtectedRoute><SavedMovies handler={handleLogIn} /></ProtectedRoute>}
+                element={
+                  <ProtectedRoute>
+                    <SavedMovies handler={handleLogIn} />
+                  </ProtectedRoute>
+                }
               ></Route>
-
 
               <Route
                 path={PATHS.signup}
@@ -90,6 +112,7 @@ function App() {
             </Routes>
             <Footer />
             {isMenuOpen && <SideBar toggleMenuState={toggleMenuState} />}
+            {infoToolTip && <Popup text={infoToolTip} />}
           </MenuStateContext.Provider>
         </LoggedInContext.Provider>
       </CurrentUserContext.Provider>

@@ -5,9 +5,9 @@ import { PATHS } from "../../utils/consts";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 
-function Register(props) {
+function Register({handler}) {
   const onSubmit = (data) => {
-    console.log(data);
+    handler(data)
   };
 
   const INPUTS_STYLES_CONFIG = {

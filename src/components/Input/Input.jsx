@@ -7,11 +7,10 @@ import {
 import { MIN_LENGTH, MAX_LENGTH, IS_EMAIL_REGEX } from "../../utils/consts";
 function Input({ register, name, errors, data, styles, ...rest }) {
   const { type, label } = data;
-console.log(name)
   return (
     <label className={styles.labelClassName}>
       {label}
-      {(name === "name") ? (
+      {name === "name" ? (
         <input
           type={type || "text"}
           className={styles.inputClassName}
@@ -28,7 +27,7 @@ console.log(name)
           })}
           {...rest}
         />
-      ) : (name === "email") ? (
+      ) : name === "email" ? (
         <input
           type={type || "text"}
           className={styles.inputClassName}
