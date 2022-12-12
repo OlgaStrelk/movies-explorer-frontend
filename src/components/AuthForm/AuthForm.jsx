@@ -53,11 +53,11 @@ import "./AuthForm.css";
 
 // export default AuthForm;
 
-  // const inputMarkup = data.inputs.map((input) => (
-  //   <Input key={input.id} data={input.data} styles={INPUTS_STYLES_CONFIG} />
-  // ));
+// const inputMarkup = data.inputs.map((input) => (
+//   <Input key={input.id} data={input.data} styles={INPUTS_STYLES_CONFIG} />
+// ));
 
-import React from "react";
+import React, { createElement, Children } from "react";
 import { useForm } from "react-hook-form";
 
 function AuthForm({ defaultValues, children, onSubmit }) {
@@ -66,18 +66,22 @@ function AuthForm({ defaultValues, children, onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      {React.Children.map(children, child => {
+      {Children.map(children, (child) => {
         return child.props.name
-          ? React.createElement(child.type, {
+          ? createElement(child.type, {
               ...{
                 ...child.props,
                 register: methods.register,
                 errors: methods.formState.errors,
-                key: child.props.name
-              }
+                key: child.props.name,
+              },
+            })
+          : child.type === "SubmitButton"
+          ? createElement(child.type, {
+              ...{ ...child.props, isValid: methods.formState.isValid },
             })
           : child;
-       })}
+      })}
     </form>
   );
 }

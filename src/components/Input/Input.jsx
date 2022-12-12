@@ -1,11 +1,12 @@
 import { INPUT_IS_REQUIRED_TEXT } from "../../utils/errorTexts";
 
 function Input({ register, errors, data, styles, ...rest }) {
-  const { name } = data;
+  const { name, type, label } = data;
   return (
     <label className={styles.labelClassName}>
-      {data.label}
+      {label}
       <input
+        type={type || "text"}
         className={styles.inputClassName}
         {...register(name, {
           required: INPUT_IS_REQUIRED_TEXT,

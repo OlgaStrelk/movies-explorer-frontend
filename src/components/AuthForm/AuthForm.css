@@ -58,6 +58,11 @@
   line-height: 17px;
 }
 
+.auth__btn_disabled {
+  color: var(--lightened-text);
+  background: var(--icons-substrate);
+}
+
 .auth__caption {
   font-size: 14px;
   font-weight: 400;
