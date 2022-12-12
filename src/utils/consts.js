@@ -1,6 +1,10 @@
 export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
 // export const BASE_URL = "http://localhost:3000";
 
+export const MIN_LENGTH = 2
+export const MAX_LENGTH = 30
+export const IS_EMAIL_REGEX = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
+
 export const BACKEND_VALIDATION_TEXT = {
   registerErrorText: 'При регистрации пользователя',
   loginErrorText: 'При аутентификации пользователя',
