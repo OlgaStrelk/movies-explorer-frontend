@@ -4,11 +4,14 @@ import AuthForm from "../AuthForm/AuthForm";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import { PATHS } from "../../utils/consts";
-function Login({handler}) {
+import Popup from "../Popup/Popup";
+
+
+function Login({ handler, infoToolTip, isOpen, onClose }) {
   const onSubmit = (data) => {
     handler(data);
   };
-  
+
   const STYLES_CONFIG = {
     sectionClassName: "section section_type_auth",
   };
@@ -31,8 +34,8 @@ function Login({handler}) {
   };
 
   const INPUTS_DATA = [
-    { label: "E-mail", name: "email", type: "email", required: true },
-    { label: "Пароль", name: "password", type: "password", required: true },
+    { label: "E-mail", name: "email", type: "email" },
+    { label: "Пароль", name: "password", type: "password" },
   ];
 
   const inputsMarkup = INPUTS_DATA.map((input) => (
@@ -45,14 +48,21 @@ function Login({handler}) {
   ));
 
   return (
-    <section className={STYLES_CONFIG.sectionClassName}>
-      <LogoLink />
-      <h1 className={FORM_DATA.className}>{FORM_DATA.title}</h1>
-      <AuthForm onSubmit={onSubmit}>
-        {inputsMarkup}
-        <SubmitButton data={SUBMIT_BTN_DATA} />
-      </AuthForm>
-    </section>
+    <>
+      <section className={STYLES_CONFIG.sectionClassName}>
+        <LogoLink />
+        <h1 className={FORM_DATA.className}>{FORM_DATA.title}</h1>
+        <AuthForm onSubmit={onSubmit}>
+          {inputsMarkup}
+          <SubmitButton data={SUBMIT_BTN_DATA} />
+        </AuthForm>
+      </section>
+      <Popup
+        isOpen={isOpen}
+        text={infoToolTip}
+        onClose={onClose}
+      />
+    </>
   );
 }
 

@@ -17,7 +17,6 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
-import Popup from "../Popup/Popup";
 import { authorize, register } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
@@ -27,12 +26,20 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
-  console.log(infoToolTip);
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+    setInfoToolTip("");
+  };
+
   const handleLogIn = (data) => {
     authorize(data)
       .then((res) => {
-        console.log(res);
         setCurrentUser(data);
         setLoggedIn(true);
         navigate(PATHS.movies);
@@ -40,6 +47,7 @@ function App() {
       .catch((err) => {
         if (err === 409) {
           setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+          openPopup();
         }
         console.log(err);
       });
@@ -53,6 +61,7 @@ function App() {
       .catch((err) => {
         if (err === 409) {
           setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+          openPopup();
         }
         console.log(err);
       });
@@ -102,17 +111,30 @@ function App() {
 
               <Route
                 path={PATHS.signup}
-                element={<Register handler={handleRegister} />}
+                element={
+                  <Register
+                    infoToolTip={infoToolTip}
+                    isOpen={isPopupOpen}
+                    onClose={closePopup}
+                    handler={handleRegister}
+                  />
+                }
               ></Route>
               <Route
                 path={PATHS.signin}
-                element={<Login handler={handleLogIn} />}
+                element={
+                  <Login
+                    infoToolTip={infoToolTip}
+                    isOpen={isPopupOpen}
+                    onClose={closePopup}
+                    handler={handleLogIn}
+                  />
+                }
               ></Route>
               <Route path={PATHS.others} element={<PageNotFound />}></Route>
             </Routes>
             <Footer />
             {isMenuOpen && <SideBar toggleMenuState={toggleMenuState} />}
-            {infoToolTip && <Popup text={infoToolTip} />}
           </MenuStateContext.Provider>
         </LoggedInContext.Provider>
       </CurrentUserContext.Provider>

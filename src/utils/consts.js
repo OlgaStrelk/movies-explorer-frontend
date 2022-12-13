@@ -6,7 +6,7 @@ export const MAX_LENGTH = 30
 export const IS_EMAIL_REGEX = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
 
 export const BACKEND_VALIDATION_TEXT = {
-  conflictErrorText: 'Данный email уже занят',
+  conflictErrorText: 'К сожалению, этот email уже занят',
   // ErrorText: 'При аутентификации пользователя',
 }
 
