@@ -3,11 +3,11 @@ export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
 
 export const MIN_LENGTH = 2
 export const MAX_LENGTH = 30
-export const IS_EMAIL_REGEX = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/
+// export const IS_EMAIL_REGEX =   /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 export const BACKEND_VALIDATION_TEXT = {
   conflictErrorText: 'К сожалению, этот email уже занят',
-  // ErrorText: 'При аутентификации пользователя',
+  badRequestErrorText: 'Введенный вами email некорректен',
 }
 
 export const PATHS = {

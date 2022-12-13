@@ -1,3 +1,4 @@
+import validator from 'validator'
 import LogoLink from "../LogoLink/LogoLink";
 import "./Register.css";
 import AuthForm from "../AuthForm/AuthForm";
@@ -7,6 +8,7 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import Popup from "../Popup/Popup";
 
 function Register({ handler, infoToolTip, isOpen, onClose }) {
+
   const onSubmit = (data) => {
     handler(data);
   };
