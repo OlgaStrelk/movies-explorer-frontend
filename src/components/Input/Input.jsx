@@ -2,7 +2,7 @@ import { useFormContext } from "react-hook-form";
 
 function Input({ name, data, styles, ...rest }) {
   const { type, label } = data;
-  const { register, formState } = useFormContext(); 
+  const { register, formState } = useFormContext();
 
   return (
     <label className={styles.labelClassName}>
