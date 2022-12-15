@@ -51,7 +51,6 @@ function Register({ handler, infoToolTip, isOpen, onClose }) {
   const inputsMarkup = INPUTS_DATA.map((input) => (
     <Input
       key={input.name}
-      name={input.name}
       data={input}
       styles={INPUTS_STYLES_CONFIG}
     />

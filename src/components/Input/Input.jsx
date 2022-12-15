@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 
-function Input({ name, data, styles, ...rest }) {
-  const { type, label } = data;
+function Input({ data, styles, ...rest }) {
+  const { type, label, name } = data;
   const { register, formState } = useFormContext();
 
   return (
