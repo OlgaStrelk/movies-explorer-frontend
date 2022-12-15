@@ -1,10 +1,5 @@
 import "./AuthForm.css";
-import React, { createElement, Children } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import {
-  useJoiValidationResolver,
-  validationSchema,
-} from "../../hooks/useEmailValidation";
 
 function AuthForm({ defaultValues, children, onSubmit }) {
   // const resolver = useJoiValidationResolver(validationSchema);
