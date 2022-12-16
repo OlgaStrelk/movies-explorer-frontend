@@ -12,10 +12,8 @@
 //   useCallback(
 //     async (data) => {
 //       try {
-//         const values = await validationSchema.validate(data, {
-//           abortEarly: false,
-//         });
-//         console.log(`values ${values}`);
+//         const result = await validationSchema.validate(data, { abortEarly: false });
+//         console.log(`result ${result}`);
 
 //         return {
 //           values,
@@ -41,13 +39,41 @@
 //     [validationSchema]
 //   );
 
-// export const validationSchema = Joi.object({
+// export const validationSchema = Joi.object().keys({
 //   name: Joi.string()
-//     .required(INPUT_IS_REQUIRED_TEXT)
+//     .alphanum()
 //     .min(MIN_LENGTH)
-//     .max(MAX_LENGTH),
+//     .max(MAX_LENGTH)
+//     .required()
+//     .error(errors => {
+//       errors.forEach(err => {
+//         switch (err.code) {
+//           case "any.empty":
+//             err.message = "Value should not be empty!";
+//             break;
+//           case "string.min":
+//             err.message = `Value should have at least ${err.local.limit} characters!`;
+//             break;
+//           case "string.max":
+//             err.message = `Value should have at most ${err.local.limit} characters!`;
+//             break;
+//           default:
+//             break;
+//         }
+//       });
+//       return errors;
+//     }),
+    // .messages({
+    //   'string.base': ``,
+    //   'string.empty': ``,
+    //   'string.min': `${MIN_LENGTH}{#limit}`,
+    //   'string.min': `${MAX_LENGTH}{#limit}`,
+    //   'any.required': `${INPUT_IS_REQUIRED_TEXT}`
+
+//     }),
+
 //   email: Joi.string()
-//     .required(INPUT_IS_REQUIRED_TEXT)
-//     .email(INVALID_EMAIL_TEXT),
-//   password: Joi.string().required(INPUT_IS_REQUIRED_TEXT),
+//     .email({ tlds: {allow: false}})
+//     .required(),
+//   password: Joi.string().required(),
 // });
