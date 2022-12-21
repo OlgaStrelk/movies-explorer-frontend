@@ -3,7 +3,6 @@ import { FormProvider, useForm } from "react-hook-form";
 import { useJoiValidationResolver, validationSchema } from "../../hooks/useEmailValidation";
 function AuthForm({ children, onSubmit }) {
   const resolver = useJoiValidationResolver(validationSchema);
-  //{ resolver }
   const methods = useForm({ resolver });
 
   const { handleSubmit } = methods;

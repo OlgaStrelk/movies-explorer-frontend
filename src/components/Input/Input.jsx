@@ -13,11 +13,11 @@ function Input({ data, styles, ...rest }) {
           {...register(name)}
           {...rest}
         />
-      {/* {name in formState.errors && (
+      {name in formState.errors && (
         <span className={styles.errorTextClassName}>
           {formState.errors[name].message}
         </span>
-      )} */}
+      )}
     </label>
   );
 }

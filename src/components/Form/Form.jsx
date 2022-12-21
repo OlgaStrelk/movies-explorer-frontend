@@ -1,7 +1,9 @@
-//SearcherForm
+import { useForm } from "react-hook-form";
+
 import "./Form.css";
 
 function Form({ data }) {
+  
   
   const handleForm = (e) => {
     e.PreventDefault();

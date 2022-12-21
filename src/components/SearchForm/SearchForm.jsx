@@ -1,9 +1,11 @@
+
 import "./SearchForm.css";
 import Form from "../Form/Form";
 import SearchBtnIcon from "../../images/search-btn__icon.svg";
 import Tumbler from "../Tumbler/Tumbler";
 
 function SearchForm() {
+  
   const TUMBLER_DATA = {
     title: "Короткометражки",
   };

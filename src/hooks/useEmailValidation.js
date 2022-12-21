@@ -8,63 +8,26 @@ import {
 import { useCallback } from "react";
 import { MAX_LENGTH, MIN_LENGTH } from "../utils/consts";
 
-// export const useJoiValidationResolver = (validationSchema) =>
-//   useCallback(
-//     async (data) => {
-//       try {
-//         console.log(data);
-//         const values = await Joi.validate(data, validationSchema, {abortEarly: false});
-//         console.log(`values ${values}`);
-
-//         return {
-//           values,
-//           errors: {},
-//         };
-//       } catch (errors) {
-//         console.log(`errors ${errors}`);
-//         return {
-//           values: {},
-//             errors: errors?.inner?.reduce(
-//               (allErrors, currentError) => ({
-//                 ...allErrors,
-//                 [currentError.path]: {
-//                   type: currentError.type ?? "validation",
-//                   message: currentError.message,
-//                 },
-//               }),
-//               {}
-//             ),
-//         };
-//       }
-//     },
-//     [validationSchema]
-//   );
-//().keys
-
 export const useJoiValidationResolver = (validationSchema) =>
   useCallback(
     async (data) => {
       try {
         const values = await validationSchema.validateAsync(data);
-        console.log(values);
         return {
           values,
           errors: {},
         };
       } catch (errors) {
-        console.log(errors);
         return {
           values: {},
-          errors: errors?.inner?.reduce(
-            (allErrors, currentError) => ({
-              ...allErrors,
-              [currentError.path]: {
-                type: currentError.type ?? "validation",
-                message: currentError.message,
-              },
-            }),
-            {}
-          ),
+          errors: errors
+        //   errors: errors.inner.reduce((allErrors, currentError) => ({
+        //     ...allErrors,
+        //     [currentError.path]: {
+        //       type: currentError.type ?? "validation",
+        //       message: currentError.message,
+        //     },
+        //   })),
         };
       }
     },
