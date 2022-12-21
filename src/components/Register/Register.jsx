@@ -1,4 +1,3 @@
-import validator from 'validator'
 import LogoLink from "../LogoLink/LogoLink";
 import "./Register.css";
 import AuthForm from "../AuthForm/AuthForm";
@@ -8,7 +7,6 @@ import SubmitButton from "../SubmitButton/SubmitButton";
 import Popup from "../Popup/Popup";
 
 function Register({ handler, infoToolTip, isOpen, onClose }) {
-
   const onSubmit = (data) => {
     handler(data);
   };
@@ -32,28 +30,33 @@ function Register({ handler, infoToolTip, isOpen, onClose }) {
 
   const INPUTS_DATA = [
     {
-      label: "Имя",
-      name: "name",
-      type: "text",
+      id: 11,
+      data: {
+        label: "Имя",
+        name: "name",
+        type: "text",
+      },
     },
     {
-      label: "E-mail",
-      name: "email",
-      type: "email",
+      id: 12,
+      data: {
+        label: "E-mail",
+        name: "email",
+        type: "email",
+      },
     },
     {
-      label: "Пароль",
-      name: "password",
-      type: "password",
+      id: 13,
+      data: {
+        label: "Пароль",
+        name: "password",
+        type: "password",
+      },
     },
   ];
 
   const inputsMarkup = INPUTS_DATA.map((input) => (
-    <Input
-      key={input.name}
-      data={input}
-      styles={INPUTS_STYLES_CONFIG}
-    />
+    <Input key={input.id} data={input.data} styles={INPUTS_STYLES_CONFIG} />
   ));
 
   return (

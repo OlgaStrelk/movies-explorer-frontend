@@ -3,14 +3,17 @@ import { useForm } from "react-hook-form";
 import "./Form.css";
 
 function Form({ data }) {
-  
+  const methods = useForm();
+  const { handleSubmit } = methods;
+
+
   
   const handleForm = (e) => {
     e.PreventDefault();
     console.log("You clicked submit.");
   };
   return (
-    <form className="form" onSubmit={(e) => handleForm()}>
+    <form className="form" onSubmit={handleSubmit(handleForm)}>
       <div className="form__icon"></div>
       <input
         className="form__input"

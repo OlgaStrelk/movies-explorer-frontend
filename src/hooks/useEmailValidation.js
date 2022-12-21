@@ -1,69 +1,61 @@
-import Joi from "joi";
+// import Joi from "joi";
 
-import {
-  INPUT_IS_REQUIRED_TEXT,
-  INVALID_EMAIL_TEXT,
-} from "../utils/errorTexts";
+// import {
+//   INPUT_IS_REQUIRED_TEXT,
+//   INVALID_EMAIL_TEXT,
+// } from "../utils/errorTexts";
 
-import { useCallback } from "react";
-import { MAX_LENGTH, MIN_LENGTH } from "../utils/consts";
+// import { useCallback } from "react";
+// import { MAX_LENGTH, MIN_LENGTH } from "../utils/consts";
 
-export const useJoiValidationResolver = (validationSchema) =>
-  useCallback(
-    async (data) => {
-      try {
-        const values = await validationSchema.validateAsync(data);
-        return {
-          values,
-          errors: {},
-        };
-      } catch (errors) {
-        return {
-          values: {},
-          errors: errors
-        //   errors: errors.inner.reduce((allErrors, currentError) => ({
-        //     ...allErrors,
-        //     [currentError.path]: {
-        //       type: currentError.type ?? "validation",
-        //       message: currentError.message,
-        //     },
-        //   })),
-        };
-      }
-    },
-    [validationSchema]
-  );
+// export const useJoiValidationResolver = (validationSchema, context) =>
+// //   useCallback(
+//     async (data, context) => {
+//       const { error, value: values } = validationSchema.validate(data, {
+//         abortEarly: false,
+//       });
 
-export const validationSchema = Joi.object({
-  name: Joi.string().alphanum().min(MIN_LENGTH).max(MAX_LENGTH).required(),
-  // .error((errors) => {
-  //   errors.forEach((err) => {
-  //     switch (err.code) {
-  //       case "any.empty":
-  //         err.message = "Value should not be empty!";
-  //         break;
-  //       case "string.min":
-  //         err.message = `Value should have at least ${err.local.limit} characters!`;
-  //         break;
-  //       case "string.max":
-  //         err.message = `Value should have at most ${err.local.limit} characters!`;
-  //         break;
-  //       default:
-  //         break;
-  //     }
-  //   });
-  //   return errors;
-  // }),
-  //   .messages({
-  //     'string.base': ``,
-  //     'string.empty': ``,
-  //     'string.min': `${MIN_LENGTH}{#limit}`,
-  //     'string.min': `${MAX_LENGTH}{#limit}`,
-  //     'any.required': `${INPUT_IS_REQUIRED_TEXT}`
+//       if (!error) return { values: values, errors: {} };
 
-  //   }),
-  email: Joi.string()
-    .email({ tlds: { allow: false } })
-    .required(),
-  password: Joi.string().required(),
-});
+//       return {
+//         values: {},
+//         errors: error.details.reduce(
+//           (previous, currentError) => ({
+//             ...previous,
+//             [currentError.path[0]]: currentError,
+//           }),
+//           {}
+//         ),
+//       };
+//     },
+// //     [validationSchema]
+// //   );
+
+
+//   // .error((errors) => {
+//   //   errors.forEach((err) => {
+//   //     switch (err.code) {
+//   //       case "any.empty":
+//   //         err.message = "Value should not be empty!";
+//   //         break;
+//   //       case "string.min":
+//   //         err.message = `Value should have at least ${err.local.limit} characters!`;
+//   //         break;
+//   //       case "string.max":
+//   //         err.message = `Value should have at most ${err.local.limit} characters!`;
+//   //         break;
+//   //       default:
+//   //         break;
+//   //     }
+//   //   });
+//   //   return errors;
+//   // }),
+    // .messages({
+    //   'string.base': ``,
+    //   'string.empty': ``,
+    //   'string.min': `${MIN_LENGTH}{#limit}`,
+    //   'string.min': `${MAX_LENGTH}{#limit}`,
+    //   'any.required': `${INPUT_IS_REQUIRED_TEXT}`
+
+    // }),
+// });

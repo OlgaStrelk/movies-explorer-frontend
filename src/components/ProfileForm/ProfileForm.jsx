@@ -1,10 +1,16 @@
 import { Link, redirect, useNavigate } from "react-router-dom";
+import { FormProvider, useForm } from "react-hook-form";
+
 import { PATHS } from "../../utils/consts";
 
 import Input from "../Input/Input";
 import "./ProfileForm.css";
 
 function ProfileForm({ logOutHandler }) {
+  // const resolver = useJoiValidationResolver(validationSchema);
+  // const methods = useForm({ resolver });
+
+  // const { handleSubmit } = methods;
   const navigate = useNavigate();
 
   const INPUTS_DATA = [
@@ -13,13 +19,7 @@ function ProfileForm({ logOutHandler }) {
       data: {
         label: "Имя",
         type: "text",
-        id: "name",
         name: "name",
-        required: true,
-        value: "Ольга",
-        onChange: () => {
-          console.log("Меняюсь");
-        },
       },
     },
     {
@@ -27,13 +27,7 @@ function ProfileForm({ logOutHandler }) {
       data: {
         label: "E-mail",
         type: "email",
-        id: "email",
         name: "email",
-        required: true,
-        value: "strelod@gmail.com",
-        onChange: () => {
-          console.log("Меняюсь");
-        },
       },
     },
   ];
@@ -52,7 +46,7 @@ function ProfileForm({ logOutHandler }) {
   }
   const BTNS_DATA = [
     {
-      id: 1,
+      id: 7,
       data: {
         title: "Редактировать",
         uniqueStyle: "profile-form__btn_type_edit",
@@ -61,7 +55,7 @@ function ProfileForm({ logOutHandler }) {
       },
     },
     {
-      id: 2,
+      id: 8,
       data: {
         title: "Выйти из аккаунта",
         uniqueStyle: "profile-form__btn_type_sign-out",
@@ -87,8 +81,13 @@ function ProfileForm({ logOutHandler }) {
     );
   });
 
+  const onSubmit =() => {
+    console.log("поменяли")
+  }
+
   return (
-    <form className="profile-form">
+//onSubmit={handleSubmit(onSubmit)}
+    <form className="profile-form" >
       <div>{inputMarkup}</div>
       <div className="profile-form__container">{btnsMarkup}</div>
     </form>
