@@ -5,10 +5,10 @@ function Input({ data, styles, ...rest }) {
   const { type, label, name } = data;
   const {
     register,
-    formState: { errors }
+    formState: { errors },
   } = useFormContext();
 
-  console.log(errors[name]?.message)
+  console.log(errors[name]?.message);
   return (
     <label className={styles.labelClassName}>
       {label}
@@ -19,11 +19,11 @@ function Input({ data, styles, ...rest }) {
         {...rest}
       />
       {name in errors && (
-      <span className={styles.errorTextClassName}>
+        <span className={styles.errorTextClassName}>
           {errors[name].message}
         </span>
-      // <ErrorMessage className={styles.errorTextClassName} errors={errors} name={name} />
       )}
+      {/* <ErrorMessage className={styles.errorTextClassName} errors={errors} name={name} /> */}
     </label>
   );
 }
