@@ -1,5 +1,5 @@
 import { useFormContext } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
+// import { ErrorMessage } from "@hookform/error-message";
 
 function Input({ data, styles, ...rest }) {
   const { type, label, name } = data;
@@ -8,7 +8,6 @@ function Input({ data, styles, ...rest }) {
     formState: { errors },
   } = useFormContext();
 
-  console.log(errors[name]?.message);
   return (
     <label className={styles.labelClassName}>
       {label}

@@ -52,6 +52,7 @@ function App() {
         console.log(err);
       });
   };
+  console.log(currentUser)
 
   const handleRegister = (data) => {
     register(data)

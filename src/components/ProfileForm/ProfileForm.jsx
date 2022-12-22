@@ -1,16 +1,32 @@
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
+import { joiResolver } from "@hookform/resolvers/joi";
 
+import { profileValidationSchema } from "../../utils/joiValidationSchema";
 import { PATHS } from "../../utils/consts";
 
 import Input from "../Input/Input";
 import "./ProfileForm.css";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function ProfileForm({ logOutHandler }) {
-  // const resolver = useJoiValidationResolver(validationSchema);
-  // const methods = useForm({ resolver });
+  const currentUser = useContext(CurrentUserContext);
 
-  // const { handleSubmit } = methods;
+  const methods = useForm({
+    resolver: joiResolver(profileValidationSchema),
+    // resolver: async (data, context, options) => {
+    //   // you can debug your validation schema here
+    //   console.log("formData", data);
+    //   console.log(
+    //     "validation result",
+    //     await joiResolver(validationSchema)(data, context, options)
+    //   );
+    //   return joiResolver(validationSchema)(data, context, options);
+    // },
+    mode: "onChange",
+    defaultValues: currentUser,
+  });
   const navigate = useNavigate();
 
   const INPUTS_DATA = [
@@ -40,10 +56,10 @@ function ProfileForm({ logOutHandler }) {
     <Input key={input.id} data={input.data} styles={STYLES_CONFIG} />
   ));
 
-  const handleSignOutClick=()=> {
+  const handleSignOutClick = () => {
     logOutHandler();
-    navigate(PATHS.aboutProject)
-  }
+    navigate(PATHS.aboutProject);
+  };
   const BTNS_DATA = [
     {
       id: 7,
@@ -61,7 +77,7 @@ function ProfileForm({ logOutHandler }) {
         uniqueStyle: "profile-form__btn_type_sign-out",
         type: "button",
         disabled: false,
-        clickHandler: handleSignOutClick
+        clickHandler: handleSignOutClick,
       },
     },
   ];
@@ -81,16 +97,18 @@ function ProfileForm({ logOutHandler }) {
     );
   });
 
-  const onSubmit =() => {
-    console.log("поменяли")
-  }
+  const onSubmit = () => {
+    console.log("поменяли");
+  };
 
   return (
-//onSubmit={handleSubmit(onSubmit)}
-    <form className="profile-form" >
-      <div>{inputMarkup}</div>
-      <div className="profile-form__container">{btnsMarkup}</div>
-    </form>
+    //onSubmit={handleSubmit(onSubmit)}
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(onSubmit)} className="profile-form">
+        <div>{inputMarkup}</div>
+        <div className="profile-form__container">{btnsMarkup}</div>
+      </form>
+    </FormProvider>
   );
 }
 

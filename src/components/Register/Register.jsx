@@ -5,10 +5,15 @@ import { PATHS } from "../../utils/consts";
 import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import Popup from "../Popup/Popup";
+import { registerValidationSchema } from "../../utils/joiValidationSchema";
 
 function Register({ handler, infoToolTip, isOpen, onClose }) {
   const onSubmit = (data) => {
     handler(data);
+  };
+
+  const STYLES_CONFIG = {
+    sectionClassName: "section section_type_auth",
   };
 
   const INPUTS_STYLES_CONFIG = {
@@ -61,10 +66,13 @@ function Register({ handler, infoToolTip, isOpen, onClose }) {
 
   return (
     <>
-      <section className="section section_type_auth">
+      <section className={STYLES_CONFIG.sectionClassName}>
         <LogoLink />
         <h1 className={FORM_DATA.className}>{FORM_DATA.title}</h1>
-        <AuthForm onSubmit={onSubmit}>
+        <AuthForm
+          onSubmit={onSubmit}
+          validationScema={registerValidationSchema}
+        >
           {inputsMarkup}
           <SubmitButton data={SUBMIT_BTN_DATA} />
         </AuthForm>
