@@ -8,8 +8,11 @@ import { PATHS } from "../../utils/consts";
 import Input from "../Input/Input";
 import "./ProfileForm.css";
 import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { updateProfile } from "../../utils/MainApi";
 
-function ProfileForm({ logOutHandler, currentUser }) {
+function ProfileForm({ logOutHandler, setCurrentUser }) {
+  const currentUser = useContext(CurrentUserContext);
 
   const methods = useForm({
     resolver: joiResolver(profileValidationSchema),
@@ -26,6 +29,18 @@ function ProfileForm({ logOutHandler, currentUser }) {
     defaultValues: currentUser,
   });
   const navigate = useNavigate();
+
+  const STYLES_CONFIG = {
+    formClassName: "form_type_profile",
+    containerClassName: "form__container_type_profile",
+    input: {
+      inputClassName: "form__input_type_profile",
+      labelClassName: "form__label_type_profile",
+    },
+    btnClassName: "form__btn_type_profile",
+    signOutBtnClassName: "form__btn_type_sign-out",
+    editBtnClassName: "form__btn_type_edit-profile",
+  };
 
   const INPUTS_DATA = [
     {
@@ -46,12 +61,9 @@ function ProfileForm({ logOutHandler, currentUser }) {
     },
   ];
 
-  const STYLES_CONFIG = {
-    inputClassName: "profile-input__field",
-    labelClassName: "profile-input__label",
-  };
+
   const inputMarkup = INPUTS_DATA.map((input) => (
-    <Input key={input.id} data={input.data} styles={STYLES_CONFIG} />
+    <Input key={input.id} data={input.data} styles={STYLES_CONFIG.input} />
   ));
 
   const handleSignOutClick = () => {
@@ -63,7 +75,7 @@ function ProfileForm({ logOutHandler, currentUser }) {
       id: 7,
       data: {
         title: "Редактировать",
-        uniqueStyle: "profile-form__btn_type_edit",
+        uniqueStyle: STYLES_CONFIG.editBtnClassName,
         type: "submit",
         disabled: true,
       },
@@ -72,7 +84,7 @@ function ProfileForm({ logOutHandler, currentUser }) {
       id: 8,
       data: {
         title: "Выйти из аккаунта",
-        uniqueStyle: "profile-form__btn_type_sign-out",
+        uniqueStyle: STYLES_CONFIG.signOutBtnClassName,
         type: "button",
         disabled: false,
         clickHandler: handleSignOutClick,
@@ -81,7 +93,7 @@ function ProfileForm({ logOutHandler, currentUser }) {
   ];
 
   const btnsMarkup = BTNS_DATA.map((btn) => {
-    let btnClassName = `profile-form__btn ${btn.data.uniqueStyle}`;
+    let btnClassName = `${STYLES_CONFIG.btnClassName} ${btn.data.uniqueStyle}`;
     return (
       <button
         key={btn.id}
@@ -95,16 +107,20 @@ function ProfileForm({ logOutHandler, currentUser }) {
     );
   });
 
-  const onSubmit = () => {
-    console.log("поменяли");
+  const onSubmit = (data) => {
+    updateProfile().then((data) => {
+      setCurrentUser(data);
+    });
   };
 
   return (
-    //onSubmit={handleSubmit(onSubmit)}
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)} className="profile-form">
+      <form
+        onSubmit={methods.handleSubmit(onSubmit)}
+        className={STYLES_CONFIG.formClassName}
+      >
         <div>{inputMarkup}</div>
-        <div className="profile-form__container">{btnsMarkup}</div>
+        <div className={STYLES_CONFIG.containerClassName}>{btnsMarkup}</div>
       </form>
     </FormProvider>
   );

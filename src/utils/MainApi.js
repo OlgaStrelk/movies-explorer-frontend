@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BASE_URL, token } from "./consts";
 
 export const register = (name, email, password) => {
@@ -38,6 +39,16 @@ export const getProfile = () => {
   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
 };
 
+export const updateProfile = () => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+};
 // export const checkToken = (token) => {
 //   return fetch(`${BASE_URL}/users/me`, {
 //     method: "GET",

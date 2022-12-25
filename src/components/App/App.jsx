@@ -76,7 +76,7 @@ function App() {
 
   const handleLogOut = () => {
     setLoggedIn(false);
-    setCurrentUser({})
+    setCurrentUser({});
   };
 
   const toggleMenuState = () => {
