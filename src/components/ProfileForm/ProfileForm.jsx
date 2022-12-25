@@ -25,9 +25,12 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     //   );
     //   return joiResolver(validationSchema)(data, context, options);
     // },
-    mode: "onChange",
-    defaultValues: currentUser,
+    mode: "onBlur",
+    defaultValues: {name: currentUser.name, email: currentUser.email},
   });
+
+  console.log(currentUser)
+
   const navigate = useNavigate();
 
   const STYLES_CONFIG = {
@@ -107,9 +110,9 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     );
   });
 
-  const onSubmit = (data) => {
-    updateProfile().then((data) => {
-      setCurrentUser(data);
+  const onSubmit = (inputsData) => {
+    updateProfile(inputsData).then((userData) => {
+      setCurrentUser(userData);
     });
   };
 
