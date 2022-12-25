@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { LoggedInContext } from "../../contexts/LoggedInContext";
@@ -17,7 +17,7 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
-import { authorize, register } from "../../utils/MainApi";
+import { authorize, getProfile, register } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
@@ -37,10 +37,17 @@ function App() {
     setInfoToolTip("");
   };
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      getProfile()
+        .then((res) => setCurrentUser(res.data))
+        .catch((err) => console.log(err));
+    }
+  }, [isLoggedIn]);
+
   const handleLogIn = (data) => {
     authorize(data)
-      .then((res) => {
-        setCurrentUser(data);
+      .then(() => {
         setLoggedIn(true);
         navigate(PATHS.movies);
       })
@@ -52,7 +59,6 @@ function App() {
         console.log(err);
       });
   };
-  console.log(currentUser)
 
   const handleRegister = (data) => {
     register(data)
@@ -70,7 +76,7 @@ function App() {
 
   const handleLogOut = () => {
     setLoggedIn(false);
-    // setCurrentUser({})
+    setCurrentUser({})
   };
 
   const toggleMenuState = () => {

@@ -57,3 +57,5 @@ export const NAVIGATION_DATA = {
     },
   ],
 };
+
+export const token = localStorage.getItem("jwt")

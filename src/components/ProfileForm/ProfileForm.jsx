@@ -8,10 +8,8 @@ import { PATHS } from "../../utils/consts";
 import Input from "../Input/Input";
 import "./ProfileForm.css";
 import { useContext } from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-function ProfileForm({ logOutHandler }) {
-  const currentUser = useContext(CurrentUserContext);
+function ProfileForm({ logOutHandler, currentUser }) {
 
   const methods = useForm({
     resolver: joiResolver(profileValidationSchema),

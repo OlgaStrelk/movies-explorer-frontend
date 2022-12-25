@@ -1,18 +1,27 @@
 import "./Profile.css";
-import { useEffect } from 'react';
-import ProfileForm from '../ProfileForm/ProfileForm';
+import { useEffect } from "react";
+import ProfileForm from "../ProfileForm/ProfileForm";
+import { getProfile } from "../../utils/MainApi";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+function Profile({ logOutHandler }) {
+  const currentUser = CurrentUserContext();
 
-function Profile({logOutHandler}) {
-
+  // useEffect(() => {
+  //   getProfile()
+  //     .then((data) => {
+  //       setCurrentUser(data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   const PROFILE_DATA = {
-    title: `Привет, Ольга!`
-  }  
+    title: `Привет, ${currentUser.name}!`,
+  };
 
   return (
-    <main className='profile'>
-      <h1 className='profile__title'>{PROFILE_DATA.title}</h1>
-      <ProfileForm logOutHandler={logOutHandler}/>
+    <main className="profile">
+      <h1 className="profile__title">{PROFILE_DATA.title}</h1>
+      <ProfileForm currentUser={currentUser} logOutHandler={logOutHandler} />
     </main>
   );
 }
