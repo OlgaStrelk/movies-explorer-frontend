@@ -25,11 +25,15 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     //   );
     //   return joiResolver(validationSchema)(data, context, options);
     // },
-    mode: "onChange",
-    defaultValues: {name: currentUser.name, email: currentUser.email},
+    mode: "all",
+    defaultValues: { name: currentUser.name, email: currentUser.email },
   });
 
-  console.log(currentUser)
+  const {
+    formState: { isValid },
+  } = methods;
+
+  console.log(currentUser);
 
   const navigate = useNavigate();
 
@@ -39,9 +43,10 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     input: {
       inputClassName: "form__input_type_profile",
       labelClassName: "form__label_type_profile",
-      errorTextClassName: "form__error_type_profile"
+      errorTextClassName: "form__error_type_profile",
     },
     btnClassName: "form__btn_type_profile",
+    disabledBtnClassName: "form__btn_type_profile_disabled",
     signOutBtnClassName: "form__btn_type_sign-out",
     editBtnClassName: "form__btn_type_edit-profile",
   };
@@ -65,7 +70,6 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     },
   ];
 
-
   const inputMarkup = INPUTS_DATA.map((input) => (
     <Input key={input.id} data={input.data} styles={STYLES_CONFIG.input} />
   ));
@@ -81,7 +85,6 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         title: "Редактировать",
         uniqueStyle: STYLES_CONFIG.editBtnClassName,
         type: "submit",
-        disabled: true,
       },
     },
     {
@@ -90,7 +93,6 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         title: "Выйти из аккаунта",
         uniqueStyle: STYLES_CONFIG.signOutBtnClassName,
         type: "button",
-        disabled: false,
         clickHandler: handleSignOutClick,
       },
     },
@@ -98,12 +100,12 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
 
   const btnsMarkup = BTNS_DATA.map((btn) => {
     let btnClassName = `${STYLES_CONFIG.btnClassName} ${btn.data.uniqueStyle}`;
+    let disabledBtnClassName = `${btnClassName} ${STYLES_CONFIG.disabledBtnClassName}`;
     return (
       <button
         key={btn.id}
         type={btn.data.type}
-        className={btnClassName}
-        disabled={btn.data.disabled}
+        className={isValid ? btnClassName : disabledBtnClassName}
         onClick={btn.data.clickHandler}
       >
         {btn.data.title}
@@ -111,9 +113,14 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     );
   });
 
-  const onSubmit = (inputsData) => {
-    updateProfile(inputsData).then((userData) => {
+  const onSubmit = (data) => {
+    updateProfile({
+      email: data.email,
+      name: data.name,
+    }).then((userData) => {
+      console.log(userData);
       setCurrentUser(userData);
+      console.log(currentUser);
     });
   };
 

@@ -95,7 +95,10 @@ function App() {
                 path={PATHS.profile}
                 element={
                   <ProtectedRoute>
-                    <Profile logOutHandler={handleLogOut} />
+                    <Profile
+                      logOutHandler={handleLogOut}
+                      setCurrentUser={setCurrentUser}
+                    />
                   </ProtectedRoute>
                 }
               ></Route>

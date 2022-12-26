@@ -17,7 +17,8 @@
   line-height: 16px;
 }
 
-.form__btn_type_profile:disabled {
+.form__btn_type_profile_disabled {
+  color: var(--lightened-text);
   cursor: default;
 }
 
@@ -35,7 +36,12 @@
   font-size: 10px;
   position: absolute;
   bottom: 3px;
-  right: 0;
+  right: 3px;
+  text-align: end;
+  font-size: 10px;
+  line-height: 1;
+  min-height: 20px;
+  max-width: 80%;
 }
 
 .form__label_type_profile {
@@ -43,7 +49,7 @@
   /* padding: 16px 0; */
 
   max-width: 410px;
-  height: 48px;
+  height: 60px;
 
   position: relative;
 
@@ -63,7 +69,7 @@
 
 .form__input_type_profile {
   height: 100%;
-  width: 75%;
+  width: 80%;
 
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;

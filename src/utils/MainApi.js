@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { BASE_URL, token } from "./consts";
 
 export const register = (name, email, password) => {
@@ -39,14 +38,15 @@ export const getProfile = () => {
   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
 };
 
-export const updateProfile = () => {
+export const updateProfile = (email, name) => {
   return fetch(`${BASE_URL}/users/me`, {
-    method: "PUT",
+    method: "PATCH",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
+    body: JSON.stringify(email, name),
   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
 };
 // export const checkToken = (token) => {
