@@ -39,6 +39,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     input: {
       inputClassName: "form__input_type_profile",
       labelClassName: "form__label_type_profile",
+      errorTextClassName: "form__error_type_profile"
     },
     btnClassName: "form__btn_type_profile",
     signOutBtnClassName: "form__btn_type_sign-out",
