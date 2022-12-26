@@ -25,7 +25,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     //   );
     //   return joiResolver(validationSchema)(data, context, options);
     // },
-    mode: "onBlur",
+    mode: "onChange",
     defaultValues: {name: currentUser.name, email: currentUser.email},
   });
 
