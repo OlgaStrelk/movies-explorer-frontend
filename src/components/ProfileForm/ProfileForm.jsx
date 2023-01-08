@@ -118,8 +118,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
       email: data.email,
       name: data.name,
     }).then((userData) => {
-      console.log(userData);
-      setCurrentUser(userData);
+      setCurrentUser(userData.data);
       console.log(currentUser);
     });
   };
