@@ -30,10 +30,8 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
   });
 
   const {
-    formState: { isValid },
+    formState: { isValid, isDirty },
   } = methods;
-
-  console.log(currentUser);
 
   const navigate = useNavigate();
 
@@ -78,6 +76,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     logOutHandler();
     navigate(PATHS.aboutProject);
   };
+
   const BTNS_DATA = [
     {
       id: 7,
@@ -105,7 +104,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
       <button
         key={btn.id}
         type={btn.data.type}
-        className={isValid ? btnClassName : disabledBtnClassName}
+        className={(isValid && isDirty) ? btnClassName : disabledBtnClassName}
         onClick={btn.data.clickHandler}
       >
         {btn.data.title}
@@ -119,7 +118,6 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
       name: data.name,
     }).then((userData) => {
       setCurrentUser(userData.data);
-      console.log(currentUser);
     });
   };
 
