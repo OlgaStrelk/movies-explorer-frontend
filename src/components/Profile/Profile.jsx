@@ -4,7 +4,7 @@ import ProfileForm from "../ProfileForm/ProfileForm";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 function Profile({ logOutHandler, setCurrentUser }) {
   const currentUser = useContext(CurrentUserContext);
-  console.log(currentUser)
+
   const STYLES_CONFIG = {
     profileClassName: "profile",
     titleClassName: "profile__title"

@@ -106,6 +106,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         type={btn.data.type}
         className={(isValid && isDirty) ? btnClassName : disabledBtnClassName}
         onClick={btn.data.clickHandler}
+        disabled={(isValid && isDirty) ? false : true}
       >
         {btn.data.title}
       </button>

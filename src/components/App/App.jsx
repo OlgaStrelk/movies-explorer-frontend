@@ -73,10 +73,13 @@ function App() {
         console.log(err);
       });
   };
+  console.log(currentUser);
 
   const handleLogOut = () => {
     setLoggedIn(false);
+    console.log(currentUser);
     setCurrentUser({});
+    console.log(currentUser);
   };
 
   const toggleMenuState = () => {
