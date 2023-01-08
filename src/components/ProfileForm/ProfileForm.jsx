@@ -84,6 +84,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         title: "Редактировать",
         uniqueStyle: STYLES_CONFIG.editBtnClassName,
         type: "submit",
+        disabled: (isValid && isDirty) ? false : true
       },
     },
     {
@@ -93,6 +94,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         uniqueStyle: STYLES_CONFIG.signOutBtnClassName,
         type: "button",
         clickHandler: handleSignOutClick,
+        disabled: false
       },
     },
   ];
@@ -106,7 +108,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         type={btn.data.type}
         className={(isValid && isDirty) ? btnClassName : disabledBtnClassName}
         onClick={btn.data.clickHandler}
-        disabled={(isValid && isDirty) ? false : true}
+        disabled={btn.data.disabled}
       >
         {btn.data.title}
       </button>
