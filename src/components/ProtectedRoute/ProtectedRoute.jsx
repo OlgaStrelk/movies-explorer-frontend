@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import { Route, Navigate } from "react-router-dom";
-import { LoggedInContext } from "../../contexts/LoggedInContext";
 import { PATHS } from "../../utils/consts";
 
-const ProtectedRoute = ({ children, ...props }) => {
-  const isLoggedIn = useContext(LoggedInContext);
-  if (!isLoggedIn) {
-    return <Navigate to={PATHS.signin} replace />;
+const ProtectedRoute = ({ isLoggedIn, children }) => {
+  if (isLoggedIn) {
+    return children;
   }
-
-  return children;
+  return <Navigate to={PATHS.signin} replace />;
 };
 
 export default ProtectedRoute;
