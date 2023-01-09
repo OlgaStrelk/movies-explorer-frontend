@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import SearchForm from "../SearchForm/SearchForm";
 import ShowMoreButton from "../ShowMoreButton/ShowMoreButton";
@@ -7,9 +7,9 @@ import Preloader from "../Preloader/Preloader";
 
 function Movies(props) {
   let isLoading = false;
-  useEffect(() => {
-    props.handler();
-  }, []);
+  // useEffect(() => {
+  //   props.handler();
+  // }, []);
 
   return (
     <>

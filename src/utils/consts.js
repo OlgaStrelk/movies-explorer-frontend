@@ -1,3 +1,16 @@
+// export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
+export const BASE_URL = "http://localhost:3002";
+
+export const MIN_LENGTH = 2
+export const MAX_LENGTH = 30
+export const IS_ALPHANUM_REGEX = /^[a-zA-Z0-9]+$/
+
+export const BACKEND_VALIDATION_TEXT = {
+  conflictErrorText: 'К сожалению, этот email уже занят',
+  badRequestErrorText: 'Введенный вами email некорректен',
+  authorizationErrorText: "Ошибка авторизации"
+}
+
 export const PATHS = {
   aboutProject: "/",
   movies: "/movies",
@@ -45,3 +58,5 @@ export const NAVIGATION_DATA = {
     },
   ],
 };
+
+export const token = localStorage.getItem("jwt")

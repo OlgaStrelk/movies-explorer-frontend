@@ -3,7 +3,7 @@ import "./TabletNavigation.css";
 
 
 function TabletNavigation({ handler, linksData }) {
-  const stylesConfig = {
+  const STYLES_CONFIG = {
     listClassName: "tablet-navigation",
     listItemClassName: "tablet-navigation__list-item",
     linkClassName: "tablet-navigation__link",
@@ -11,7 +11,7 @@ function TabletNavigation({ handler, linksData }) {
 
   return (
     <Navigation
-      styles={stylesConfig}
+      styles={STYLES_CONFIG}
       linksData={linksData}
       handler={handler}
     />

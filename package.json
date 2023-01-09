@@ -3,21 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
+    "@hookform/resolvers": "^2.9.10",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "joi": "^17.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.39.7",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
+    "validator": "^13.7.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && scp -r ./build/* strelod@51.250.78.202:/home/strelod/frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-		"lint": "npx eslint . --fix"
+    "lint": "npx eslint . --fix"
   },
   "eslintConfig": {
     "extends": [

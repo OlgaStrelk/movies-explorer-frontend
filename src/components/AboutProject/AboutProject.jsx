@@ -6,7 +6,7 @@ import TimeLine from "../TimeLine/TimeLine";
 function AboutProject() {
   const SECTION_DATA = { id: "about-project", title: "О проекте" };
 
-  const CLASS_NAMES_CONFIG = {
+  const STYLES_CONFIG = {
     uniqueTitleClass: "about-project__title", 
   }
   const ARTICLES_DATA = [
@@ -29,7 +29,7 @@ function AboutProject() {
   const articlesMarkup = ARTICLES_DATA.map((article) => (
     <Article
       key={article.id}
-      classes={CLASS_NAMES_CONFIG}
+      classes={STYLES_CONFIG}
     >
       {article.data}
     </Article>
