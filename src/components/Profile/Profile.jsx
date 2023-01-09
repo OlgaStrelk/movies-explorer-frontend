@@ -2,7 +2,7 @@ import "./Profile.css";
 import { useContext } from "react";
 import ProfileForm from "../ProfileForm/ProfileForm";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-function Profile({ logOutHandler, setCurrentUser }) {
+function Profile({ logOutHandler, updateProfileHandler }) {
   const currentUser = useContext(CurrentUserContext);
 
   const STYLES_CONFIG = {
@@ -17,7 +17,7 @@ function Profile({ logOutHandler, setCurrentUser }) {
   return (
     <main className={STYLES_CONFIG.profileClassName}>
       <h1 className={STYLES_CONFIG.titleClassName}>{PROFILE_DATA.title}</h1>
-      <ProfileForm currentUser={currentUser} setCurrentUser={setCurrentUser} logOutHandler={logOutHandler} />
+      <ProfileForm currentUser={currentUser} updateProfileHandler={updateProfileHandler} logOutHandler={logOutHandler} />
     </main>
   );
 }

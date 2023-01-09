@@ -9,9 +9,8 @@ import Input from "../Input/Input";
 import "./ProfileForm.css";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { updateProfile } from "../../utils/MainApi";
 
-function ProfileForm({ logOutHandler, setCurrentUser }) {
+function ProfileForm({ logOutHandler, updateProfileHandler }) {
   const currentUser = useContext(CurrentUserContext);
 
   const methods = useForm({
@@ -116,16 +115,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
   });
 
   const onSubmit = (data) => {
-    updateProfile({
-      email: data.email,
-      name: data.name,
-    })
-      .then((userData) => {
-        setCurrentUser(userData.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    updateProfileHandler(data)
   };
 
   return (

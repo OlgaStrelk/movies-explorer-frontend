@@ -22,16 +22,42 @@ import {
   checkToken,
   getProfile,
   register,
+  updateProfile,
 } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   let navigate = useNavigate();
+  // const [token, setToken] = useState("")
   const [infoToolTip, setInfoToolTip] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isPopupOpen, setPopupOpen] = useState(false);
+
+  //log in -> tocken
+  const handleLogIn = (data) => {
+    authorize(data)
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
+        navigate(PATHS.movies);
+      })
+      .then(() => {
+        verifyToken();
+      })
+      .catch((err) => {
+        if (err === 401) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.authorizationErrorText);
+          openPopup();
+        }
+        if (err === 409) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+          openPopup();
+        }
+        console.log(err);
+      });
+  };
+  //get Profile and get Movies
 
   const openPopup = () => {
     setPopupOpen(true);
@@ -45,10 +71,10 @@ function App() {
   const verifyToken = () => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      checkToken(token)
+      getProfile(token)
         .then((res) => {
-          setCurrentUser(res.data);
           setLoggedIn(true);
+          setCurrentUser(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -56,32 +82,9 @@ function App() {
     }
   };
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     getProfile()
-  //       .then((res) => setCurrentUser(res.data))
-  //       .catch((err) => console.log(err));
-  //   }
-  // }, [isLoggedIn]);
-
-  const handleLogIn = (data) => {
-    authorize(data)
-      .then((data) => {
-        localStorage.setItem("jwt", data.token);
-        setLoggedIn(true);
-        navigate(PATHS.movies);
-      })
-      .then(() => {
-        verifyToken();
-      })
-      .catch((err) => {
-        if (err === 409) {
-          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
-          openPopup();
-        }
-        console.log(err);
-      });
-  };
+  useEffect(() => {
+    verifyToken();
+  }, []);
 
   const handleRegister = (data) => {
     register(data)
@@ -107,6 +110,17 @@ function App() {
     setMenuOpen(!isMenuOpen);
   };
 
+  const handleUpdateProfile = (data) => {
+    updateProfile({ email: data.email, name: data.name })
+      .then(() => {
+        setInfoToolTip("Данные успешно обновлены");
+        openPopup();
+      })
+      .catch((err) => {
+        setInfoToolTip({ err });
+      });
+  };
+
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
@@ -121,7 +135,7 @@ function App() {
                   <ProtectedRoute>
                     <Profile
                       logOutHandler={handleLogOut}
-                      setCurrentUser={setCurrentUser}
+                      updateProfileHandler={handleUpdateProfile}
                     />
                   </ProtectedRoute>
                 }
@@ -130,7 +144,7 @@ function App() {
                 path={PATHS.movies}
                 element={
                   <ProtectedRoute>
-                    <Movies handler={handleLogIn} />
+                    <Movies />
                   </ProtectedRoute>
                 }
               ></Route>
@@ -138,7 +152,7 @@ function App() {
                 path={PATHS.savedMovies}
                 element={
                   <ProtectedRoute>
-                    <SavedMovies handler={handleLogIn} />
+                    <SavedMovies />
                   </ProtectedRoute>
                 }
               ></Route>

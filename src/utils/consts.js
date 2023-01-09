@@ -8,6 +8,7 @@ export const IS_ALPHANUM_REGEX = /^[a-zA-Z0-9]+$/
 export const BACKEND_VALIDATION_TEXT = {
   conflictErrorText: 'К сожалению, этот email уже занят',
   badRequestErrorText: 'Введенный вами email некорректен',
+  authorizationErrorText: "Ошибка авторизации"
 }
 
 export const PATHS = {
