@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 
 import "./Header.css";
 import AuthNavigation from "../AuthNavigation/AuthNavigation";
@@ -7,13 +7,8 @@ import { PATHS } from "../../utils/consts";
 import { useLocation } from "react-router-dom";
 import LogoLink from "../LogoLink/LogoLink";
 import Burger from "../Burger/Burger";
-import { LoggedInContext } from "../../contexts/LoggedInContext";
 
-
-function Header({ handler }) {
-  const isLoggedIn = useContext(LoggedInContext);
-
-
+function Header({ handler, isLoggedIn }) {
   const STYLE = {
     section: "section",
     sectionType: { promo: "section_type_promo" },
@@ -38,7 +33,7 @@ function Header({ handler }) {
           <LogoLink class={STYLE.logo} />
           {isLoggedIn ? (
             <>
-              <LoggedInNavigation />  <Burger handler={handler} />
+              <LoggedInNavigation /> <Burger handler={handler} />
             </>
           ) : (
             <>

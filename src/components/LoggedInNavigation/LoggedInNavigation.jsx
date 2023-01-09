@@ -4,7 +4,7 @@ import { NAVIGATION_DATA } from "../../utils/consts";
 import AccountLink from "../AccountLink/AccountLink";
 
 function LoggedInNavigation() {
-  const stylesConfig = {
+  const STYLES_CONFIG = {
     listClassName: "logged-in-bar",
     listItemClassName: "logged-in-bar__list-item",
     linkClassName: "logged-in-bar__link",
@@ -12,7 +12,7 @@ function LoggedInNavigation() {
 
   return (
     <>
-      <Navigation styles={stylesConfig} linksData={NAVIGATION_DATA.loggedInLinks} />
+      <Navigation styles={STYLES_CONFIG} linksData={NAVIGATION_DATA.loggedInLinks} />
       <AccountLink />
     </>
   );

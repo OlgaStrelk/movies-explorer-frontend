@@ -1,4 +1,4 @@
-.profile-form {
+.form_type_profile {
   height: 100%;
   width: 100%;
   display: flex;
@@ -6,42 +6,106 @@
   justify-content: space-between;
 }
 
-.profile-form__container {
+.form__container_type_profile {
   display: flex;
   flex-direction: column;
 }
 
-.profile-form__btn {
+.form__btn_type_profile {
   margin-top: 16px;
   font-size: 13px;
   line-height: 16px;
 }
 
-.profile-form__btn:disabled {
+.form__btn_type_profile_disabled {
+  color: var(--lightened-text);
   cursor: default;
 }
 
-.profile-form__btn_type_edit {
+.form__btn_type_edit-profile {
   font-weight: 400;
 }
 
-.profile-form__btn_type_sign-out {
+.form__btn_type_sign-out {
   font-weight: 500;
   color: var(--catchy-element);
 }
 
+.form__error_type_profile {
+  color: var(--catchy-element);
+  font-size: 10px;
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  text-align: end;
+  font-size: 10px;
+  line-height: 1;
+  min-height: 20px;
+  max-width: 80%;
+}
+
+.form__label_type_profile {
+  margin: 0 auto;
+  /* padding: 16px 0; */
+
+  max-width: 410px;
+  height: 60px;
+
+  position: relative;
+
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--icons-substrate);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 13px;
+}
+
+.form__label_type_profile:last-of-type {
+  border-bottom: none;
+}
+
+.form__input_type_profile {
+  height: 100%;
+  width: 80%;
+
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-right: 1px solid transparent;
+
+  box-sizing: border-box;
+  text-align: end;
+  line-height: 13px;
+}
+
+.form__input_type_profile:focus {
+  outline: none;
+}
+
+.form__input_type_profile:focus-visible {
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
+}
+
 @media screen and (max-width: 767px) {
-  .profile-form {
+  .form_type_profile {
     width: 100%;
   }
 
-  .profile-form__container {
+  .form__container_type_profile {
     max-width: 100%;
     max-height: cals(100vh-74px);
   }
 
-  .profile-form__btn {
+  .form__btn_type_profile {
     font-size: 12px;
     line-height: 15px;
+  }
+
+  .form__label_type_profile {
+    max-width: 260px;
   }
 }

@@ -1,24 +1,29 @@
-import { useState } from 'react';
-import "./Input.css";
+import { useFormContext } from "react-hook-form";
+// import { ErrorMessage } from "@hookform/error-message";
 
-function Input({ data, styles }) {
-  const [value, setValue] = useState(data.value);
-  console.log(data)
+function Input({ data, styles, ...rest }) {
+  const { type, label, name } = data;
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
 
   return (
-    <>
-      <label className={styles.labelClassName}>
-        {data.label}
-        <input
-          className={styles.inputClassName}
-          onChange={(e)=>{setValue(e.target.value)}}
-          id={data.id}
-          value={value}
-          name={data.name}
-          required={data.required}
-        />
-      </label>
-    </>
+    <label className={styles.labelClassName}>
+      {label}
+      <input
+        type={type || "text"}
+        className={styles.inputClassName}
+        {...register(name)}
+        {...rest}
+      />
+      {name in errors && (
+        <span className={styles.errorTextClassName}>
+          {errors[name].message}
+        </span>
+      )}
+      {/* <ErrorMessage className={styles.errorTextClassName} errors={errors} name={name} /> */}
+    </label>
   );
 }
 

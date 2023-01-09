@@ -4,11 +4,8 @@ import AccountLink from "../AccountLink/AccountLink";
 import "./SideBar.css";
 import TabletNavigation from "../TabletNavigation/TabletNavigation";
 import { NAVIGATION_DATA } from "../../utils/consts";
-import { LoggedInContext } from "../../contexts/LoggedInContext";
 
-function SideBar({ toggleMenuState }) {
-  const isLoggedIn = useContext(LoggedInContext);
-
+function SideBar({ toggleMenuState, isLoggedIn }) {
   let linksData = isLoggedIn
     ? NAVIGATION_DATA.loggedInLinks
     : NAVIGATION_DATA.authLinks;
@@ -19,7 +16,10 @@ function SideBar({ toggleMenuState }) {
         <TabletNavigation handler={toggleMenuState} linksData={linksData} />
         {isLoggedIn && (
           <div className="side-bar__link">
-            <AccountLink handler={toggleMenuState} style={{ display: "flex" }} />
+            <AccountLink
+              handler={toggleMenuState}
+              style={{ display: "flex" }}
+            />
           </div>
         )}
       </div>

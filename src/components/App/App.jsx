@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import { LoggedInContext } from "../../contexts/LoggedInContext";
+
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { MenuStateContext } from "../../contexts/MenuStateContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 import "./App.css";
 import Main from "../Main/Main";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import { PATHS } from "../../utils/consts";
+import { PATHS, BACKEND_VALIDATION_TEXT } from "../../utils/consts";
 import Movies from "../Movies/Movies";
 import Profile from "../Profile/Profile";
 import SavedMovies from "../SavedMovies/SavedMovies";
@@ -15,56 +16,180 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
+import {
+  authorize,
+  getProfile,
+  register,
+  updateProfile,
+} from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
+  let navigate = useNavigate();
+  // const [token, setToken] = useState("")
+  const [infoToolTip, setInfoToolTip] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+  const [isPopupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
-    console.log(isLoggedIn);
-  }, [isLoggedIn]);
-  const handleLogIn = () => {
-    setLoggedIn(true);
+    verifyToken();
+  }, []);
+
+  //log in -> tocken
+  const handleLogIn = (data) => {
+    authorize(data)
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
+      })
+      .then(() => {
+        verifyToken();
+      })
+      .then(navigate(PATHS.movies))
+      .catch((err) => {
+        if (err === 401) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.authorizationErrorText);
+          openPopup();
+        }
+        if (err === 409) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+          openPopup();
+        }
+        console.log(err);
+      });
+  };
+  //get Profile and get Movies
+
+  const openPopup = () => {
+    setPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setPopupOpen(false);
+    setInfoToolTip("");
+  };
+
+  const verifyToken = () => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      getProfile(token)
+        .then((res) => {
+          setLoggedIn(true);
+          setCurrentUser(res.data);
+        })
+        .catch(() => {
+          setInfoToolTip("Необходимо заново авторизоваться");
+          openPopup();
+        });
+    }
+  };
+
+  const handleRegister = (data) => {
+    register(data)
+      .then(() => {
+        handleLogIn({ email: data.email, password: data.password });
+      })
+      .catch((err) => {
+        if (err === 409) {
+          setInfoToolTip(BACKEND_VALIDATION_TEXT.conflictErrorText);
+          openPopup();
+        }
+        console.log(err);
+      });
   };
 
   const handleLogOut = () => {
     setLoggedIn(false);
+    setCurrentUser({});
+    localStorage.removeItem("jwt");
   };
 
   const toggleMenuState = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  const handleUpdateProfile = (data) => {
+    updateProfile({ email: data.email, name: data.name })
+      .then(() => {
+        setInfoToolTip("Данные успешно обновлены");
+        openPopup();
+      })
+      .catch((err) => {
+        setInfoToolTip({ err });
+      });
+  };
+
+  console.log(isLoggedIn);
   return (
     <>
-      <LoggedInContext.Provider value={isLoggedIn}>
+      <CurrentUserContext.Provider value={currentUser}>
         <MenuStateContext.Provider value={isMenuOpen}>
-          <Header handler={toggleMenuState} />
+          <Header handler={toggleMenuState} isLoggedIn={isLoggedIn} />
           <Routes>
             <Route exact path={PATHS.aboutProject} element={<Main />} />
             <Route
               path={PATHS.profile}
-              element={<Profile logOutHandler={handleLogOut} />}
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Profile
+                    logOutHandler={handleLogOut}
+                    updateProfileHandler={handleUpdateProfile}
+                  />
+                </ProtectedRoute>
+              }
             ></Route>
             <Route
               path={PATHS.movies}
-              element={<Movies handler={handleLogIn} />}
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Movies />
+                </ProtectedRoute>
+              }
             ></Route>
             <Route
               path={PATHS.savedMovies}
-              element={<SavedMovies handler={handleLogIn} />}
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <SavedMovies />
+                </ProtectedRoute>
+              }
             ></Route>
-            <Route path={PATHS.signup} element={<Register />}></Route>
+
+            <Route
+              path={PATHS.signup}
+              element={
+                <Register
+                  infoToolTip={infoToolTip}
+                  isOpen={isPopupOpen}
+                  onClose={closePopup}
+                  handler={handleRegister}
+                />
+              }
+            ></Route>
             <Route
               path={PATHS.signin}
-              element={<Login handler={handleLogIn} />}
+              element={
+                <Login
+                  infoToolTip={infoToolTip}
+                  isOpen={isPopupOpen}
+                  onClose={closePopup}
+                  isLoggedIn={isLoggedIn}
+                  handler={handleLogIn}
+                />
+              }
             ></Route>
             <Route path={PATHS.others} element={<PageNotFound />}></Route>
           </Routes>
           <Footer />
-          {isMenuOpen && <SideBar toggleMenuState={toggleMenuState} />}
+          {isMenuOpen && (
+            <SideBar
+              isLoggedIn={isLoggedIn}
+              toggleMenuState={toggleMenuState}
+            />
+          )}
         </MenuStateContext.Provider>
-      </LoggedInContext.Provider>
+      </CurrentUserContext.Provider>
     </>
   );
 }
