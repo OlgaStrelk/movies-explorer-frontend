@@ -17,7 +17,12 @@ import Register from "../Register/Register";
 import Login from "../Login/Login";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import SideBar from "../SideBar/SideBar";
-import { authorize, getProfile, register } from "../../utils/MainApi";
+import {
+  authorize,
+  checkToken,
+  getProfile,
+  register,
+} from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
@@ -37,19 +42,37 @@ function App() {
     setInfoToolTip("");
   };
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      getProfile()
-        .then((res) => setCurrentUser(res.data))
-        .catch((err) => console.log(err));
+  const verifyToken = () => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkToken(token)
+        .then((res) => {
+          setCurrentUser(res.data);
+          setLoggedIn(true);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-  }, [isLoggedIn]);
+  };
+
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     getProfile()
+  //       .then((res) => setCurrentUser(res.data))
+  //       .catch((err) => console.log(err));
+  //   }
+  // }, [isLoggedIn]);
 
   const handleLogIn = (data) => {
     authorize(data)
-      .then(() => {
+      .then((data) => {
+        localStorage.setItem("jwt", data.token);
         setLoggedIn(true);
         navigate(PATHS.movies);
+      })
+      .then(() => {
+        verifyToken();
       })
       .catch((err) => {
         if (err === 409) {
@@ -73,13 +96,11 @@ function App() {
         console.log(err);
       });
   };
-  console.log(currentUser);
 
   const handleLogOut = () => {
     setLoggedIn(false);
-    console.log(currentUser);
     setCurrentUser({});
-    console.log(currentUser);
+    localStorage.removeItem("jwt");
   };
 
   const toggleMenuState = () => {

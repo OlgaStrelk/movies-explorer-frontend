@@ -21,9 +21,11 @@ export const authorize = async (email, password) => {
     },
     body: JSON.stringify(email, password),
   });
-  const data = await (res.ok ? res.json() : Promise.reject(res.status));
-  localStorage.setItem("jwt", data.token);
-  return data;
+  return await (res.ok ? res.json() : Promise.reject(res.status));
+
+  // const data = await (res.ok ? res.json() : Promise.reject(res.status));
+  // localStorage.setItem("jwt", data.token);
+  // return data;
 };
 
 export const getProfile = async () => {
@@ -50,13 +52,13 @@ export const updateProfile = async (email, name) => {
   });
   return await (res.ok ? res.json() : Promise.reject(res.status));
 };
-// export const checkToken = (token) => {
-//   return fetch(`${BASE_URL}/users/me`, {
-//     method: "GET",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
-// };
+export const checkToken = (token) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
+};

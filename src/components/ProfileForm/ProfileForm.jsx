@@ -84,7 +84,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         title: "Редактировать",
         uniqueStyle: STYLES_CONFIG.editBtnClassName,
         type: "submit",
-        disabled: (isValid && isDirty) ? false : true
+        disabled: isValid && isDirty ? false : true,
       },
     },
     {
@@ -94,7 +94,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
         uniqueStyle: STYLES_CONFIG.signOutBtnClassName,
         type: "button",
         clickHandler: handleSignOutClick,
-        disabled: false
+        disabled: false,
       },
     },
   ];
@@ -106,7 +106,7 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
       <button
         key={btn.id}
         type={btn.data.type}
-        className={(isValid && isDirty) ? btnClassName : disabledBtnClassName}
+        className={isValid && isDirty ? btnClassName : disabledBtnClassName}
         onClick={btn.data.clickHandler}
         disabled={btn.data.disabled}
       >
@@ -119,9 +119,13 @@ function ProfileForm({ logOutHandler, setCurrentUser }) {
     updateProfile({
       email: data.email,
       name: data.name,
-    }).then((userData) => {
-      setCurrentUser(userData.data);
-    });
+    })
+      .then((userData) => {
+        setCurrentUser(userData.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
