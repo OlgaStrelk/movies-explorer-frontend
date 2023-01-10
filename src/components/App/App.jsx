@@ -35,18 +35,18 @@ function App() {
 
   useEffect(() => {
     verifyToken();
-  }, []);
+    console.log(isLoggedIn);
+  }, [isLoggedIn]);
 
   //log in -> tocken
   const handleLogIn = (data) => {
     authorize(data)
       .then((data) => {
         localStorage.setItem("jwt", data.token);
-      })
-      .then(() => {
         verifyToken();
+        setTimeout(() => navigate(PATHS.movies), 10);
       })
-      .then(navigate(PATHS.movies))
+
       .catch((err) => {
         if (err === 401) {
           setInfoToolTip(BACKEND_VALIDATION_TEXT.authorizationErrorText);
@@ -120,7 +120,6 @@ function App() {
       });
   };
 
-  console.log(isLoggedIn);
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
@@ -164,6 +163,7 @@ function App() {
                   isOpen={isPopupOpen}
                   onClose={closePopup}
                   handler={handleRegister}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             ></Route>
