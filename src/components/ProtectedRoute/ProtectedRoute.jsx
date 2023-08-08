@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { Route, Navigate } from "react-router-dom";
+import React from "react";
+import { Navigate } from "react-router-dom";
 import { PATHS } from "../../utils/consts";
 
 const ProtectedRoute = ({ isLoggedIn, children }) => {

@@ -5,6 +5,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
+  console.log(props)
   let isLoading = false;
   useEffect(() => {
     props.handler();

@@ -6,8 +6,9 @@ import Input from "../Input/Input";
 import SubmitButton from "../SubmitButton/SubmitButton";
 import Popup from "../Popup/Popup";
 import { registerValidationSchema } from "../../utils/joiValidationSchema";
+import AuthRedirect from "../AuthRedirect/AuthRedirect";
 
-function Register({ handler, infoToolTip, isOpen, onClose }) {
+function Register({ handler, infoToolTip, isOpen, onClose, isLoggedIn }) {
   const onSubmit = (data) => {
     handler(data);
   };
@@ -69,13 +70,17 @@ function Register({ handler, infoToolTip, isOpen, onClose }) {
       <section className={STYLES_CONFIG.sectionClassName}>
         <LogoLink />
         <h1 className={FORM_DATA.className}>{FORM_DATA.title}</h1>
-        <AuthForm
-          onSubmit={onSubmit}
-          validationScema={registerValidationSchema}
-        >
-          {inputsMarkup}
-          <SubmitButton data={SUBMIT_BTN_DATA} />
-        </AuthForm>
+        {isLoggedIn ? (
+          <AuthRedirect />
+        ) : (
+          <AuthForm
+            onSubmit={onSubmit}
+            validationScema={registerValidationSchema}
+          >
+            {inputsMarkup}
+            <SubmitButton data={SUBMIT_BTN_DATA} />
+          </AuthForm>
+        )}
       </section>
       <Popup isOpen={isOpen} text={infoToolTip} onClose={onClose} />
     </>

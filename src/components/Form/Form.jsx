@@ -9,7 +9,7 @@ function Form({ data }) {
 
   
   const handleForm = (e) => {
-    e.PreventDefault();
+    e.preventDefault();
     console.log("You clicked submit.");
   };
   return (

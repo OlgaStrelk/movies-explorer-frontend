@@ -23,6 +23,7 @@ import {
   updateProfile,
 } from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { getMovies } from "../../utils/MoviesApi";
 
 function App() {
   let navigate = useNavigate();
@@ -35,9 +36,9 @@ function App() {
 
   useEffect(() => {
     verifyToken();
-    console.log(isLoggedIn);
   }, [isLoggedIn]);
 
+  
   //log in -> tocken
   const handleLogIn = (data) => {
     authorize(data)
@@ -46,7 +47,6 @@ function App() {
         verifyToken();
         setTimeout(() => navigate(PATHS.movies), 10);
       })
-
       .catch((err) => {
         if (err === 401) {
           setInfoToolTip(BACKEND_VALIDATION_TEXT.authorizationErrorText);
@@ -57,8 +57,11 @@ function App() {
           openPopup();
         }
         console.log(err);
+        setInfoToolTip(BACKEND_VALIDATION_TEXT.serverRespondErrorText);
+        openPopup();
       });
   };
+
   //get Profile and get Movies
 
   const openPopup = () => {
