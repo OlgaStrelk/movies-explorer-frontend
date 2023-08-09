@@ -1,4 +1,4 @@
-# movies-explorer-frontend  
+# movies-explorer-frontend    
  
 ### чтобы запустить проект локально: 
 #### i. Скачайте и запустите API проекта
