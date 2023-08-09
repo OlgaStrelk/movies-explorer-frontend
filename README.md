@@ -1,5 +1,5 @@
 # movies-explorer-frontend 
-
+ 
 ### чтобы запустить проект локально: 
 #### i. Скачайте и запустите API проекта
 1) Склонируйте репозиторий [по ссылке](https://github.com/OlgaStrelk/movies-explorer-api) и откройте папку проекта в терминале
