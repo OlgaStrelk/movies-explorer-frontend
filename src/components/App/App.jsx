@@ -82,6 +82,7 @@ function App() {
           setCurrentUser(res.data);
         })
         .catch(() => {
+          console.log('aaaa')
           setInfoToolTip("Необходимо заново авторизоваться");
           openPopup();
         });
