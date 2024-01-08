@@ -1,6 +1,7 @@
 import { BASE_URL, token } from "./consts";
 
 export const register = async (name, email, password) => {
+  console.log(name, email, password)
   const res = await fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {

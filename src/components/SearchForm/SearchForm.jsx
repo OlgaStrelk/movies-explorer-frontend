@@ -21,6 +21,9 @@ function SearchForm() {
     },
   };
 
+
+  
+
   return (
     <div className="search-form">
         <Form data={FORM_DATA} />
