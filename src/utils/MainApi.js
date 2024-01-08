@@ -1,14 +1,13 @@
 import { BASE_URL, token } from "./consts";
 
-export const register = async (name, email, password) => {
-  console.log(name, email, password)
+export const register = async (data) => {
   const res = await fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(name, email, password),
+    body: JSON.stringify(data),
   });
   return await (res.ok ? res.json() : Promise.reject(res.status));
 };
