@@ -12,20 +12,16 @@ export const register = async (data) => {
   return await (res.ok ? res.json() : Promise.reject(res.status));
 };
 
-export const authorize = async (email, password) => {
+export const authorize = async (data) => {
   const res = await fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(email, password),
+    body: JSON.stringify(data),
   });
   return await (res.ok ? res.json() : Promise.reject(res.status));
-
-  // const data = await (res.ok ? res.json() : Promise.reject(res.status));
-  // localStorage.setItem("jwt", data.token);
-  // return data;
 };
 
 export const getProfile = async () => {

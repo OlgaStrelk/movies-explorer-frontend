@@ -43,6 +43,7 @@ function App() {
   const handleLogIn = (data) => {
     authorize(data)
       .then((data) => {
+        console.log(data)
         localStorage.setItem("jwt", data.token);
         verifyToken();
         setTimeout(() => navigate(PATHS.movies), 10);
@@ -82,7 +83,6 @@ function App() {
           setCurrentUser(res.data);
         })
         .catch(() => {
-          console.log('aaaa')
           setInfoToolTip("Необходимо заново авторизоваться");
           openPopup();
         });
@@ -92,6 +92,7 @@ function App() {
   const handleRegister = (data) => {
     register(data)
       .then(() => {
+        console.log(data)
         handleLogIn({ email: data.email, password: data.password });
       })
       .catch((err) => {
