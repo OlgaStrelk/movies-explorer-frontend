@@ -48,14 +48,3 @@ export const updateProfile = async (email, name) => {
   });
   return await (res.ok ? res.json() : Promise.reject(res.status));
 };
-
-// export const checkToken = (token) => {
-//   return fetch(`${BASE_URL}/users/me`, {
-//     method: "GET",
-//     headers: {
-//       Accept: "application/json",
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   }).then((res) => (res.ok ? res.json() : Promise.reject(res.status)));
-// };
