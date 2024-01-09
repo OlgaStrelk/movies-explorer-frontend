@@ -5,6 +5,7 @@ import CheckButtonIcon from "../../images/card__check-mark.svg";
 import CrossButtonIcon from "../../images/card__cross.svg";
 
 function MoviesCard({ data, isSorted }) {
+  const movie ={title: data.nameRU, image: data.image.previewUrl, duration: data.duration}
   const saveMovie = () => {
     console.log("Фильм сохранен");
   };
@@ -58,7 +59,7 @@ function MoviesCard({ data, isSorted }) {
       <div
         className="card__image"
         style={{
-          background: `center center / contain no-repeat url(${data.src})`,
+          background: `center center / contain no-repeat url(${movie.image})`,
         }}
         onMouseOver={showBtn}
         onMouseLeave={hideBtn}
@@ -74,8 +75,8 @@ function MoviesCard({ data, isSorted }) {
         )}
       </div>
       <div className="card__caption">
-        <h4 className="card__title">{data.title}</h4>
-        <p className="card__duration">{data.duration}</p>
+        <h4 className="card__title">{movie.title}</h4>
+        <p className="card__duration">{movie.duration}</p>
       </div>
     </li>
   );

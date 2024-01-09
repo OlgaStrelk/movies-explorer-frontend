@@ -5,7 +5,6 @@ import SearchForm from "../SearchForm/SearchForm";
 import Preloader from "../Preloader/Preloader";
 
 function SavedMovies(props) {
-  console.log(props)
   let isLoading = false;
   useEffect(() => {
     props.handler();
@@ -15,7 +14,7 @@ function SavedMovies(props) {
     <main>
       <article className="movies__search-form">
         <SearchForm />
-      </article>{" "}
+      </article>
       <article className="movies__content">
         {isLoading ? <Preloader /> : <MoviesCardList isSorted={true} />}
       </article>
