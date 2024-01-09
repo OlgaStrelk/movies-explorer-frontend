@@ -40,10 +40,9 @@ function App() {
 
   
   //log in -> tocken
-  const handleLogIn = (data) => {
+  const handleLogin = (data) => {
     authorize(data)
       .then((data) => {
-        console.log(data)
         localStorage.setItem("jwt", data.token);
         verifyToken();
         setTimeout(() => navigate(PATHS.movies), 10);
@@ -92,8 +91,7 @@ function App() {
   const handleRegister = (data) => {
     register(data)
       .then(() => {
-        console.log(data)
-        handleLogIn({ email: data.email, password: data.password });
+        handleLogin({ email: data.email, password: data.password });
       })
       .catch((err) => {
         if (err === 409) {
@@ -104,7 +102,7 @@ function App() {
       });
   };
 
-  const handleLogOut = () => {
+  const handleLogout = () => {
     setLoggedIn(false);
     setCurrentUser({});
     localStorage.removeItem("jwt");
@@ -137,7 +135,7 @@ function App() {
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <Profile
-                    logOutHandler={handleLogOut}
+                    logOutHandler={handleLogout}
                     updateProfileHandler={handleUpdateProfile}
                   />
                 </ProtectedRoute>
@@ -180,7 +178,7 @@ function App() {
                   isOpen={isPopupOpen}
                   onClose={closePopup}
                   isLoggedIn={isLoggedIn}
-                  handler={handleLogIn}
+                  handler={handleLogin}
                 />
               }
             ></Route>
