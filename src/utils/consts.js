@@ -1,16 +1,18 @@
 // export const BASE_URL = "https://api.beatfilms.nomoredomains.icu";
+export const BeatfilmMoviesApi = "https://api.nomoreparties.co/";
 export const BASE_URL = "http://localhost:3002";
+export const BEATFILMS_URL = "https://api.nomoreparties.co/beatfilm-movies";
 
-export const MIN_LENGTH = 2
-export const MAX_LENGTH = 30
-export const IS_ALPHANUM_REGEX = /^[a-zA-Z0-9]+$/
+export const MIN_LENGTH = 2;
+export const MAX_LENGTH = 30;
+export const IS_ALPHANUM_REGEX = /^[a-zA-Z0-9]+$/;
 
 export const BACKEND_VALIDATION_TEXT = {
-  conflictErrorText: 'К сожалению, этот email уже занят',
-  badRequestErrorText: 'Введенный вами email некорректен',
+  conflictErrorText: "К сожалению, этот email уже занят",
+  badRequestErrorText: "Введенный вами email некорректен",
   authorizationErrorText: "Ошибка авторизации",
-  serverRespondErrorText: "Сервер не отвечает"
-}
+  serverRespondErrorText: "Сервер не отвечает",
+};
 
 export const PATHS = {
   aboutProject: "/",
@@ -55,9 +57,9 @@ export const NAVIGATION_DATA = {
       id: 5,
       path: PATHS.signin,
       headerListItemClassName: "auth-bar__list-item_type_signin",
-      headerLinkClassName: "auth-bar__link_type_signin"
+      headerLinkClassName: "auth-bar__link_type_signin",
     },
   ],
 };
 
-export const token = localStorage.getItem("jwt")
+export const token = localStorage.getItem("jwt");

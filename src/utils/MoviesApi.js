@@ -1,5 +1,4 @@
-const BEATFILMS_URL = 'https://api.nomoreparties.co/beatfilm-movies'
-
+import { BEATFILMS_URL } from "./consts";
 // import { BASE_URL } from "./consts";
 
 export const getMovies = () => {

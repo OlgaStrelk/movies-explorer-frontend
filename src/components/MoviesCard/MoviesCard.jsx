@@ -3,9 +3,14 @@ import "./MoviesCard.css";
 import CheckButton from "../CheckButton/CheckButton";
 import CheckButtonIcon from "../../images/card__check-mark.svg";
 import CrossButtonIcon from "../../images/card__cross.svg";
+import { BeatfilmMoviesApi } from "../../utils/consts";
 
 function MoviesCard({ data, isSorted }) {
-  const movie ={title: data.nameRU, image: data.image.previewUrl, duration: data.duration}
+  const movie = {
+    title: data.nameRU,
+    image: `${BeatfilmMoviesApi}${data.image.url}`,
+    duration: data.duration,
+  };
   const saveMovie = () => {
     console.log("Фильм сохранен");
   };
@@ -64,14 +69,14 @@ function MoviesCard({ data, isSorted }) {
         onMouseOver={showBtn}
         onMouseLeave={hideBtn}
       >
-        {(CHILDREN_DATA.src) ? (
-        <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
-          <img src={CHILDREN_DATA.src} alt={CHILDREN_DATA.alt} />
-        </CheckButton>
+        {CHILDREN_DATA.src ? (
+          <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
+            <img src={CHILDREN_DATA.src} alt={CHILDREN_DATA.alt} />
+          </CheckButton>
         ) : (
-        <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
-          {CHILDREN_DATA.text}
-        </CheckButton>
+          <CheckButton data={BUTTON_DATA} isVisible={isVisible}>
+            {CHILDREN_DATA.text}
+          </CheckButton>
         )}
       </div>
       <div className="card__caption">
