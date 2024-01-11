@@ -2,15 +2,17 @@ import { useForm } from "react-hook-form";
 
 import "./Form.css";
 
-function Form({ data }) {
+function Form({ data, onChange }) {
   const methods = useForm();
   const { handleSubmit } = methods;
 
+const handleInputChange =(e)=> {
+  onChange(e.target.value)
+}
 
-  
-  const handleForm = (e) => {
+  const handleForm = (form, e) => {
     e.preventDefault();
-    console.log("You clicked submit.");
+    console.log(form);
   };
   return (
     <form className="form" onSubmit={handleSubmit(handleForm)}>
@@ -19,6 +21,8 @@ function Form({ data }) {
         className="form__input"
         placeholder={data.input.placeholder}
         required={data.input.required}
+        onChange={handleInputChange}
+        // value={value}
       />
       <button className="form__btn" type={data.btn.type}>
         <img src={data.btn.src} alt={data.btn.alt} />

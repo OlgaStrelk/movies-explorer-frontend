@@ -5,7 +5,9 @@ import CheckButtonIcon from "../../images/card__check-mark.svg";
 import CrossButtonIcon from "../../images/card__cross.svg";
 import { BeatfilmMoviesApi } from "../../utils/consts";
 
-function MoviesCard({ data, isSorted }) {
+function MoviesCard({ data }) {
+  // let data
+  let isSorted = true
   const movie = {
     title: data.nameRU,
     image: `${BeatfilmMoviesApi}${data.image.url}`,
@@ -19,7 +21,7 @@ function MoviesCard({ data, isSorted }) {
   };
 
   let BUTTON_DATA =
-    data.isSaved && isSorted
+  data.isSaved && isSorted
       ? {
           style: "card__btn_type_icon-content card__btn_type_delete",
           handler: deleteSavedMovie,
@@ -35,7 +37,7 @@ function MoviesCard({ data, isSorted }) {
         };
 
   let CHILDREN_DATA =
-    data.isSaved && isSorted
+  data.isSaved && isSorted
       ? {
           src: CrossButtonIcon,
           alt: "Удалить",

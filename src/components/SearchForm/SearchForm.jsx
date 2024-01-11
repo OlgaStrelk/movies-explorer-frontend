@@ -3,9 +3,10 @@ import "./SearchForm.css";
 import Form from "../Form/Form";
 import SearchBtnIcon from "../../images/search-btn__icon.svg";
 import Tumbler from "../Tumbler/Tumbler";
+import { useState } from "react";
 
-function SearchForm() {
-  
+function SearchForm({onChange}) {
+
   const TUMBLER_DATA = {
     title: "Короткометражки",
   };
@@ -26,7 +27,7 @@ function SearchForm() {
 
   return (
     <div className="search-form">
-        <Form data={FORM_DATA} />
+        <Form data={FORM_DATA} onChange={onChange} />
         <Tumbler data={TUMBLER_DATA} />
     </div>
   );

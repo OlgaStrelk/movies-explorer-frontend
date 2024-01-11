@@ -6,15 +6,15 @@ import "./Movies.css";
 import Preloader from "../Preloader/Preloader";
 import { getMovies } from "../../utils/MoviesApi";
 
-import Fuse from 'fuse.js'
-
+import Fuse from "fuse.js";
 
 function Movies(props) {
-
   const [movies, setMovies] = useState([]);
-  const fuse = new Fuse(movies, {
-    keys:['title']
-  })
+  const [inputValue, setInputValue] = useState("");
+  // const [sortedMovies, setSortedMovies] = useState([]);
+  const handleSearchRequest = (inputValue) => {
+    setInputValue(inputValue);
+  };
   const uploadMovies = () => {
     getMovies().then((data) => {
       setMovies(data);
@@ -24,6 +24,13 @@ function Movies(props) {
   useEffect(() => {
     uploadMovies();
   }, []);
+  console.log(inputValue);
+  const fuse = new Fuse(movies, {
+    keys: ["nameRU", "director", "description"],
+  });
+
+  const sortedMovies = fuse.search(inputValue);
+  console.log(sortedMovies)
   let isLoading = false;
   // useEffect(() => {
   //   props.handler();
@@ -32,14 +39,14 @@ function Movies(props) {
   return (
     <>
       <article className="movies__search-form">
-        <SearchForm />
+        <SearchForm onChange={handleSearchRequest} />
       </article>
       <article className="movies__content">
         {isLoading ? (
           <Preloader />
         ) : (
           <>
-            <MoviesCardList movies={movies} isSorted={false} />
+            <MoviesCardList movies={sortedMovies}/>
             <div className="movies__btn">
               <ShowMoreButton />
             </div>
