@@ -15,6 +15,7 @@ function Movies(props) {
   const handleSearchRequest = (inputValue) => {
     setInputValue(inputValue);
   };
+
   const uploadMovies = () => {
     getMovies().then((data) => {
       setMovies(data);
@@ -24,17 +25,18 @@ function Movies(props) {
   useEffect(() => {
     uploadMovies();
   }, []);
-  console.log(inputValue);
+
   const fuse = new Fuse(movies, {
     keys: ["nameRU", "director", "description"],
   });
 
   const sortedMovies = fuse.search(inputValue);
-  console.log(sortedMovies)
+
   let isLoading = false;
   // useEffect(() => {
   //   props.handler();
   // }, []);
+  // const renderCards=(sortedMovies)=>{}
 
   return (
     <>
