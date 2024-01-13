@@ -11,7 +11,8 @@ import Fuse from "fuse.js";
 function Movies(props) {
   const [movies, setMovies] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  // const [sortedMovies, setSortedMovies] = useState([]);
+  const [sortedMovies, setSortedMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const handleSearchRequest = (inputValue) => {
     setInputValue(inputValue);
   };
@@ -26,13 +27,16 @@ function Movies(props) {
     uploadMovies();
   }, []);
 
-  const fuse = new Fuse(movies, {
-    keys: ["nameRU", "director", "description"],
-  });
+  const filterMovies = () => {
+    setIsLoading(true);
+    const fuse = new Fuse(movies, {
+      keys: ["nameRU", "director", "description"],
+    });
 
-  const sortedMovies = fuse.search(inputValue);
+    setSortedMovies(fuse.search(inputValue));
+    setIsLoading(false);
+  };
 
-  let isLoading = false;
   // useEffect(() => {
   //   props.handler();
   // }, []);
@@ -41,14 +45,15 @@ function Movies(props) {
   return (
     <>
       <article className="movies__search-form">
-        <SearchForm onChange={handleSearchRequest} />
+        <SearchForm onChange={handleSearchRequest} onSubmit={filterMovies} />
       </article>
+
       <article className="movies__content">
         {isLoading ? (
           <Preloader />
         ) : (
           <>
-            <MoviesCardList movies={sortedMovies}/>
+            <MoviesCardList movies={sortedMovies} />
             <div className="movies__btn">
               <ShowMoreButton />
             </div>

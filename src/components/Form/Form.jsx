@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "./Form.css";
 // import { required } from "joi";
 
-function Form({ data, onChange }) {
+function Form({ data, onChange, onSubmit }) {
   const methods = useForm();
   const {
     handleSubmit,
@@ -18,7 +18,7 @@ function Form({ data, onChange }) {
 
   const handleForm = (data, e) => {
     e.preventDefault();
-    // renderCards();
+    onSubmit();
   };
 
   // const handleError = (errors, e) => {
