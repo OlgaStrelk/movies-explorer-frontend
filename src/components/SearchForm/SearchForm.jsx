@@ -1,11 +1,11 @@
-
 import "./SearchForm.css";
 import Form from "../Form/Form";
 import SearchBtnIcon from "../../images/search-btn__icon.svg";
 import Tumbler from "../Tumbler/Tumbler";
 import { useState } from "react";
 
-function SearchForm({onChange, onSubmit}) {
+function SearchForm({ onChange, onSubmit }) {
+  const [error, setError] = useState({});
 
   const TUMBLER_DATA = {
     title: "Короткометражки",
@@ -13,7 +13,8 @@ function SearchForm({onChange, onSubmit}) {
   const FORM_DATA = {
     input: {
       placeholder: "Фильм",
-      required: true
+      required: true,
+      name: "moviesQuery",
     },
     btn: {
       type: "submit",
@@ -22,14 +23,23 @@ function SearchForm({onChange, onSubmit}) {
     },
   };
 
-
-  
+  const renderError = (data) => {
+    setError(data);
+  };
 
   return (
-    <div className="search-form">
-        <Form data={FORM_DATA} onChange={onChange} onSubmit={onSubmit} />
+    <>
+      <div className="search-form">
+        <Form
+          data={FORM_DATA}
+          onChange={onChange}
+          onSubmit={onSubmit}
+          renderError={renderError}
+        />
         <Tumbler data={TUMBLER_DATA} />
-    </div>
+      </div>
+      {error &&<p>{error.message}</p>}
+    </>
   );
 }
 
